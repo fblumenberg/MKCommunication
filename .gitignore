@@ -1,0 +1,43 @@
+# XCode (and ancestors) per-user config (very noisy, and not relevant)
+*.mode1
+*.mode?v3
+!default.mode?v3
+*.perspective
+*.perspectivev3
+!default.perspectivev3
+*.pbxuser
+!default.pbxuser
+
+!default.xcworkspace
+xcuserdata
+
+profile
+*.moved-aside
+
+# build products
+build/
+*.[o]
+
+# Other source repository archive directories (protects when importing)
+.hg
+.svn
+CVS
+
+# automatic backup files
+*~.nib
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+
+# osx noise
+.DS_Store
+*.ipa
+*.swp
+*~.nib
+
+.idea
+/Podfile.lock
+/Pods/

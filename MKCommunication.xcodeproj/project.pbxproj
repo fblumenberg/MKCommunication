@@ -8,14 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
-		BAB430711705903900BEC0B5 /* MKCommunication.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAB430701705903900BEC0B5 /* MKCommunication.h */; };
-		BAB430731705903900BEC0B5 /* MKCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430721705903900BEC0B5 /* MKCommunication.m */; };
 		BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */; };
 		BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307C1705903A00BEC0B5 /* UIKit.framework */; };
 		BAB4307E1705903A00BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
 		BAB430811705903A00BEC0B5 /* libMKCommunication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB430681705903900BEC0B5 /* libMKCommunication.a */; };
 		BAB430871705903A00BEC0B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAB430851705903A00BEC0B5 /* InfoPlist.strings */; };
-		BAB4308A1705903A00BEC0B5 /* MKCommunicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430891705903A00BEC0B5 /* MKCommunicationTests.m */; };
+		BAB430D31705C69400BEC0B5 /* NSData+MKPayloadDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4309A1705C69300BEC0B5 /* NSData+MKPayloadDecode.m */; };
+		BAB430E71705C69400BEC0B5 /* FakeOsd.csv in Resources */ = {isa = PBXBuildFile; fileRef = BAB430B11705C69400BEC0B5 /* FakeOsd.csv */; };
+		BAB430EE1705C69400BEC0B5 /* MKSimConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430B61705C69400BEC0B5 /* MKSimConnection.m */; };
+		BAB430F01705C69400BEC0B5 /* MKConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430B81705C69400BEC0B5 /* MKConnectionController.m */; };
+		BAB4310C1705DD1F00BEC0B5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4310B1705DD1F00BEC0B5 /* QuartzCore.framework */; };
+		BAB4310E1705DD2900BEC0B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4310D1705DD2900BEC0B5 /* CoreLocation.framework */; };
+		BAB431101705DD3A00BEC0B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4310F1705DD3A00BEC0B5 /* CFNetwork.framework */; };
+		BAB431121705DDCB00BEC0B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB431111705DDCB00BEC0B5 /* CoreGraphics.framework */; };
+		BAB431131705DE7B00BEC0B5 /* IKData3D.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430BB1705C69400BEC0B5 /* IKData3D.m */; };
+		BAB431141705DE7B00BEC0B5 /* IKDebugData.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430BD1705C69400BEC0B5 /* IKDebugData.m */; };
+		BAB431151705DE7B00BEC0B5 /* IKDebugLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430BF1705C69400BEC0B5 /* IKDebugLabel.m */; };
+		BAB431161705DE7B00BEC0B5 /* IKDeviceVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430C11705C69400BEC0B5 /* IKDeviceVersion.m */; };
+		BAB431171705DE7B00BEC0B5 /* IKLcdDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430C31705C69400BEC0B5 /* IKLcdDisplay.m */; };
+		BAB431181705DE7B00BEC0B5 /* IKLcdMenuPage.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430C51705C69400BEC0B5 /* IKLcdMenuPage.m */; };
+		BAB431191705DE7B00BEC0B5 /* IKMixerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430C71705C69400BEC0B5 /* IKMixerTable.m */; };
+		BAB4311A1705DE7B00BEC0B5 /* IKNaviData.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430CA1705C69400BEC0B5 /* IKNaviData.m */; };
+		BAB4311B1705DE7B00BEC0B5 /* IKParamSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430CC1705C69400BEC0B5 /* IKParamSet.m */; };
+		BAB4311C1705DE7B00BEC0B5 /* IKPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430CE1705C69400BEC0B5 /* IKPoint.m */; };
+		BAB4311D1705DE7B00BEC0B5 /* NSString+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB431081705D33500BEC0B5 /* NSString+Parsing.m */; };
+		BAB4311E1705DE9200BEC0B5 /* MKSimConnection-Devices.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430B21705C69400BEC0B5 /* MKSimConnection-Devices.m */; };
+		BAB4311F1705DE9200BEC0B5 /* MKSimConnection-NCData.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430B31705C69400BEC0B5 /* MKSimConnection-NCData.m */; };
+		BAB431201705DE9200BEC0B5 /* MKSimConnection-Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430B41705C69400BEC0B5 /* MKSimConnection-Settings.m */; };
+		BAB431211705DE9E00BEC0B5 /* NSData+MKCommandDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430961705C69300BEC0B5 /* NSData+MKCommandDecode.m */; };
+		BAB431221705DE9E00BEC0B5 /* NSData+MKCommandEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430981705C69300BEC0B5 /* NSData+MKCommandEncode.m */; };
+		BAB431231705DE9E00BEC0B5 /* NSData+MKPayloadDecodeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4309B1705C69300BEC0B5 /* NSData+MKPayloadDecodeSetting.m */; };
+		BAB431241705DE9E00BEC0B5 /* NSData+MKPayloadEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4309D1705C69300BEC0B5 /* NSData+MKPayloadEncode.m */; };
+		BAB431251705DE9E00BEC0B5 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430AB1705C69400BEC0B5 /* AsyncSocket.m */; };
+		BAB431261705DE9E00BEC0B5 /* MKIpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430AF1705C69400BEC0B5 /* MKIpConnection.m */; };
+		BAB4312E1705DF2000BEC0B5 /* MKCommandChannelsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB431271705DF2000BEC0B5 /* MKCommandChannelsTest.m */; };
+		BAB4312F1705DF2000BEC0B5 /* MKCommandDebugDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB431281705DF2000BEC0B5 /* MKCommandDebugDataTest.m */; };
+		BAB431301705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB431291705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m */; };
+		BAB431311705DF2000BEC0B5 /* MKCommandNaviDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312A1705DF2000BEC0B5 /* MKCommandNaviDataTest.m */; };
+		BAB431321705DF2000BEC0B5 /* MKCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */; };
+		BAB431331705DF2000BEC0B5 /* MKCommandVersionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */; };
+		BAB431341705DF2000BEC0B5 /* ParamSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */; };
+		D24D350EBF904322BA6919BA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9600AD7E9DF478E949D4AA9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,25 +68,79 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				BAB430711705903900BEC0B5 /* MKCommunication.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3EB816C0C6004D4A853612C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BAB430681705903900BEC0B5 /* libMKCommunication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKCommunication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4306B1705903900BEC0B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB4306F1705903900BEC0B5 /* MKCommunication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKCommunication-Prefix.pch"; sourceTree = "<group>"; };
-		BAB430701705903900BEC0B5 /* MKCommunication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCommunication.h; sourceTree = "<group>"; };
-		BAB430721705903900BEC0B5 /* MKCommunication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCommunication.m; sourceTree = "<group>"; };
 		BAB430791705903A00BEC0B5 /* MKCommunicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKCommunicationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BAB4307C1705903A00BEC0B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BAB430841705903A00BEC0B5 /* MKCommunicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKCommunicationTests-Info.plist"; sourceTree = "<group>"; };
 		BAB430861705903A00BEC0B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BAB430881705903A00BEC0B5 /* MKCommunicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCommunicationTests.h; sourceTree = "<group>"; };
-		BAB430891705903A00BEC0B5 /* MKCommunicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCommunicationTests.m; sourceTree = "<group>"; };
+		BAB430941705C69300BEC0B5 /* MKDataConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKDataConstants.h; sourceTree = "<group>"; };
+		BAB430951705C69300BEC0B5 /* NSData+MKCommandDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKCommandDecode.h"; sourceTree = "<group>"; };
+		BAB430961705C69300BEC0B5 /* NSData+MKCommandDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKCommandDecode.m"; sourceTree = "<group>"; };
+		BAB430971705C69300BEC0B5 /* NSData+MKCommandEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKCommandEncode.h"; sourceTree = "<group>"; };
+		BAB430981705C69300BEC0B5 /* NSData+MKCommandEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKCommandEncode.m"; sourceTree = "<group>"; };
+		BAB430991705C69300BEC0B5 /* NSData+MKPayloadDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKPayloadDecode.h"; sourceTree = "<group>"; };
+		BAB4309A1705C69300BEC0B5 /* NSData+MKPayloadDecode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKPayloadDecode.m"; sourceTree = "<group>"; };
+		BAB4309B1705C69300BEC0B5 /* NSData+MKPayloadDecodeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKPayloadDecodeSetting.m"; sourceTree = "<group>"; };
+		BAB4309C1705C69300BEC0B5 /* NSData+MKPayloadEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKPayloadEncode.h"; sourceTree = "<group>"; };
+		BAB4309D1705C69300BEC0B5 /* NSData+MKPayloadEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKPayloadEncode.m"; sourceTree = "<group>"; };
+		BAB430AA1705C69400BEC0B5 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		BAB430AB1705C69400BEC0B5 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		BAB430AD1705C69400BEC0B5 /* MKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKConnection.h; sourceTree = "<group>"; };
+		BAB430AE1705C69400BEC0B5 /* MKIpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKIpConnection.h; sourceTree = "<group>"; };
+		BAB430AF1705C69400BEC0B5 /* MKIpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKIpConnection.m; sourceTree = "<group>"; };
+		BAB430B11705C69400BEC0B5 /* FakeOsd.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FakeOsd.csv; sourceTree = "<group>"; };
+		BAB430B21705C69400BEC0B5 /* MKSimConnection-Devices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKSimConnection-Devices.m"; sourceTree = "<group>"; };
+		BAB430B31705C69400BEC0B5 /* MKSimConnection-NCData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKSimConnection-NCData.m"; sourceTree = "<group>"; };
+		BAB430B41705C69400BEC0B5 /* MKSimConnection-Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKSimConnection-Settings.m"; sourceTree = "<group>"; };
+		BAB430B51705C69400BEC0B5 /* MKSimConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSimConnection.h; sourceTree = "<group>"; };
+		BAB430B61705C69400BEC0B5 /* MKSimConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSimConnection.m; sourceTree = "<group>"; };
+		BAB430B71705C69400BEC0B5 /* MKConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKConnectionController.h; sourceTree = "<group>"; };
+		BAB430B81705C69400BEC0B5 /* MKConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKConnectionController.m; sourceTree = "<group>"; };
+		BAB430BA1705C69400BEC0B5 /* IKData3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKData3D.h; sourceTree = "<group>"; };
+		BAB430BB1705C69400BEC0B5 /* IKData3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKData3D.m; sourceTree = "<group>"; };
+		BAB430BC1705C69400BEC0B5 /* IKDebugData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKDebugData.h; sourceTree = "<group>"; };
+		BAB430BD1705C69400BEC0B5 /* IKDebugData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKDebugData.m; sourceTree = "<group>"; };
+		BAB430BE1705C69400BEC0B5 /* IKDebugLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKDebugLabel.h; sourceTree = "<group>"; };
+		BAB430BF1705C69400BEC0B5 /* IKDebugLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKDebugLabel.m; sourceTree = "<group>"; };
+		BAB430C01705C69400BEC0B5 /* IKDeviceVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKDeviceVersion.h; sourceTree = "<group>"; };
+		BAB430C11705C69400BEC0B5 /* IKDeviceVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKDeviceVersion.m; sourceTree = "<group>"; };
+		BAB430C21705C69400BEC0B5 /* IKLcdDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKLcdDisplay.h; sourceTree = "<group>"; };
+		BAB430C31705C69400BEC0B5 /* IKLcdDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKLcdDisplay.m; sourceTree = "<group>"; };
+		BAB430C41705C69400BEC0B5 /* IKLcdMenuPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKLcdMenuPage.h; sourceTree = "<group>"; };
+		BAB430C51705C69400BEC0B5 /* IKLcdMenuPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKLcdMenuPage.m; sourceTree = "<group>"; };
+		BAB430C61705C69400BEC0B5 /* IKMixerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMixerTable.h; sourceTree = "<group>"; };
+		BAB430C71705C69400BEC0B5 /* IKMixerTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKMixerTable.m; sourceTree = "<group>"; };
+		BAB430C81705C69400BEC0B5 /* IKMkDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKMkDataTypes.h; sourceTree = "<group>"; };
+		BAB430C91705C69400BEC0B5 /* IKNaviData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKNaviData.h; sourceTree = "<group>"; };
+		BAB430CA1705C69400BEC0B5 /* IKNaviData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKNaviData.m; sourceTree = "<group>"; };
+		BAB430CB1705C69400BEC0B5 /* IKParamSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKParamSet.h; sourceTree = "<group>"; };
+		BAB430CC1705C69400BEC0B5 /* IKParamSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKParamSet.m; sourceTree = "<group>"; };
+		BAB430CD1705C69400BEC0B5 /* IKPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKPoint.h; sourceTree = "<group>"; };
+		BAB430CE1705C69400BEC0B5 /* IKPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKPoint.m; sourceTree = "<group>"; };
+		BAB431071705D33500BEC0B5 /* NSString+Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Parsing.h"; sourceTree = "<group>"; };
+		BAB431081705D33500BEC0B5 /* NSString+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Parsing.m"; sourceTree = "<group>"; };
+		BAB4310B1705DD1F00BEC0B5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BAB4310D1705DD2900BEC0B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BAB4310F1705DD3A00BEC0B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BAB431111705DDCB00BEC0B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BAB431271705DF2000BEC0B5 /* MKCommandChannelsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandChannelsTest.m; sourceTree = "<group>"; };
+		BAB431281705DF2000BEC0B5 /* MKCommandDebugDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandDebugDataTest.m; sourceTree = "<group>"; };
+		BAB431291705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandLcdDisplayTest.m; sourceTree = "<group>"; };
+		BAB4312A1705DF2000BEC0B5 /* MKCommandNaviDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandNaviDataTest.m; sourceTree = "<group>"; };
+		BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandTest.m; sourceTree = "<group>"; };
+		BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandVersionTest.m; sourceTree = "<group>"; };
+		BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest.m; sourceTree = "<group>"; };
+		E9600AD7E9DF478E949D4AA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */,
+				D24D350EBF904322BA6919BA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +157,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB431121705DDCB00BEC0B5 /* CoreGraphics.framework in Frameworks */,
+				BAB431101705DD3A00BEC0B5 /* CFNetwork.framework in Frameworks */,
+				BAB4310E1705DD2900BEC0B5 /* CoreLocation.framework in Frameworks */,
+				BAB4310C1705DD1F00BEC0B5 /* QuartzCore.framework in Frameworks */,
 				BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */,
 				BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */,
 				BAB4307E1705903A00BEC0B5 /* Foundation.framework in Frameworks */,
@@ -86,6 +178,7 @@
 				BAB430821705903A00BEC0B5 /* MKCommunicationTests */,
 				BAB4306A1705903900BEC0B5 /* Frameworks */,
 				BAB430691705903900BEC0B5 /* Products */,
+				3EB816C0C6004D4A853612C3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +194,14 @@
 		BAB4306A1705903900BEC0B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAB431111705DDCB00BEC0B5 /* CoreGraphics.framework */,
+				BAB4310F1705DD3A00BEC0B5 /* CFNetwork.framework */,
+				BAB4310D1705DD2900BEC0B5 /* CoreLocation.framework */,
+				BAB4310B1705DD1F00BEC0B5 /* QuartzCore.framework */,
 				BAB4306B1705903900BEC0B5 /* Foundation.framework */,
 				BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */,
 				BAB4307C1705903A00BEC0B5 /* UIKit.framework */,
+				E9600AD7E9DF478E949D4AA9 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,8 +209,13 @@
 		BAB4306D1705903900BEC0B5 /* MKCommunication */ = {
 			isa = PBXGroup;
 			children = (
-				BAB430701705903900BEC0B5 /* MKCommunication.h */,
-				BAB430721705903900BEC0B5 /* MKCommunication.m */,
+				BAB430931705C69300BEC0B5 /* Coding */,
+				BAB430A91705C69300BEC0B5 /* LowLevel */,
+				BAB430AC1705C69400BEC0B5 /* MKConnection */,
+				BAB430B71705C69400BEC0B5 /* MKConnectionController.h */,
+				BAB430B81705C69400BEC0B5 /* MKConnectionController.m */,
+				BAB430B91705C69400BEC0B5 /* Models */,
+				BAB431061705D33500BEC0B5 /* OtherSources */,
 				BAB4306E1705903900BEC0B5 /* Supporting Files */,
 			);
 			path = MKCommunication;
@@ -129,8 +232,13 @@
 		BAB430821705903A00BEC0B5 /* MKCommunicationTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAB430881705903A00BEC0B5 /* MKCommunicationTests.h */,
-				BAB430891705903A00BEC0B5 /* MKCommunicationTests.m */,
+				BAB431271705DF2000BEC0B5 /* MKCommandChannelsTest.m */,
+				BAB431281705DF2000BEC0B5 /* MKCommandDebugDataTest.m */,
+				BAB431291705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m */,
+				BAB4312A1705DF2000BEC0B5 /* MKCommandNaviDataTest.m */,
+				BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */,
+				BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */,
+				BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */,
 				BAB430831705903A00BEC0B5 /* Supporting Files */,
 			);
 			path = MKCommunicationTests;
@@ -145,6 +253,93 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BAB430931705C69300BEC0B5 /* Coding */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430941705C69300BEC0B5 /* MKDataConstants.h */,
+				BAB430951705C69300BEC0B5 /* NSData+MKCommandDecode.h */,
+				BAB430961705C69300BEC0B5 /* NSData+MKCommandDecode.m */,
+				BAB430971705C69300BEC0B5 /* NSData+MKCommandEncode.h */,
+				BAB430981705C69300BEC0B5 /* NSData+MKCommandEncode.m */,
+				BAB430991705C69300BEC0B5 /* NSData+MKPayloadDecode.h */,
+				BAB4309A1705C69300BEC0B5 /* NSData+MKPayloadDecode.m */,
+				BAB4309B1705C69300BEC0B5 /* NSData+MKPayloadDecodeSetting.m */,
+				BAB4309C1705C69300BEC0B5 /* NSData+MKPayloadEncode.h */,
+				BAB4309D1705C69300BEC0B5 /* NSData+MKPayloadEncode.m */,
+			);
+			path = Coding;
+			sourceTree = "<group>";
+		};
+		BAB430A91705C69300BEC0B5 /* LowLevel */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430AA1705C69400BEC0B5 /* AsyncSocket.h */,
+				BAB430AB1705C69400BEC0B5 /* AsyncSocket.m */,
+			);
+			path = LowLevel;
+			sourceTree = "<group>";
+		};
+		BAB430AC1705C69400BEC0B5 /* MKConnection */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430AD1705C69400BEC0B5 /* MKConnection.h */,
+				BAB430AE1705C69400BEC0B5 /* MKIpConnection.h */,
+				BAB430AF1705C69400BEC0B5 /* MKIpConnection.m */,
+				BAB430B01705C69400BEC0B5 /* Simulator */,
+			);
+			path = MKConnection;
+			sourceTree = "<group>";
+		};
+		BAB430B01705C69400BEC0B5 /* Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430B11705C69400BEC0B5 /* FakeOsd.csv */,
+				BAB430B21705C69400BEC0B5 /* MKSimConnection-Devices.m */,
+				BAB430B31705C69400BEC0B5 /* MKSimConnection-NCData.m */,
+				BAB430B41705C69400BEC0B5 /* MKSimConnection-Settings.m */,
+				BAB430B51705C69400BEC0B5 /* MKSimConnection.h */,
+				BAB430B61705C69400BEC0B5 /* MKSimConnection.m */,
+			);
+			path = Simulator;
+			sourceTree = "<group>";
+		};
+		BAB430B91705C69400BEC0B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430BA1705C69400BEC0B5 /* IKData3D.h */,
+				BAB430BB1705C69400BEC0B5 /* IKData3D.m */,
+				BAB430BC1705C69400BEC0B5 /* IKDebugData.h */,
+				BAB430BD1705C69400BEC0B5 /* IKDebugData.m */,
+				BAB430BE1705C69400BEC0B5 /* IKDebugLabel.h */,
+				BAB430BF1705C69400BEC0B5 /* IKDebugLabel.m */,
+				BAB430C01705C69400BEC0B5 /* IKDeviceVersion.h */,
+				BAB430C11705C69400BEC0B5 /* IKDeviceVersion.m */,
+				BAB430C21705C69400BEC0B5 /* IKLcdDisplay.h */,
+				BAB430C31705C69400BEC0B5 /* IKLcdDisplay.m */,
+				BAB430C41705C69400BEC0B5 /* IKLcdMenuPage.h */,
+				BAB430C51705C69400BEC0B5 /* IKLcdMenuPage.m */,
+				BAB430C61705C69400BEC0B5 /* IKMixerTable.h */,
+				BAB430C71705C69400BEC0B5 /* IKMixerTable.m */,
+				BAB430C81705C69400BEC0B5 /* IKMkDataTypes.h */,
+				BAB430C91705C69400BEC0B5 /* IKNaviData.h */,
+				BAB430CA1705C69400BEC0B5 /* IKNaviData.m */,
+				BAB430CB1705C69400BEC0B5 /* IKParamSet.h */,
+				BAB430CC1705C69400BEC0B5 /* IKParamSet.m */,
+				BAB430CD1705C69400BEC0B5 /* IKPoint.h */,
+				BAB430CE1705C69400BEC0B5 /* IKPoint.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAB431061705D33500BEC0B5 /* OtherSources */ = {
+			isa = PBXGroup;
+			children = (
+				BAB431071705D33500BEC0B5 /* NSString+Parsing.h */,
+				BAB431081705D33500BEC0B5 /* NSString+Parsing.m */,
+			);
+			path = OtherSources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +350,7 @@
 				BAB430641705903900BEC0B5 /* Sources */,
 				BAB430651705903900BEC0B5 /* Frameworks */,
 				BAB430661705903900BEC0B5 /* CopyFiles */,
+				5AF621C8103540A29C736EEE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,12 +413,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB430871705903A00BEC0B5 /* InfoPlist.strings in Resources */,
+				BAB430E71705C69400BEC0B5 /* FakeOsd.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5AF621C8103540A29C736EEE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		BAB430771705903A00BEC0B5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,7 +454,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB430731705903900BEC0B5 /* MKCommunication.m in Sources */,
+				BAB430D31705C69400BEC0B5 /* NSData+MKPayloadDecode.m in Sources */,
+				BAB430EE1705C69400BEC0B5 /* MKSimConnection.m in Sources */,
+				BAB430F01705C69400BEC0B5 /* MKConnectionController.m in Sources */,
+				BAB431131705DE7B00BEC0B5 /* IKData3D.m in Sources */,
+				BAB431141705DE7B00BEC0B5 /* IKDebugData.m in Sources */,
+				BAB431151705DE7B00BEC0B5 /* IKDebugLabel.m in Sources */,
+				BAB431161705DE7B00BEC0B5 /* IKDeviceVersion.m in Sources */,
+				BAB431171705DE7B00BEC0B5 /* IKLcdDisplay.m in Sources */,
+				BAB431181705DE7B00BEC0B5 /* IKLcdMenuPage.m in Sources */,
+				BAB431191705DE7B00BEC0B5 /* IKMixerTable.m in Sources */,
+				BAB4311A1705DE7B00BEC0B5 /* IKNaviData.m in Sources */,
+				BAB4311B1705DE7B00BEC0B5 /* IKParamSet.m in Sources */,
+				BAB4311C1705DE7B00BEC0B5 /* IKPoint.m in Sources */,
+				BAB4311D1705DE7B00BEC0B5 /* NSString+Parsing.m in Sources */,
+				BAB4311E1705DE9200BEC0B5 /* MKSimConnection-Devices.m in Sources */,
+				BAB4311F1705DE9200BEC0B5 /* MKSimConnection-NCData.m in Sources */,
+				BAB431201705DE9200BEC0B5 /* MKSimConnection-Settings.m in Sources */,
+				BAB431211705DE9E00BEC0B5 /* NSData+MKCommandDecode.m in Sources */,
+				BAB431221705DE9E00BEC0B5 /* NSData+MKCommandEncode.m in Sources */,
+				BAB431231705DE9E00BEC0B5 /* NSData+MKPayloadDecodeSetting.m in Sources */,
+				BAB431241705DE9E00BEC0B5 /* NSData+MKPayloadEncode.m in Sources */,
+				BAB431251705DE9E00BEC0B5 /* AsyncSocket.m in Sources */,
+				BAB431261705DE9E00BEC0B5 /* MKIpConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +484,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB4308A1705903A00BEC0B5 /* MKCommunicationTests.m in Sources */,
+				BAB4312E1705DF2000BEC0B5 /* MKCommandChannelsTest.m in Sources */,
+				BAB4312F1705DF2000BEC0B5 /* MKCommandDebugDataTest.m in Sources */,
+				BAB431301705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m in Sources */,
+				BAB431311705DF2000BEC0B5 /* MKCommandNaviDataTest.m in Sources */,
+				BAB431321705DF2000BEC0B5 /* MKCommandTest.m in Sources */,
+				BAB431331705DF2000BEC0B5 /* MKCommandVersionTest.m in Sources */,
+				BAB431341705DF2000BEC0B5 /* ParamSetTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,11 +571,12 @@
 		};
 		BAB4308E1705903A00BEC0B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB816C0C6004D4A853612C3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/MKCommunication.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MKCommunication/MKCommunication-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -344,11 +584,12 @@
 		};
 		BAB4308F1705903A00BEC0B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB816C0C6004D4A853612C3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/MKCommunication.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MKCommunication/MKCommunication-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -356,6 +597,7 @@
 		};
 		BAB430911705903A00BEC0B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EB816C0C6004D4A853612C3 /* Pods.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -403,6 +645,7 @@
 				BAB4308F1705903A00BEC0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAB430901705903A00BEC0B5 /* Build configuration list for PBXNativeTarget "MKCommunicationTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +654,7 @@
 				BAB430921705903A00BEC0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
