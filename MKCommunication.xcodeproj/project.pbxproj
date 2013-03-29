@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
+		BAB430711705903900BEC0B5 /* MKCommunication.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAB430701705903900BEC0B5 /* MKCommunication.h */; };
+		BAB430731705903900BEC0B5 /* MKCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430721705903900BEC0B5 /* MKCommunication.m */; };
+		BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */; };
+		BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307C1705903A00BEC0B5 /* UIKit.framework */; };
+		BAB4307E1705903A00BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
+		BAB430811705903A00BEC0B5 /* libMKCommunication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB430681705903900BEC0B5 /* libMKCommunication.a */; };
+		BAB430871705903A00BEC0B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAB430851705903A00BEC0B5 /* InfoPlist.strings */; };
+		BAB4308A1705903A00BEC0B5 /* MKCommunicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB430891705903A00BEC0B5 /* MKCommunicationTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAB4307F1705903A00BEC0B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAB430601705903900BEC0B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAB430671705903900BEC0B5;
+			remoteInfo = MKCommunication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BAB430661705903900BEC0B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				BAB430711705903900BEC0B5 /* MKCommunication.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BAB430681705903900BEC0B5 /* libMKCommunication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKCommunication.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB4306B1705903900BEC0B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BAB4306F1705903900BEC0B5 /* MKCommunication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKCommunication-Prefix.pch"; sourceTree = "<group>"; };
+		BAB430701705903900BEC0B5 /* MKCommunication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCommunication.h; sourceTree = "<group>"; };
+		BAB430721705903900BEC0B5 /* MKCommunication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCommunication.m; sourceTree = "<group>"; };
+		BAB430791705903A00BEC0B5 /* MKCommunicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKCommunicationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		BAB4307C1705903A00BEC0B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		BAB430841705903A00BEC0B5 /* MKCommunicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKCommunicationTests-Info.plist"; sourceTree = "<group>"; };
+		BAB430861705903A00BEC0B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BAB430881705903A00BEC0B5 /* MKCommunicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKCommunicationTests.h; sourceTree = "<group>"; };
+		BAB430891705903A00BEC0B5 /* MKCommunicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKCommunicationTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAB430651705903900BEC0B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB430751705903A00BEC0B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */,
+				BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */,
+				BAB4307E1705903A00BEC0B5 /* Foundation.framework in Frameworks */,
+				BAB430811705903A00BEC0B5 /* libMKCommunication.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAB4305F1705903900BEC0B5 = {
+			isa = PBXGroup;
+			children = (
+				BAB4306D1705903900BEC0B5 /* MKCommunication */,
+				BAB430821705903A00BEC0B5 /* MKCommunicationTests */,
+				BAB4306A1705903900BEC0B5 /* Frameworks */,
+				BAB430691705903900BEC0B5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAB430691705903900BEC0B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430681705903900BEC0B5 /* libMKCommunication.a */,
+				BAB430791705903A00BEC0B5 /* MKCommunicationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAB4306A1705903900BEC0B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAB4306B1705903900BEC0B5 /* Foundation.framework */,
+				BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */,
+				BAB4307C1705903A00BEC0B5 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAB4306D1705903900BEC0B5 /* MKCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430701705903900BEC0B5 /* MKCommunication.h */,
+				BAB430721705903900BEC0B5 /* MKCommunication.m */,
+				BAB4306E1705903900BEC0B5 /* Supporting Files */,
+			);
+			path = MKCommunication;
+			sourceTree = "<group>";
+		};
+		BAB4306E1705903900BEC0B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAB4306F1705903900BEC0B5 /* MKCommunication-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAB430821705903A00BEC0B5 /* MKCommunicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430881705903A00BEC0B5 /* MKCommunicationTests.h */,
+				BAB430891705903A00BEC0B5 /* MKCommunicationTests.m */,
+				BAB430831705903A00BEC0B5 /* Supporting Files */,
+			);
+			path = MKCommunicationTests;
+			sourceTree = "<group>";
+		};
+		BAB430831705903A00BEC0B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAB430841705903A00BEC0B5 /* MKCommunicationTests-Info.plist */,
+				BAB430851705903A00BEC0B5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAB430671705903900BEC0B5 /* MKCommunication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB4308D1705903A00BEC0B5 /* Build configuration list for PBXNativeTarget "MKCommunication" */;
+			buildPhases = (
+				BAB430641705903900BEC0B5 /* Sources */,
+				BAB430651705903900BEC0B5 /* Frameworks */,
+				BAB430661705903900BEC0B5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MKCommunication;
+			productName = MKCommunication;
+			productReference = BAB430681705903900BEC0B5 /* libMKCommunication.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BAB430781705903A00BEC0B5 /* MKCommunicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB430901705903A00BEC0B5 /* Build configuration list for PBXNativeTarget "MKCommunicationTests" */;
+			buildPhases = (
+				BAB430741705903A00BEC0B5 /* Sources */,
+				BAB430751705903A00BEC0B5 /* Frameworks */,
+				BAB430761705903A00BEC0B5 /* Resources */,
+				BAB430771705903A00BEC0B5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAB430801705903A00BEC0B5 /* PBXTargetDependency */,
+			);
+			name = MKCommunicationTests;
+			productName = MKCommunicationTests;
+			productReference = BAB430791705903A00BEC0B5 /* MKCommunicationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAB430601705903900BEC0B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Frank Blumenberg";
+			};
+			buildConfigurationList = BAB430631705903900BEC0B5 /* Build configuration list for PBXProject "MKCommunication" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BAB4305F1705903900BEC0B5;
+			productRefGroup = BAB430691705903900BEC0B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAB430671705903900BEC0B5 /* MKCommunication */,
+				BAB430781705903A00BEC0B5 /* MKCommunicationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAB430761705903A00BEC0B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB430871705903A00BEC0B5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAB430771705903A00BEC0B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAB430641705903900BEC0B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB430731705903900BEC0B5 /* MKCommunication.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB430741705903A00BEC0B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB4308A1705903A00BEC0B5 /* MKCommunicationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAB430801705903A00BEC0B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAB430671705903900BEC0B5 /* MKCommunication */;
+			targetProxy = BAB4307F1705903A00BEC0B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAB430851705903A00BEC0B5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAB430861705903A00BEC0B5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAB4308B1705903A00BEC0B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BAB4308C1705903A00BEC0B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAB4308E1705903A00BEC0B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MKCommunication.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKCommunication/MKCommunication-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BAB4308F1705903A00BEC0B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MKCommunication.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKCommunication/MKCommunication-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BAB430911705903A00BEC0B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKCommunication/MKCommunication-Prefix.pch";
+				INFOPLIST_FILE = "MKCommunicationTests/MKCommunicationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		BAB430921705903A00BEC0B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKCommunication/MKCommunication-Prefix.pch";
+				INFOPLIST_FILE = "MKCommunicationTests/MKCommunicationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAB430631705903900BEC0B5 /* Build configuration list for PBXProject "MKCommunication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB4308B1705903A00BEC0B5 /* Debug */,
+				BAB4308C1705903A00BEC0B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAB4308D1705903A00BEC0B5 /* Build configuration list for PBXNativeTarget "MKCommunication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB4308E1705903A00BEC0B5 /* Debug */,
+				BAB4308F1705903A00BEC0B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAB430901705903A00BEC0B5 /* Build configuration list for PBXNativeTarget "MKCommunicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB430911705903A00BEC0B5 /* Debug */,
+				BAB430921705903A00BEC0B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAB430601705903900BEC0B5 /* Project object */;
+}
