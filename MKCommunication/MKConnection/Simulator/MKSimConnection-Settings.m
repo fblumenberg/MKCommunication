@@ -264,7 +264,7 @@ void ParamSet_DefaultSet3(void) // beginner
 
   if (index < 1 || index > [self.settings count]) index = 1;
 
-  self.activeSetting = index;
+//  self.activeSetting = index;
 
   index--;
 
