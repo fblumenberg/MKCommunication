@@ -46,7 +46,7 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 92) {
+    if (revision == 92 || revision == 93) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
     }
     else if (revision == 90 || revision == 91) {
@@ -119,7 +119,7 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 92) {
+  if (_parameterLatest.Revision == 92 || _parameterLatest.Revision == 93) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
@@ -198,7 +198,7 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90 || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
+  return _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90 || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
 
 //---------------------------------------------------
