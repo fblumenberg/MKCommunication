@@ -43,6 +43,7 @@
 NSString *const MKFoundDeviceNotification = @"MKFoundDeviceNotification";
 NSString *const MKDeviceChangedNotification = @"MKDeviceChangedNotification";
 NSString *const MKConnectedNotification = @"MKConnectedNotification";
+NSString *const MKProbeMkNotification = @"MKProbeMkNotification";
 NSString *const MKDisconnectedNotification = @"MKDisconnectedNotification";
 NSString *const MKDisconnectErrorNotification = @"MKDisconnectErrorNotification";
 
@@ -421,6 +422,9 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 
 - (void)didConnectTo:(NSString *)hostOrDevice {
+  NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+  [nc postNotificationName:MKProbeMkNotification object:self userInfo:nil];
+
   [self nextConnectAction];
 }
 

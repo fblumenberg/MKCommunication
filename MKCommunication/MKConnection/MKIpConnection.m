@@ -128,6 +128,8 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port; {
   DDLogVerbose(@"Did connect to %@ on port %d", host, port);
+  _reconnect=NO;
+  _connectCounter=0;
   
   if ([delegate respondsToSelector:@selector(didConnectTo:)]) {
     [delegate didConnectTo:host];
@@ -176,7 +178,7 @@ static int ddLogLevel = LOG_LEVEL_WARN;
     }
   }
   else{
-    DDLogVerbose(@"Try to connect to %@ on port %d", _host, _port);
+    DDLogVerbose(@"Retry to connect to %@ on port %d connect count %d", _host, _port,_connectCounter);
     [asyncSocket connectToHost:_host onPort:_port withTimeout:CONNECT_TIMEOUT error:nil];
   }
   
