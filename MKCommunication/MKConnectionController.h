@@ -29,6 +29,7 @@
 extern NSString *const MKFoundDeviceNotification;
 extern NSString *const MKDeviceChangedNotification;
 extern NSString *const MKConnectedNotification;
+extern NSString *const MKProbeMkNotification;
 extern NSString *const MKDisconnectedNotification;
 extern NSString *const MKDisconnectErrorNotification;
 
