@@ -46,14 +46,52 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 92 || revision == 93) {
+    if (revision == 95) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
+    }
+    else if (revision == 92 || revision == 93) {
+      memcpy(&_parameter92, [data bytes], sizeof(_parameter92));
+      memcpy(&_parameterLatest, [data bytes], sizeof(_parameter92));
+      
+      _parameterLatest.NaviOut1Parameter = _parameter92.NaviOut1Parameter;
+      _parameterLatest.NaviGpsModeChannel = _parameter92.NaviGpsModeControl;
+      _parameterLatest.NaviGpsGain = _parameter92.NaviGpsGain;
+      _parameterLatest.NaviGpsP = _parameter92.NaviGpsP;
+      _parameterLatest.NaviGpsI = _parameter92.NaviGpsI;
+      _parameterLatest.NaviGpsD = _parameter92.NaviGpsD;
+      _parameterLatest.NaviGpsPLimit = _parameter92.NaviGpsPLimit;
+      _parameterLatest.NaviGpsILimit = _parameter92.NaviGpsILimit;
+      _parameterLatest.NaviGpsDLimit = _parameter92.NaviGpsDLimit;
+      _parameterLatest.NaviGpsA = _parameter92.NaviGpsACC;
+      _parameterLatest.NaviGpsMinSat = _parameter92.NaviGpsMinSat;
+      _parameterLatest.NaviStickThreshold = _parameter92.NaviStickThreshold;
+      _parameterLatest.NaviWindCorrection = _parameter92.NaviWindCorrection;
+      _parameterLatest.NaviAccCompensation = _parameter92.NaviAccCompensation;
+      _parameterLatest.NaviOperatingRadius = _parameter92.NaviOperatingRadius;
+      _parameterLatest.NaviAngleLimitation = _parameter92.NaviAngleLimitation;
+      _parameterLatest.NaviPH_LoginTime = _parameter92.NaviPH_LoginTime;
+      _parameterLatest.ExternalControl = _parameter92.ExternalControl;
+      _parameterLatest.OrientationAngle = _parameter92.OrientationAngle;
+      _parameterLatest.CareFreeChannel = _parameter92.CareFreeModeControl;
+      _parameterLatest.MotorSafetySwitch = _parameter92.MotorSafetySwitch;
+      _parameterLatest.MotorSmooth = _parameter92.MotorSmooth;
+      _parameterLatest.ComingHomeAltitude = _parameter92.ComingHomeAltitude;
+      _parameterLatest.FailSafeTime = _parameter92.FailSafeTime;
+      _parameterLatest.MaxAltitude = _parameter92.MaxAltitude;
+      _parameterLatest.FailsafeChannel = _parameter92.FailsafeChannel;
+      _parameterLatest.ServoFilterNick = _parameter92.ServoFilterNick;
+      _parameterLatest.ServoFilterRoll = _parameter92.ServoFilterRoll;
+      _parameterLatest.BitConfig = _parameter92.BitConfig;
+      _parameterLatest.ServoCompInvert = _parameter92.ServoCompInvert;
+      _parameterLatest.ExtraConfig = _parameter92.ExtraConfig;
+      _parameterLatest.GlobalConfig3 = _parameter92.GlobalConfig3;
+      memcpy(_parameterLatest.Name, _parameter92.Name, 12);
     }
     else if (revision == 90 || revision == 91) {
       memcpy(&_parameter90, [data bytes], sizeof(_parameter90));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter90));
 
-      _parameterLatest.NaviGpsModeControl = _parameter90.NaviGpsModeControl;
+      _parameterLatest.NaviGpsModeChannel = _parameter90.NaviGpsModeControl;
       _parameterLatest.NaviGpsGain = _parameter90.NaviGpsGain;
       _parameterLatest.NaviGpsP = _parameter90.NaviGpsP;
       _parameterLatest.NaviGpsI = _parameter90.NaviGpsI;
@@ -61,7 +99,7 @@
       _parameterLatest.NaviGpsPLimit = _parameter90.NaviGpsPLimit;
       _parameterLatest.NaviGpsILimit = _parameter90.NaviGpsILimit;
       _parameterLatest.NaviGpsDLimit = _parameter90.NaviGpsDLimit;
-      _parameterLatest.NaviGpsACC = _parameter90.NaviGpsACC;
+      _parameterLatest.NaviGpsA = _parameter90.NaviGpsACC;
       _parameterLatest.NaviGpsMinSat = _parameter90.NaviGpsMinSat;
       _parameterLatest.NaviStickThreshold = _parameter90.NaviStickThreshold;
       _parameterLatest.NaviWindCorrection = _parameter90.NaviWindCorrection;
@@ -71,7 +109,7 @@
       _parameterLatest.NaviPH_LoginTime = _parameter90.NaviPH_LoginTime;
       _parameterLatest.ExternalControl = _parameter90.ExternalControl;
       _parameterLatest.OrientationAngle = _parameter90.OrientationAngle;
-      _parameterLatest.CareFreeModeControl = _parameter90.CareFreeModeControl;
+      _parameterLatest.CareFreeChannel = _parameter90.CareFreeModeControl;
       _parameterLatest.MotorSafetySwitch = _parameter90.MotorSafetySwitch;
       _parameterLatest.MotorSmooth = _parameter90.MotorSmooth;
       _parameterLatest.ComingHomeAltitude = _parameter90.ComingHomeAltitude;
@@ -119,11 +157,54 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 92 || _parameterLatest.Revision == 93) {
+  if (_parameterLatest.Revision == 95) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
 
+    d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
+  }
+  else if (_parameterLatest.Revision == 92 || _parameterLatest.Revision == 93) {
+    unsigned char payloadData[sizeof(_parameter92)];
+    
+    memcpy(&_parameter92, &_parameterLatest, sizeof(_parameter92));
+    
+    _parameter92.NaviOut1Parameter = _parameterLatest.NaviOut1Parameter;
+    _parameter92.NaviGpsModeControl = _parameterLatest.NaviGpsModeChannel;
+    _parameter92.NaviGpsGain = _parameterLatest.NaviGpsGain;
+    _parameter92.NaviGpsP = _parameterLatest.NaviGpsP;
+    _parameter92.NaviGpsI = _parameterLatest.NaviGpsI;
+    _parameter92.NaviGpsD = _parameterLatest.NaviGpsD;
+    _parameter92.NaviGpsPLimit = _parameterLatest.NaviGpsPLimit;
+    _parameter92.NaviGpsILimit = _parameterLatest.NaviGpsILimit;
+    _parameter92.NaviGpsDLimit = _parameterLatest.NaviGpsDLimit;
+    _parameter92.NaviGpsACC = _parameterLatest.NaviGpsA;
+    _parameter92.NaviGpsMinSat = _parameterLatest.NaviGpsMinSat;
+    _parameter92.NaviStickThreshold = _parameterLatest.NaviStickThreshold;
+    _parameter92.NaviWindCorrection = _parameterLatest.NaviWindCorrection;
+    _parameter92.NaviAccCompensation = _parameterLatest.NaviAccCompensation;
+    _parameter92.NaviOperatingRadius = _parameterLatest.NaviOperatingRadius;
+    _parameter92.NaviAngleLimitation = _parameterLatest.NaviAngleLimitation;
+    _parameter92.NaviPH_LoginTime = _parameterLatest.NaviPH_LoginTime;
+    _parameter92.ExternalControl = _parameterLatest.ExternalControl;
+    _parameter92.OrientationAngle = _parameterLatest.OrientationAngle;
+    _parameter92.CareFreeModeControl = _parameterLatest.CareFreeChannel;
+    _parameter92.MotorSafetySwitch = _parameterLatest.MotorSafetySwitch;
+    _parameter92.MotorSmooth = _parameterLatest.MotorSmooth;
+    _parameter92.ComingHomeAltitude = _parameterLatest.ComingHomeAltitude;
+    _parameter92.FailSafeTime = _parameterLatest.FailSafeTime;
+    _parameter92.MaxAltitude = _parameterLatest.MaxAltitude;
+    _parameter92.FailsafeChannel = _parameterLatest.FailsafeChannel;
+    _parameter92.ServoFilterNick = _parameterLatest.ServoFilterNick;
+    _parameter92.ServoFilterRoll = _parameterLatest.ServoFilterRoll;
+    _parameter92.BitConfig = _parameterLatest.BitConfig;
+    _parameter92.ServoCompInvert = _parameterLatest.ServoCompInvert;
+    _parameter92.ExtraConfig = _parameterLatest.ExtraConfig;
+    _parameter92.GlobalConfig3 = _parameterLatest.GlobalConfig3;
+    memcpy(_parameter92.Name, _parameterLatest.Name, 12);
+    
+    memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter92, sizeof(_parameter92));
+    
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 90 || _parameterLatest.Revision == 91) {
@@ -131,7 +212,7 @@
 
     memcpy(&_parameter90, &_parameterLatest, sizeof(_parameter90));
 
-    _parameter90.NaviGpsModeControl = _parameterLatest.NaviGpsModeControl;
+    _parameter90.NaviGpsModeControl = _parameterLatest.NaviGpsModeChannel;
     _parameter90.NaviGpsGain = _parameterLatest.NaviGpsGain;
     _parameter90.NaviGpsP = _parameterLatest.NaviGpsP;
     _parameter90.NaviGpsI = _parameterLatest.NaviGpsI;
@@ -139,7 +220,7 @@
     _parameter90.NaviGpsPLimit = _parameterLatest.NaviGpsPLimit;
     _parameter90.NaviGpsILimit = _parameterLatest.NaviGpsILimit;
     _parameter90.NaviGpsDLimit = _parameterLatest.NaviGpsDLimit;
-    _parameter90.NaviGpsACC = _parameterLatest.NaviGpsACC;
+    _parameter90.NaviGpsACC = _parameterLatest.NaviGpsA;
     _parameter90.NaviGpsMinSat = _parameterLatest.NaviGpsMinSat;
     _parameter90.NaviStickThreshold = _parameterLatest.NaviStickThreshold;
     _parameter90.NaviWindCorrection = _parameterLatest.NaviWindCorrection;
@@ -149,7 +230,7 @@
     _parameter90.NaviPH_LoginTime = _parameterLatest.NaviPH_LoginTime;
     _parameter90.ExternalControl = _parameterLatest.ExternalControl;
     _parameter90.OrientationAngle = _parameterLatest.OrientationAngle;
-    _parameter90.CareFreeModeControl = _parameterLatest.CareFreeModeControl;
+    _parameter90.CareFreeModeControl = _parameterLatest.CareFreeChannel;
     _parameter90.MotorSafetySwitch = _parameterLatest.MotorSafetySwitch;
     _parameter90.MotorSmooth = _parameterLatest.MotorSmooth;
     _parameter90.ComingHomeAltitude = _parameterLatest.ComingHomeAltitude;
@@ -443,12 +524,12 @@
   _parameterLatest.Luftdruck_D = [value unsignedCharValue];
 }
 
-- (NSNumber *)MaxHoehe {
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.MaxHoehe];
+- (NSNumber *) HoeheChannel {
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.HoeheChannel];
 }
 
-- (void)setMaxHoehe:(NSNumber *)value {
-  _parameterLatest.MaxHoehe = [value unsignedCharValue];
+- (void)setHoeheChannel:(NSNumber *)value {
+  _parameterLatest.HoeheChannel = [value unsignedCharValue];
 }
 
 - (NSNumber *)Hoehe_P {
@@ -965,12 +1046,12 @@
   _parameterLatest.NaviOut1Parameter = [value unsignedCharValue];
 }
 
-- (NSNumber *)NaviGpsModeControl {
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviGpsModeControl];
+- (NSNumber *)NaviGpsModeChannel {
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviGpsModeChannel];
 }
 
-- (void)setNaviGpsModeControl:(NSNumber *)value {
-  _parameterLatest.NaviGpsModeControl = [value unsignedCharValue];
+- (void)setNaviGpsModeChannel:(NSNumber *)value {
+  _parameterLatest.NaviGpsModeChannel = [value unsignedCharValue];
 }
 
 - (NSNumber *)NaviGpsGain {
@@ -1029,12 +1110,12 @@
   _parameterLatest.NaviGpsDLimit = [value unsignedCharValue];
 }
 
-- (NSNumber *)NaviGpsACC {
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviGpsACC];
+- (NSNumber *)NaviGpsA {
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviGpsA];
 }
 
-- (void)setNaviGpsACC:(NSNumber *)value {
-  _parameterLatest.NaviGpsACC = [value unsignedCharValue];
+- (void)setNaviGpsA:(NSNumber *)value {
+  _parameterLatest.NaviGpsA = [value unsignedCharValue];
 }
 
 - (NSNumber *)NaviGpsMinSat {
@@ -1109,12 +1190,12 @@
   _parameterLatest.OrientationAngle = [value unsignedCharValue];
 }
 
-- (NSNumber *)CareFreeModeControl {
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.CareFreeModeControl];
+- (NSNumber *)CareFreeChannel {
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.CareFreeChannel];
 }
 
-- (void)setCareFreeModeControl:(NSNumber *)value {
-  _parameterLatest.CareFreeModeControl = [value unsignedCharValue];
+- (void)setCareFreeChannel:(NSNumber *)value {
+  _parameterLatest.CareFreeChannel = [value unsignedCharValue];
 }
 
 - (NSNumber *)MotorSafetySwitch {
@@ -1552,6 +1633,26 @@
 - (void)setServoFilterRoll:(NSNumber *)value {
   NSAssert(_parameterLatest.Revision >= 90, @"Wrong parameter revision %d", _parameterLatest.Revision);
   _parameterLatest.ServoFilterRoll = [value unsignedCharValue];
+}
+
+- (NSNumber *)StartLandChannel {
+    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    return [NSNumber numberWithUnsignedChar:_parameterLatest.StartLandChannel];
+}
+
+- (void)setStartLandChannel:(NSNumber *)value {
+    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    _parameterLatest.StartLandChannel = [value unsignedCharValue];
+}
+
+- (NSNumber *)LandingSpeed {
+    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    return [NSNumber numberWithUnsignedChar:_parameterLatest.LandingSpeed];
+}
+
+- (void)setLandingSpeed:(NSNumber *)value {
+    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    _parameterLatest.LandingSpeed = [value unsignedCharValue];
 }
 
 //---------------------------------------------------

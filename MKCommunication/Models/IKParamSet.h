@@ -28,7 +28,8 @@
 
 @interface IKParamSet : NSObject {
 
-  IKMkParamset92 _parameterLatest;
+  IKMkParamset95 _parameterLatest;
+  IKMkParamset92 _parameter92;
   IKMkParamset90 _parameter90;
   IKMkParamset88 _parameter88;
   IKMkParamset85 _parameter85;
@@ -67,7 +68,7 @@
 @property(assign) NSNumber *GlobalConfig_DREHRATEN_BEGRENZER;
 @property(assign) NSNumber *Hoehe_MinGas;
 @property(assign) NSNumber *Luftdruck_D;
-@property(assign) NSNumber *MaxHoehe;
+@property(assign) NSNumber *HoeheChannel;
 @property(assign) NSNumber *Hoehe_P;
 @property(assign) NSNumber *Hoehe_Verstaerkung;
 @property(assign) NSNumber *Hoehe_ACC_Wirkung;
@@ -132,7 +133,7 @@
 @property(assign) NSNumber *WARN_J16_Bitmask;
 @property(assign) NSNumber *WARN_J17_Bitmask;
 @property(assign) NSNumber *NaviOut1Parameter;
-@property(assign) NSNumber *NaviGpsModeControl;
+@property(assign) NSNumber *NaviGpsChannel;
 @property(assign) NSNumber *NaviGpsGain;
 @property(assign) NSNumber *NaviGpsP;
 @property(assign) NSNumber *NaviGpsI;
@@ -140,7 +141,7 @@
 @property(assign) NSNumber *NaviGpsPLimit;
 @property(assign) NSNumber *NaviGpsILimit;
 @property(assign) NSNumber *NaviGpsDLimit;
-@property(assign) NSNumber *NaviGpsACC;
+@property(assign) NSNumber *NaviGpsA;
 @property(assign) NSNumber *NaviGpsMinSat;
 @property(assign) NSNumber *NaviStickThreshold;
 @property(assign) NSNumber *NaviWindCorrection;
@@ -150,7 +151,7 @@
 @property(assign) NSNumber *NaviPH_LoginTime;
 @property(assign) NSNumber *ExternalControl;
 @property(assign) NSNumber *OrientationAngle;
-@property(assign) NSNumber *CareFreeModeControl;
+@property(assign) NSNumber *CareFreeChannel;
 @property(assign) NSNumber *MotorSafetySwitch;
 @property(assign) NSNumber *MotorSmooth;
 @property(assign) NSNumber *ComingHomeAltitude;
@@ -159,6 +160,9 @@
 @property(assign) NSNumber *FailsafeChannel;
 @property(assign) NSNumber *ServoFilterNick;
 @property(assign) NSNumber *ServoFilterRoll;
+@property(assign) NSNumber *StartLandChannel;
+@property(assign) NSNumber *LandingSpeed;
+
 @property(assign) NSNumber *BitConfig;
 @property(assign) NSNumber *BitConfig_LOOP_OBEN;
 @property(assign) NSNumber *BitConfig_LOOP_UNTEN;

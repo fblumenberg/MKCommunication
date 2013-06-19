@@ -180,7 +180,9 @@
 				BAB430691705903900BEC0B5 /* Products */,
 				3EB816C0C6004D4A853612C3 /* Pods.xcconfig */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		BAB430691705903900BEC0B5 /* Products */ = {
 			isa = PBXGroup;
