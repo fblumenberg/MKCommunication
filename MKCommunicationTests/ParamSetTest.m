@@ -780,7 +780,8 @@ static void fillIKMkParamset95(IKMkParamset95 *p) {
   
     IKParamSet *p = [IKParamSet settingWithData:origPayload];
     STAssertNotNil(p, @"IKParamSet creating failed");
-    
+    STAssertEquals([p isValid], YES, @"Data should be valid");
+  
     NSString *name = [NSString stringWithCString:pMk.Name encoding:NSASCIIStringEncoding];
     STAssertNotNil(p.Name, @"IKParamSet name");
     
