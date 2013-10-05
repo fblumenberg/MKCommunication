@@ -41,7 +41,8 @@ enum CsvIndex {
 @implementation MKSimConnection (NCData)
 
 - (void)initNCData{
-  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"FakeOsd"
+  
+  NSString *filePath = [[NSBundle bundleForClass: [self class]] pathForResource:@"FakeOsd"
                                                        ofType:@"csv"];
   
   self.naviData = [IKNaviData new];

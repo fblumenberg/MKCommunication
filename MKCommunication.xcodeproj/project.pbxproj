@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8378BF1615454A74AA5F53D9 /* libPods-MKCommunicationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2667E1370245E3A2901362 /* libPods-MKCommunicationTests.a */; };
+		BA111BDC1800524000DE54E0 /* MKSimConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA111BDB1800524000DE54E0 /* MKSimConnectionTest.m */; };
 		BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
 		BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */; };
 		BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307C1705903A00BEC0B5 /* UIKit.framework */; };
@@ -74,7 +76,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A2667E1370245E3A2901362 /* libPods-MKCommunicationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MKCommunicationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB816C0C6004D4A853612C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		B6585B542F7347B9BE17A5D0 /* Pods-MKCommunicationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKCommunicationTests.xcconfig"; path = "Pods/Pods-MKCommunicationTests.xcconfig"; sourceTree = "<group>"; };
+		BA111BDB1800524000DE54E0 /* MKSimConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSimConnectionTest.m; sourceTree = "<group>"; };
 		BAB430681705903900BEC0B5 /* libMKCommunication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKCommunication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4306B1705903900BEC0B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB4306F1705903900BEC0B5 /* MKCommunication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKCommunication-Prefix.pch"; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 				BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */,
 				BAB4307E1705903A00BEC0B5 /* Foundation.framework in Frameworks */,
 				BAB430811705903A00BEC0B5 /* libMKCommunication.a in Frameworks */,
+				8378BF1615454A74AA5F53D9 /* libPods-MKCommunicationTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,7 @@
 				BAB4306A1705903900BEC0B5 /* Frameworks */,
 				BAB430691705903900BEC0B5 /* Products */,
 				3EB816C0C6004D4A853612C3 /* Pods.xcconfig */,
+				B6585B542F7347B9BE17A5D0 /* Pods-MKCommunicationTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +209,7 @@
 				BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */,
 				BAB4307C1705903A00BEC0B5 /* UIKit.framework */,
 				E9600AD7E9DF478E949D4AA9 /* libPods.a */,
+				0A2667E1370245E3A2901362 /* libPods-MKCommunicationTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */,
 				BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */,
 				BAB430831705903A00BEC0B5 /* Supporting Files */,
+				BA111BDB1800524000DE54E0 /* MKSimConnectionTest.m */,
 			);
 			path = MKCommunicationTests;
 			sourceTree = "<group>";
@@ -365,10 +374,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAB430901705903A00BEC0B5 /* Build configuration list for PBXNativeTarget "MKCommunicationTests" */;
 			buildPhases = (
+				22C5E65DDCAD499786F1EF20 /* Check Pods Manifest.lock */,
 				BAB430741705903A00BEC0B5 /* Sources */,
 				BAB430751705903A00BEC0B5 /* Frameworks */,
 				BAB430761705903A00BEC0B5 /* Resources */,
 				BAB430771705903A00BEC0B5 /* ShellScript */,
+				75BA13F6C9CF49ACB80ED886 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,6 +431,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22C5E65DDCAD499786F1EF20 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5AF621C8103540A29C736EEE /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +459,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		75BA13F6C9CF49ACB80ED886 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MKCommunicationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		BAB430771705903A00BEC0B5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -485,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB4312E1705DF2000BEC0B5 /* MKCommandChannelsTest.m in Sources */,
+				BA111BDC1800524000DE54E0 /* MKSimConnectionTest.m in Sources */,
 				BAB4312F1705DF2000BEC0B5 /* MKCommandDebugDataTest.m in Sources */,
 				BAB431301705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m in Sources */,
 				BAB431311705DF2000BEC0B5 /* MKCommandNaviDataTest.m in Sources */,
@@ -597,9 +639,10 @@
 		};
 		BAB430911705903A00BEC0B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EB816C0C6004D4A853612C3 /* Pods.xcconfig */;
+			baseConfigurationReference = B6585B542F7347B9BE17A5D0 /* Pods-MKCommunicationTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
@@ -613,8 +656,10 @@
 		};
 		BAB430921705903A00BEC0B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6585B542F7347B9BE17A5D0 /* Pods-MKCommunicationTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
