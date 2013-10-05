@@ -33,7 +33,7 @@
 
 #import "MKDataConstants.h"
 
-static IKMkParamset92 EE_Parameter;
+static IKMkParamset95 EE_Parameter;
 static uint8_t PlatinenVersion = 21;
 
 static void ParamSet_DefaultStickMapping(void) {
@@ -56,111 +56,131 @@ static void ParamSet_DefaultStickMapping(void) {
 /*    Default Values for parameter set 1           */
 /***************************************************/
 static void CommonDefaults(void) {
-  EE_Parameter.Revision = EEPARAM_REVISION;
-  memset(EE_Parameter.Name, 0, 12); // delete name
-  if (PlatinenVersion >= 20) {
-    EE_Parameter.Gyro_D = 10;
-    EE_Parameter.Driftkomp = 0;
-    EE_Parameter.GyroAccFaktor = 27;
-    EE_Parameter.WinkelUmschlagNick = 78;
-    EE_Parameter.WinkelUmschlagRoll = 78;
-  }
-  else {
-    EE_Parameter.Gyro_D = 3;
-    EE_Parameter.Driftkomp = 32;
-    EE_Parameter.GyroAccFaktor = 30;
-    EE_Parameter.WinkelUmschlagNick = 85;
-    EE_Parameter.WinkelUmschlagRoll = 85;
-  }
-  EE_Parameter.GyroAccAbgleich = 32;        // 1/k
-  EE_Parameter.BitConfig = 0;              // Looping usw.
-  EE_Parameter.GlobalConfig = CFG_ACHSENKOPPLUNG_AKTIV | CFG_KOMPASS_AKTIV | CFG_GPS_AKTIV | CFG_HOEHEN_SCHALTER;
-  EE_Parameter.ExtraConfig = CFG_GPS_AID | CFG2_VARIO_BEEP;
-  EE_Parameter.GlobalConfig3 = CFG3_SPEAK_ALL;//CFG3_VARIO_FAILSAFE;
-  EE_Parameter.Receiver = RECEIVER_HOTT;
-  EE_Parameter.MotorSafetySwitch = 0;
-  EE_Parameter.ExternalControl = 0;
+	EE_Parameter.Revision = EEPARAM_REVISION;
+	memset(EE_Parameter.Name,0,12); // delete name
+	if(PlatinenVersion >= 20)
+	{
+		EE_Parameter.Gyro_D = 10;
+		EE_Parameter.Driftkomp = 0;
+		EE_Parameter.GyroAccFaktor = 27;
+		EE_Parameter.WinkelUmschlagNick = 78;
+		EE_Parameter.WinkelUmschlagRoll = 78;
+	}
+	else
+	{
+		EE_Parameter.Gyro_D = 3;
+		EE_Parameter.Driftkomp = 32;
+		EE_Parameter.GyroAccFaktor = 30;
+		EE_Parameter.WinkelUmschlagNick = 85;
+		EE_Parameter.WinkelUmschlagRoll = 85;
+	}
+	EE_Parameter.GyroAccAbgleich = 32;        // 1/k
+	EE_Parameter.BitConfig = 0;              // Looping usw.
+	EE_Parameter.GlobalConfig = CFG_ACHSENKOPPLUNG_AKTIV | CFG_KOMPASS_AKTIV | CFG_GPS_AKTIV | CFG_HOEHEN_SCHALTER;
+	EE_Parameter.ExtraConfig = CFG_GPS_AID | CFG2_VARIO_BEEP | CFG_LEARNABLE_CAREFREE;
+	EE_Parameter.Receiver = RECEIVER_HOTT;
+	EE_Parameter.MotorSafetySwitch = 0;
+	EE_Parameter.ExternalControl = 0;
+  
+	EE_Parameter.Gas_Min = 8;             // Wert : 0-32
+	EE_Parameter.Gas_Max = 230;           // Wert : 33-247
+	EE_Parameter.KompassWirkung = 64;    // Wert : 0-247
+  
+	EE_Parameter.Hoehe_MinGas = 30;
+	EE_Parameter.HoeheChannel = 5;         // Wert : 0-32
 
-  EE_Parameter.Gas_Min = 8;             // Wert : 0-32
-  EE_Parameter.Gas_Max = 230;           // Wert : 33-247
-  EE_Parameter.KompassWirkung = 64;    // Wert : 0-247
-
-  EE_Parameter.Hoehe_MinGas = 30;
-  EE_Parameter.MaxHoehe = 255;         // Wert : 0-247   255 -> Poti1
-  EE_Parameter.Hoehe_P = 15;          // Wert : 0-32
-  EE_Parameter.Luftdruck_D = 30;          // Wert : 0-247
-  EE_Parameter.Hoehe_ACC_Wirkung = 0;     // Wert : 0-247
-  EE_Parameter.Hoehe_HoverBand = 8;         // Wert : 0-247
-  EE_Parameter.Hoehe_GPS_Z = 20;           // Wert : 0-247
-  EE_Parameter.Hoehe_StickNeutralPoint = 0;// Wert : 0-247 (0 = Hover-Estimation)
-  EE_Parameter.Hoehe_Verstaerkung = 15;    // Wert : 0-50 (15 -> ca. +/- 5m/sek bei Stick-Voll-Ausschlag)
-
-  EE_Parameter.UserParam1 = 0;           // zur freien Verwendung
-  EE_Parameter.UserParam2 = 0;           // zur freien Verwendung
-  EE_Parameter.UserParam3 = 0;           // zur freien Verwendung
-  EE_Parameter.UserParam4 = 0;           // zur freien Verwendung
-  EE_Parameter.UserParam5 = 0;           // zur freien Verwendung
-  EE_Parameter.UserParam6 = 0;           // zur freien Verwendung
-  EE_Parameter.UserParam7 = 0;             // zur freien Verwendung
-  EE_Parameter.UserParam8 = 0;             // zur freien Verwendung
-
-  EE_Parameter.ServoNickControl = 128;     // Wert : 0-247     // Stellung des Servos
-  EE_Parameter.ServoNickComp = 50;         // Wert : 0-247     // Einfluss Gyro/Servo
-  EE_Parameter.ServoCompInvert = 2;        // Wert : 0-247     // Richtung Einfluss Gyro/Servo
-  EE_Parameter.ServoNickMin = 15;          // Wert : 0-247     // Anschlag
-  EE_Parameter.ServoNickMax = 230;         // Wert : 0-247     // Anschlag
-  EE_Parameter.ServoNickRefresh = 4;
-  EE_Parameter.Servo3 = 125;
-  EE_Parameter.Servo4 = 125;
-  EE_Parameter.Servo5 = 125;
-  EE_Parameter.ServoRollControl = 128;     // Wert : 0-247     // Stellung des Servos
-  EE_Parameter.ServoRollComp = 85;         // Wert : 0-247     // Einfluss Gyro/Servo
-  EE_Parameter.ServoRollMin = 70;          // Wert : 0-247     // Anschlag
-  EE_Parameter.ServoRollMax = 220;         // Wert : 0-247     // Anschlag
-  EE_Parameter.ServoManualControlSpeed = 60;
-  EE_Parameter.CamOrientation = 0;         // Wert : 0-24 -> 0-360 -> 15∞ steps
-
-  EE_Parameter.J16Bitmask = 95;
-  EE_Parameter.J17Bitmask = 243;
-  EE_Parameter.WARN_J16_Bitmask = 0xAA;
-  EE_Parameter.WARN_J17_Bitmask = 0xAA;
-  EE_Parameter.J16Timing = 40;
-  EE_Parameter.J17Timing = 40;
+//	if(ACC_AltitudeControl)
+//	{
+//		EE_Parameter.Hoehe_P      = 20;          // Wert : 0-32
+//		EE_Parameter.Luftdruck_D  = 40;          // Wert : 0-247
+//		EE_Parameter.Hoehe_ACC_Wirkung = 30;     // Wert : 0-247
+//		EE_Parameter.Hoehe_HoverBand = 1;     	  // Wert : 0-247
+//		EE_Parameter.Hoehe_GPS_Z = 0;           // Wert : 0-247
+//		EE_Parameter.Hoehe_StickNeutralPoint = 127;// Wert : 0-247 (0 = Hover-Estimation)
+//		EE_Parameter.GlobalConfig3 = CFG3_SPEAK_ALL;//
+//		EE_Parameter.FailSafeTime = 30; 	          // 0 = off
+//	}
+//	else
+	{
+		EE_Parameter.Hoehe_P      = 15;          // Wert : 0-32
+		EE_Parameter.Luftdruck_D  = 30;          // Wert : 0-247
+		EE_Parameter.Hoehe_ACC_Wirkung = 0;     // Wert : 0-247
+		EE_Parameter.Hoehe_HoverBand = 8;     	  // Wert : 0-247
+		EE_Parameter.Hoehe_GPS_Z = 20;           // Wert : 0-247
+		EE_Parameter.Hoehe_StickNeutralPoint = 0;// Wert : 0-247 (0 = Hover-Estimation)
+    EE_Parameter.GlobalConfig3 = CFG3_SPEAK_ALL;
+		EE_Parameter.FailSafeTime = 0; 	          // 0 = off
+	}
+	
+	EE_Parameter.Hoehe_Verstaerkung = 15;    // Wert : 0-50 (15 -> ca. +/- 5m/sek bei Stick-Voll-Ausschlag)
+	EE_Parameter.StartLandChannel = 0;
+	EE_Parameter.LandingSpeed = 12;
+  
+	EE_Parameter.UserParam1 =   0;           // zur freien Verwendung
+	EE_Parameter.UserParam2 =   0;           // zur freien Verwendung
+	EE_Parameter.UserParam3 =   0;           // zur freien Verwendung
+	EE_Parameter.UserParam4 =   0;           // zur freien Verwendung
+	EE_Parameter.UserParam5 =   0;           // zur freien Verwendung
+	EE_Parameter.UserParam6 =   0;           // zur freien Verwendung
+	EE_Parameter.UserParam7 = 0;             // zur freien Verwendung
+	EE_Parameter.UserParam8 = 0;             // zur freien Verwendung
+  
+	EE_Parameter.ServoNickControl = 128;     // Wert : 0-247     // Stellung des Servos
+	EE_Parameter.ServoNickComp = 50;         // Wert : 0-247     // Einfluss Gyro/Servo
+	EE_Parameter.ServoCompInvert = 2;        // Wert : 0-247     // Richtung Einfluss Gyro/Servo
+	EE_Parameter.ServoNickMin = 24;          // Wert : 0-247     // Anschlag
+	EE_Parameter.ServoNickMax = 230;         // Wert : 0-247     // Anschlag
+	EE_Parameter.ServoNickRefresh = 4;
+	EE_Parameter.Servo3 = 125;
+	EE_Parameter.Servo4 = 125;
+	EE_Parameter.Servo5 = 125;
+	EE_Parameter.ServoRollControl = 128;     // Wert : 0-247     // Stellung des Servos
+	EE_Parameter.ServoRollComp = 85;         // Wert : 0-247     // Einfluss Gyro/Servo
+	EE_Parameter.ServoRollMin = 70;          // Wert : 0-247     // Anschlag
+	EE_Parameter.ServoRollMax = 220;         // Wert : 0-247     // Anschlag
+	EE_Parameter.ServoManualControlSpeed = 60;
+	EE_Parameter.CamOrientation = 0;         // Wert : 0-24 -> 0-360 -> 15∞ steps
+  
+	EE_Parameter.J16Bitmask = 95;
+	EE_Parameter.J17Bitmask = 243;
+	EE_Parameter.WARN_J16_Bitmask = 0xAA;
+	EE_Parameter.WARN_J17_Bitmask = 0xAA;
+	EE_Parameter.J16Timing = 40;
+	EE_Parameter.J17Timing = 40;
   EE_Parameter.NaviOut1Parameter = 0;       // Photo release in meter
-  EE_Parameter.LoopGasLimit = 50;
-  EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle f¸r Stickausschlag
-  EE_Parameter.LoopHysterese = 50;
-
-  EE_Parameter.NaviGpsModeControl = 254; // 254 -> Poti 2
-  EE_Parameter.NaviGpsGain = 100;
-  EE_Parameter.NaviGpsP = 90;
-  EE_Parameter.NaviGpsI = 90;
-  EE_Parameter.NaviGpsD = 90;
-  EE_Parameter.NaviGpsPLimit = 75;
-  EE_Parameter.NaviGpsILimit = 85;
-  EE_Parameter.NaviGpsDLimit = 75;
-  EE_Parameter.NaviGpsACC = 0;
-  EE_Parameter.NaviGpsMinSat = 6;
-  EE_Parameter.NaviStickThreshold = 8;
-  EE_Parameter.NaviWindCorrection = 90;
-  EE_Parameter.NaviAccCompensation = 42;
-  EE_Parameter.NaviOperatingRadius = 245;
-  EE_Parameter.NaviAngleLimitation = 140;
-  EE_Parameter.NaviPH_LoginTime = 5;
-  EE_Parameter.OrientationAngle = 0;
-  EE_Parameter.CareFreeModeControl = 0;
-  EE_Parameter.UnterspannungsWarnung = 33; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
-  EE_Parameter.NotGas = 65;                // Wert : 0-247     // Gaswert bei Empangsverlust (ggf. in Prozent)
-  EE_Parameter.NotGasZeit = 90;            // Wert : 0-247     // Zeit bis auf NotGas geschaltet wird, wg. Rx-Problemen
-  EE_Parameter.MotorSmooth = 0;
-  EE_Parameter.ComingHomeAltitude = 0;     // 0 = don't change
-  EE_Parameter.FailSafeTime = 0;             // 0 = off
-  EE_Parameter.MaxAltitude = 150;           // 0 = off
-  EE_Parameter.AchsKopplung1 = 90;
-  EE_Parameter.AchsKopplung2 = 55;
-  EE_Parameter.FailsafeChannel = 0;
-  EE_Parameter.ServoFilterNick = 0;
-  EE_Parameter.ServoFilterRoll = 0;
+	EE_Parameter.LoopGasLimit = 50;
+	EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle f¸r Stickausschlag
+	EE_Parameter.LoopHysterese = 50;
+  
+	EE_Parameter.NaviGpsModeChannel = 6; // Kanal 6
+	EE_Parameter.NaviGpsGain = 100;
+	EE_Parameter.NaviGpsP =  100;
+	EE_Parameter.NaviGpsI =   90;
+	EE_Parameter.NaviGpsD =  120;
+	EE_Parameter.NaviGpsA =   40;
+	EE_Parameter.NaviGpsPLimit = 75;
+	EE_Parameter.NaviGpsILimit = 85;
+	EE_Parameter.NaviGpsDLimit = 75;
+	EE_Parameter.NaviGpsMinSat = 6;
+	EE_Parameter.NaviStickThreshold = 8;
+	EE_Parameter.NaviWindCorrection = 50;
+	EE_Parameter.NaviAccCompensation = 42;
+	EE_Parameter.NaviOperatingRadius = 245;
+	EE_Parameter.NaviAngleLimitation = 140;
+	EE_Parameter.NaviPH_LoginTime = 2;
+	EE_Parameter.OrientationAngle = 0;
+	EE_Parameter.CareFreeChannel = 0;
+	EE_Parameter.UnterspannungsWarnung = 33; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
+	EE_Parameter.NotGas = 65;                // Wert : 0-247     // Gaswert bei Empangsverlust (ggf. in Prozent)
+	EE_Parameter.NotGasZeit = 90;            // Wert : 0-247     // Zeit bis auf NotGas geschaltet wird, wg. Rx-Problemen
+	EE_Parameter.MotorSmooth = 0;
+	EE_Parameter.ComingHomeAltitude = 0; 	  // 0 = don't change
+	EE_Parameter.MaxAltitude = 150;           // 0 = off
+	EE_Parameter.AchsKopplung1 = 125;
+	EE_Parameter.AchsKopplung2 = 52;
+	EE_Parameter.FailsafeChannel = 0;
+	EE_Parameter.ServoFilterNick = 0;
+	EE_Parameter.ServoFilterRoll = 0;
 }
 
 /***************************************************/
@@ -168,60 +188,60 @@ static void CommonDefaults(void) {
 /***************************************************/
 void ParamSet_DefaultSet1(void) // normal
 {
-  CommonDefaults();
-  EE_Parameter.Stick_P = 10;               // Wert : 1-20
-  EE_Parameter.Stick_D = 16;               // Wert : 0-20
-  EE_Parameter.StickGier_P = 6;                 // Wert : 1-20
-  EE_Parameter.Gyro_P = 90;                // Wert : 0-247
-  EE_Parameter.Gyro_I = 120;               // Wert : 0-247
-  EE_Parameter.Gyro_Gier_P = 90;           // Wert : 0-247
-  EE_Parameter.Gyro_Gier_I = 120;          // Wert : 0-247
-  EE_Parameter.Gyro_Stability = 6;         // Wert : 1-8
-  EE_Parameter.I_Faktor = 32;
-  EE_Parameter.CouplingYawCorrection = 60;
-  EE_Parameter.DynamicStability = 75;
-  memcpy(EE_Parameter.Name, "Fast", 4);
+	CommonDefaults();
+	EE_Parameter.Stick_P = 10;               // Wert : 1-20
+	EE_Parameter.Stick_D = 16;               // Wert : 0-20
+	EE_Parameter.StickGier_P = 6;                 // Wert : 1-20
+	EE_Parameter.Gyro_P = 90;                // Wert : 0-247
+	EE_Parameter.Gyro_I = 120;               // Wert : 0-247
+	EE_Parameter.Gyro_Gier_P = 90;           // Wert : 0-247
+	EE_Parameter.Gyro_Gier_I = 120;          // Wert : 0-247
+	EE_Parameter.Gyro_Stability = 6; 	  	  // Wert : 1-8
+	EE_Parameter.I_Faktor = 32;
+	EE_Parameter.CouplingYawCorrection = 60;
+	EE_Parameter.DynamicStability = 75;
+	memcpy(EE_Parameter.Name, "Fast",4);
 }
 
 
 /***************************************************/
 /*    Default Values for parameter set 2           */
 /***************************************************/
-void ParamSet_DefaultSet2(void) // beginner
+void ParamSet_DefaultSet2(void) // Agil
 {
-  CommonDefaults();
-  EE_Parameter.Stick_P = 8;                // Wert : 1-20
-  EE_Parameter.Stick_D = 16;               // Wert : 0-20
-  EE_Parameter.StickGier_P = 6;                // Wert : 1-20
-  EE_Parameter.Gyro_P = 100;               // Wert : 0-247
-  EE_Parameter.Gyro_I = 120;               // Wert : 0-247
-  EE_Parameter.Gyro_Gier_P = 100;          // Wert : 0-247
-  EE_Parameter.Gyro_Gier_I = 120;          // Wert : 0-247
-  EE_Parameter.Gyro_Stability = 6;         // Wert : 1-8
-  EE_Parameter.I_Faktor = 16;
-  EE_Parameter.CouplingYawCorrection = 70;
-  EE_Parameter.DynamicStability = 70;
-  memcpy(EE_Parameter.Name, "Normal", 6);
+	CommonDefaults();
+	EE_Parameter.Stick_P = 8;                // Wert : 1-20
+	EE_Parameter.Stick_D = 16;               // Wert : 0-20
+	EE_Parameter.StickGier_P  = 6;                // Wert : 1-20
+	EE_Parameter.Gyro_P = 100;               // Wert : 0-247
+	EE_Parameter.Gyro_I = 120;               // Wert : 0-247
+	EE_Parameter.Gyro_Gier_P = 100;          // Wert : 0-247
+	EE_Parameter.Gyro_Gier_I = 120;          // Wert : 0-247
+	EE_Parameter.Gyro_Stability = 6; 	  	  // Wert : 1-8
+	EE_Parameter.I_Faktor = 16;
+	EE_Parameter.CouplingYawCorrection = 70;
+	EE_Parameter.DynamicStability = 70;
+	memcpy(EE_Parameter.Name, "Agile",5);
 }
 
 /***************************************************/
 /*    Default Values for parameter set 3           */
 /***************************************************/
-void ParamSet_DefaultSet3(void) // beginner
+void ParamSet_DefaultSet3(void) // Easy
 {
-  CommonDefaults();
-  EE_Parameter.Stick_P = 6;                // Wert : 1-20
-  EE_Parameter.Stick_D = 10;               // Wert : 0-20
-  EE_Parameter.StickGier_P = 4;           // Wert : 1-20
-  EE_Parameter.Gyro_P = 100;               // Wert : 0-247
-  EE_Parameter.Gyro_I = 120;               // Wert : 0-247
-  EE_Parameter.Gyro_Gier_P = 100;          // Wert : 0-247
-  EE_Parameter.Gyro_Gier_I = 120;          // Wert : 0-247
-  EE_Parameter.Gyro_Stability = 6;         // Wert : 1-8
-  EE_Parameter.I_Faktor = 16;
-  EE_Parameter.CouplingYawCorrection = 70;
-  EE_Parameter.DynamicStability = 70;
-  memcpy(EE_Parameter.Name, "Easy", 4);
+	CommonDefaults();
+	EE_Parameter.Stick_P = 6;                // Wert : 1-20
+	EE_Parameter.Stick_D = 10;               // Wert : 0-20
+	EE_Parameter.StickGier_P  = 4;           // Wert : 1-20
+	EE_Parameter.Gyro_P = 100;               // Wert : 0-247
+	EE_Parameter.Gyro_I = 120;               // Wert : 0-247
+	EE_Parameter.Gyro_Gier_P = 100;          // Wert : 0-247
+	EE_Parameter.Gyro_Gier_I = 120;          // Wert : 0-247
+	EE_Parameter.Gyro_Stability = 6; 	      // Wert : 1-8
+	EE_Parameter.I_Faktor = 16;
+	EE_Parameter.CouplingYawCorrection = 70;
+	EE_Parameter.DynamicStability = 70;
+	memcpy(EE_Parameter.Name, "Easy", 4);
 }
 
 
