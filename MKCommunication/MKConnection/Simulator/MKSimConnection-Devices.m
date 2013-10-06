@@ -40,9 +40,9 @@
   //  kIKMkAddressFC    =1,
   versionInfo = calloc(sizeof(IKMkVersionInfo), 1);
 
-  versionInfo->SWMajor = 0;
-  versionInfo->SWMinor = 90;
-  versionInfo->SWPatch = 3;
+  versionInfo->SWMajor = 2;
+  versionInfo->SWMinor = 0;
+  versionInfo->SWPatch = 0;
   versionInfo->ProtoMajor = 11;
   versionInfo->ProtoMinor = 0;
 
@@ -51,8 +51,8 @@
   //  kIKMkAddressNC    =2,
   versionInfo = calloc(sizeof(IKMkVersionInfo), 1);
 
-  versionInfo->SWMajor = 0;
-  versionInfo->SWMinor = 30;
+  versionInfo->SWMajor = 2;
+  versionInfo->SWMinor = 0;
   versionInfo->SWPatch = 0;
   versionInfo->ProtoMajor = 11;
   versionInfo->ProtoMinor = 0;
