@@ -154,6 +154,7 @@ typedef struct {
 #define CFG3_NO_GPSFIX_NO_START  0x10
 #define CFG3_USE_NC_FOR_OUT1     0x20
 #define CFG3_SPEAK_ALL           0x40
+#define CFG3_SERVO_NICK_COMP_OFF 0x80
 
 #define CFG_HOEHENREGELUNG       0x01
 #define CFG_HOEHEN_SCHALTER      0x02
@@ -813,7 +814,7 @@ typedef struct
 } IKMkParamset95; // 127 bytes
 
 
-#define EEPARAM_REVISION    95 // is count up, if paramater stucture has changed (compatibility)
+#define EEPARAM_REVISION    96 // is count up, if paramater stucture has changed (compatibility)
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////

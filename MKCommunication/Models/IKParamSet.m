@@ -46,7 +46,7 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 95) {
+    if (revision == 95 || _parameterLatest.Revision == 96) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
     }
     else if (revision == 92 || revision == 93) {
@@ -157,7 +157,7 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 95) {
+  if (_parameterLatest.Revision == 95 || _parameterLatest.Revision == 96) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
@@ -279,7 +279,7 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 95 || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90 || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
+  return _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96 || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90 || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
 
 //---------------------------------------------------
@@ -1599,6 +1599,19 @@
     _parameterLatest.GlobalConfig3 |= CFG3_SPEAK_ALL;
   else
     _parameterLatest.GlobalConfig3 &= ~CFG3_SPEAK_ALL;
+}
+
+- (NSNumber *)GlobalConfig3_CFG3_SERVO_NICK_COMP_OFF {
+  NSAssert(_parameterLatest.Revision >= 96, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithBool:((_parameterLatest.GlobalConfig3 & CFG3_SERVO_NICK_COMP_OFF) == CFG3_SERVO_NICK_COMP_OFF)];
+}
+
+- (void)setGlobalConfig3_CFG3_SERVO_NICK_COMP_OFF:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 96, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  if ([value boolValue])
+    _parameterLatest.GlobalConfig3 |= CFG3_SERVO_NICK_COMP_OFF;
+  else
+    _parameterLatest.GlobalConfig3 &= ~CFG3_SERVO_NICK_COMP_OFF;
 }
 
 
