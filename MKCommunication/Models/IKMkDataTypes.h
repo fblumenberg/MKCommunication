@@ -815,6 +815,8 @@ typedef struct
 
 typedef struct
 {
+  unsigned char Index;
+
 	unsigned char Revision;
 	unsigned char Kanalbelegung[12];       // GAS[0], GIER[1],NICK[2], ROLL[3], POTI1, POTI2, POTI3
 	unsigned char GlobalConfig;           // 0x01=Höhenregler aktiv,0x02=Kompass aktiv, 0x04=GPS aktiv, 0x08=Heading Hold aktiv

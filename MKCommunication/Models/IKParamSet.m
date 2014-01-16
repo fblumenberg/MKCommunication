@@ -49,7 +49,7 @@
     if (revision == 97) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
     }
-    elseif (revision == 95 || _parameterLatest.Revision == 96) {
+    else if (revision == 95 || _parameterLatest.Revision == 96) {
       memcpy(&_parameter95, [data bytes], sizeof(_parameter95));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter95));
 
@@ -304,7 +304,9 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96 || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90 || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
+  return _parameterLatest.Revision == 97  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
+  || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90
+  || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
 
 //---------------------------------------------------

@@ -33,7 +33,7 @@
 
 #import "MKDataConstants.h"
 
-static IKMkParamset95 EE_Parameter;
+static IKMkParamset97 EE_Parameter;
 static uint8_t PlatinenVersion = 21;
 
 static void ParamSet_DefaultStickMapping(void) {
