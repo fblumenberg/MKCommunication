@@ -46,8 +46,18 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 95 || _parameterLatest.Revision == 96) {
+    if (revision == 97) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
+    }
+    elseif (revision == 95 || _parameterLatest.Revision == 96) {
+      memcpy(&_parameter95, [data bytes], sizeof(_parameter95));
+      memcpy(&_parameterLatest, [data bytes], sizeof(_parameter95));
+
+      _parameterLatest.BitConfig = _parameter95.BitConfig;
+      _parameterLatest.ServoCompInvert = _parameter95.ServoCompInvert;
+      _parameterLatest.ExtraConfig = _parameter95.ExtraConfig;
+      _parameterLatest.GlobalConfig3 = _parameter95.GlobalConfig3;
+      memcpy(_parameterLatest.Name, _parameter95.Name, 12);
     }
     else if (revision == 92 || revision == 93) {
       memcpy(&_parameter92, [data bytes], sizeof(_parameter92));
@@ -157,11 +167,26 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 95 || _parameterLatest.Revision == 96) {
+  if (_parameterLatest.Revision == 97) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
 
+    d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
+  }
+  else if (_parameterLatest.Revision == 95 || _parameterLatest.Revision == 96) {
+    unsigned char payloadData[sizeof(_parameter95)];
+    
+    memcpy(&_parameter95, &_parameterLatest, sizeof(_parameter95));
+    
+    _parameter95.BitConfig = _parameterLatest.BitConfig;
+    _parameter95.ServoCompInvert = _parameterLatest.ServoCompInvert;
+    _parameter95.ExtraConfig = _parameterLatest.ExtraConfig;
+    _parameter95.GlobalConfig3 = _parameterLatest.GlobalConfig3;
+    memcpy(_parameter95.Name, _parameterLatest.Name, 12);
+    
+    memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter95, sizeof(_parameter95));
+    
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 92 || _parameterLatest.Revision == 93) {
@@ -1614,7 +1639,6 @@
     _parameterLatest.GlobalConfig3 &= ~CFG3_SERVO_NICK_COMP_OFF;
 }
 
-
 //---------------------------------------------------
 #pragma mark -
 //---------------------------------------------------
@@ -1667,6 +1691,28 @@
     NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
     _parameterLatest.LandingSpeed = [value unsignedCharValue];
 }
+
+- (NSNumber *)CompassOffset {
+    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    return [NSNumber numberWithUnsignedChar:_parameterLatest.CompassOffset];
+}
+
+- (void)setCompassOffset:(NSNumber *)value {
+    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    _parameterLatest.CompassOffset = [value unsignedCharValue];
+}
+
+
+- (NSNumber *)AutoLandingVoltage {
+    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    return [NSNumber numberWithUnsignedChar:_parameterLatest.AutoLandingVoltage];
+}
+
+- (void)setAutoLandingVoltage:(NSNumber *)value {
+    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+    _parameterLatest.AutoLandingVoltage = [value unsignedCharValue];
+}
+
 
 //---------------------------------------------------
 #pragma mark -

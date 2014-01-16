@@ -28,7 +28,8 @@
 
 @interface IKParamSet : NSObject {
 
-  IKMkParamset95 _parameterLatest;
+  IKMkParamset97 _parameterLatest;
+  IKMkParamset95 _parameter95;
   IKMkParamset92 _parameter92;
   IKMkParamset90 _parameter90;
   IKMkParamset88 _parameter88;
@@ -162,6 +163,8 @@
 @property(assign) NSNumber *ServoFilterRoll;
 @property(assign) NSNumber *StartLandChannel;
 @property(assign) NSNumber *LandingSpeed;
+@property(assign) NSNumber *CompassOffset;
+@property(assign) NSNumber *AutoLandingVoltage;
 
 @property(assign) NSNumber *BitConfig;
 @property(assign) NSNumber *BitConfig_LOOP_OBEN;
@@ -192,7 +195,7 @@
 @property(assign) NSNumber *GlobalConfig3_CFG3_MOTOR_SWITCH_MODE;
 @property(assign) NSNumber *GlobalConfig3_CFG3_NO_GPSFIX_NO_START;
 @property(assign) NSNumber *GlobalConfig3_CFG3_USE_NC_FOR_OUT1;
-@property(assign) NSNumber *GlobalConfig3_CFG3_SPEAK_ALL;
+@property(assign) NSNumber *GlobalConfig3_CFG3_SERVO_NICK_COMP_OFF;
 
 @property(assign) NSString *Name;
 
