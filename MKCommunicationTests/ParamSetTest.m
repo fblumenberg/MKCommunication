@@ -749,11 +749,11 @@ static void fillIKMkParamset95(IKMkParamset95 *p) {
 }
 
 
-static void fillIKMkParamset97(IKMkParamset97 *p) {
+static void fillIKMkParamset98(IKMkParamset98 *p) {
   
-  memset(p, 0, sizeof(IKMkParamset97));
+  memset(p, 0, sizeof(IKMkParamset98));
   p->Index = 1;
-  p->Revision = 97;
+  p->Revision = 98;
   p->Kanalbelegung[0] = 13;
   p->Kanalbelegung[1] = 14;
   p->Kanalbelegung[2] = 15;
@@ -867,10 +867,11 @@ static void fillIKMkParamset97(IKMkParamset97 *p) {
   p->LandingSpeed=135;
   p->CompassOffset=136;
   p->AutoLandingVoltage=137;
+  p->ComingHomeVoltage=138;
   p->ExtraConfig = 132;
   p->GlobalConfig3 = 133;
   //	p->crc                            =134;
-  strcpy(p->Name, "Paramsert95");
+  strcpy(p->Name, "Paramsert98");
 }
 
 
@@ -885,8 +886,8 @@ static void fillIKMkParamset97(IKMkParamset97 *p) {
 }
 
 - (void)testInvalidRevision {
-  IKMkParamset97 pMk;
-  fillIKMkParamset97(&pMk);
+  IKMkParamset98 pMk;
+  fillIKMkParamset98(&pMk);
 
   pMk.Revision = 0;
   NSData *origPayload = [NSData dataWithBytes:(void *) &pMk length:sizeof(pMk)];
@@ -895,11 +896,11 @@ static void fillIKMkParamset97(IKMkParamset97 *p) {
   STAssertThrows([IKParamSet settingWithData:origPayload], @"");
 }
 
-- (void)testParamset97 {
-  IKMkParamset97 pMk;
-  fillIKMkParamset97(&pMk);
+- (void)testParamset98 {
+  IKMkParamset98 pMk;
+  fillIKMkParamset98(&pMk);
   
-  STAssertEquals((int)pMk.Revision, (int)97, nil);
+  STAssertEquals((int)pMk.Revision, (int)98, nil);
   
   NSData *origPayload = [NSData dataWithBytes:(void *) &pMk length:sizeof(pMk)];
   STAssertNotNil(origPayload, @"Payload creating failed");
@@ -916,11 +917,11 @@ static void fillIKMkParamset97(IKMkParamset97 *p) {
   STAssertEqualObjects(origPayload, [p data], @"The encoded data is not equal");
 }
 
-- (void)testParamset97Random {
-  IKMkParamset97 pMk;
+- (void)testParamset98Random {
+  IKMkParamset98 pMk;
   
   arc4random_buf(&pMk, sizeof(pMk));
-  pMk.Revision = 97;
+  pMk.Revision = 98;
   
   NSData *origPayload = [NSData dataWithBytes:(void *) &pMk length:sizeof(pMk)];
   STAssertNotNil(origPayload, @"Payload creating failed");

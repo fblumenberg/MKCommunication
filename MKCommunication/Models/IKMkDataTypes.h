@@ -925,6 +925,8 @@ typedef struct
 	unsigned char LandingSpeed;  
 	unsigned char CompassOffset;         
 	unsigned char AutoLandingVoltage;    // in 0,1V  0 -> disabled
+  unsigned char ComingHomeVoltage;    // in 0,1V  0 -> disabled
+
 	//------------------------------------------------
 	unsigned char BitConfig;          // (war Loop-Cfg) Bitcodiert: 0x01=oben, 0x02=unten, 0x04=links, 0x08=rechts / wird getrennt behandelt
 	unsigned char ServoCompInvert;    // //  0x01 = Nick, 0x02 = Roll, 0x04 = relative moving // WICHTIG!!! am Ende lassen
@@ -932,10 +934,10 @@ typedef struct
 	unsigned char GlobalConfig3;      // bitcodiert
 	char Name[12];
 	unsigned char crc;				  // must be the last byte!
-} IKMkParamset97; // 127 bytes 
+} IKMkParamset98; // 127 bytes
 
 
-#define EEPARAM_REVISION    97 // is count up, if paramater stucture has changed (compatibility)
+#define EEPARAM_REVISION    98 // is count up, if paramater stucture has changed (compatibility)
 
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////

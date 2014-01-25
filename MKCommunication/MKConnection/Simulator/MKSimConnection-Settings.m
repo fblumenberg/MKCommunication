@@ -33,7 +33,7 @@
 
 #import "MKDataConstants.h"
 
-static IKMkParamset97 EE_Parameter;
+static IKMkParamset98 EE_Parameter;
 static uint8_t PlatinenVersion = 21;
 
 static void ParamSet_DefaultStickMapping(void) {
@@ -181,6 +181,11 @@ static void CommonDefaults(void) {
 	EE_Parameter.FailsafeChannel = 0;
 	EE_Parameter.ServoFilterNick = 0;
 	EE_Parameter.ServoFilterRoll = 0;
+  EE_Parameter.CompassOffset = 0;
+  
+	EE_Parameter.UnterspannungsWarnung 	= 33; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
+	EE_Parameter.ComingHomeVoltage 		= 32;
+	EE_Parameter.AutoLandingVoltage 	= 31;
 }
 
 /***************************************************/

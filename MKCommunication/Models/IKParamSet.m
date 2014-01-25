@@ -46,7 +46,7 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 97) {
+    if (revision == 98) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
     }
     else if (revision == 95 || _parameterLatest.Revision == 96) {
@@ -167,7 +167,7 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 97) {
+  if (_parameterLatest.Revision == 98) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
@@ -304,7 +304,7 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 97  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
+  return _parameterLatest.Revision == 98  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
   || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90
   || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
@@ -1713,6 +1713,16 @@
 - (void)setAutoLandingVoltage:(NSNumber *)value {
     NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
     _parameterLatest.AutoLandingVoltage = [value unsignedCharValue];
+}
+
+- (NSNumber *)ComingHomeVoltage {
+  NSAssert(_parameterLatest.Revision >= 98, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.ComingHomeVoltage];
+}
+
+- (void)setComingHomeVoltage:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 98, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.ComingHomeVoltage = [value unsignedCharValue];
 }
 
 

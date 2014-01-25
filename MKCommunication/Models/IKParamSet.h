@@ -28,7 +28,7 @@
 
 @interface IKParamSet : NSObject {
 
-  IKMkParamset97 _parameterLatest;
+  IKMkParamset98 _parameterLatest;
   IKMkParamset95 _parameter95;
   IKMkParamset92 _parameter92;
   IKMkParamset90 _parameter90;
@@ -165,6 +165,7 @@
 @property(assign) NSNumber *LandingSpeed;
 @property(assign) NSNumber *CompassOffset;
 @property(assign) NSNumber *AutoLandingVoltage;
+@property(assign) NSNumber *ComingHomeVoltage;
 
 @property(assign) NSNumber *BitConfig;
 @property(assign) NSNumber *BitConfig_LOOP_OBEN;
