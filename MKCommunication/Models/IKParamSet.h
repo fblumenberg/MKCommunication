@@ -29,6 +29,7 @@
 @interface IKParamSet : NSObject {
 
   IKMkParamset98 _parameterLatest;
+  IKMkParamset97 _parameter97;
   IKMkParamset95 _parameter95;
   IKMkParamset92 _parameter92;
   IKMkParamset90 _parameter90;

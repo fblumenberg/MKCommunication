@@ -49,6 +49,16 @@
     if (revision == 98) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
     }
+    else if (revision == 97) {
+      memcpy(&_parameter97, [data bytes], sizeof(_parameter97));
+      memcpy(&_parameterLatest, [data bytes], sizeof(_parameter97));
+      
+      _parameterLatest.BitConfig = _parameter97.BitConfig;
+      _parameterLatest.ServoCompInvert = _parameter97.ServoCompInvert;
+      _parameterLatest.ExtraConfig = _parameter97.ExtraConfig;
+      _parameterLatest.GlobalConfig3 = _parameter97.GlobalConfig3;
+      memcpy(_parameterLatest.Name, _parameter97.Name, 12);
+    }
     else if (revision == 95 || _parameterLatest.Revision == 96) {
       memcpy(&_parameter95, [data bytes], sizeof(_parameter95));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter95));
@@ -172,6 +182,21 @@
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
 
+    d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
+  }
+  else if (_parameterLatest.Revision == 97) {
+    unsigned char payloadData[sizeof(_parameter97)];
+    
+    memcpy(&_parameter97, &_parameterLatest, sizeof(_parameter97));
+    
+    _parameter97.BitConfig = _parameterLatest.BitConfig;
+    _parameter97.ServoCompInvert = _parameterLatest.ServoCompInvert;
+    _parameter97.ExtraConfig = _parameterLatest.ExtraConfig;
+    _parameter97.GlobalConfig3 = _parameterLatest.GlobalConfig3;
+    memcpy(_parameter97.Name, _parameterLatest.Name, 12);
+    
+    memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter97, sizeof(_parameter97));
+    
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 95 || _parameterLatest.Revision == 96) {
@@ -304,7 +329,7 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 98  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
+  return _parameterLatest.Revision == 98  || _parameterLatest.Revision == 97  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
   || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90
   || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
