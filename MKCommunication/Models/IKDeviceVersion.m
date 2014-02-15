@@ -63,19 +63,19 @@ static NSString *HardwareType[] = {@"Default", @"FlightCtrl", @"NaviCtrl", @"MK3
 
     memcpy(&_version, [data bytes], sizeof(_version));
 
-    versionString = [NSString stringWithFormat:@"%@ %d.%d %c",
+    versionString = [NSString stringWithFormat:@"%@ %d.%02d %c",
                                                HardwareType[address],
                                                _version.SWMajor,
                                                _version.SWMinor,
                                                (_version.SWPatch + 'a')];
 
 
-    versionStringShort = [NSString stringWithFormat:@"%d.%d%c",
+    versionStringShort = [NSString stringWithFormat:@"%d.%02d%c",
                                                     _version.SWMajor,
                                                     _version.SWMinor,
                                                     (_version.SWPatch + 'a')];
 
-    versionMainStringShort = [NSString stringWithFormat:@"%d.%d",
+    versionMainStringShort = [NSString stringWithFormat:@"%d.%02d",
                                                         _version.SWMajor,
                                                         _version.SWMinor];
   }
