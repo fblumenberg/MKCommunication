@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8378BF1615454A74AA5F53D9 /* libPods-MKCommunicationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2667E1370245E3A2901362 /* libPods-MKCommunicationTests.a */; };
 		BA111BDC1800524000DE54E0 /* MKSimConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA111BDB1800524000DE54E0 /* MKSimConnectionTest.m */; };
+		BA36B3BA18CA427000A5D254 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36B3B818CA427000A5D254 /* BLE.m */; };
+		BA36B3BD18CA42C000A5D254 /* MKBleConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36B3BC18CA42C000A5D254 /* MKBleConnection.m */; };
+		BA36B3C118CA4A7900A5D254 /* MKBLEDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36B3C018CA4A7900A5D254 /* MKBLEDiscoveryViewController.m */; };
 		BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
 		BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */; };
 		BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307C1705903A00BEC0B5 /* UIKit.framework */; };
@@ -80,6 +83,13 @@
 		3EB816C0C6004D4A853612C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		B6585B542F7347B9BE17A5D0 /* Pods-MKCommunicationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKCommunicationTests.xcconfig"; path = "Pods/Pods-MKCommunicationTests.xcconfig"; sourceTree = "<group>"; };
 		BA111BDB1800524000DE54E0 /* MKSimConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSimConnectionTest.m; sourceTree = "<group>"; };
+		BA36B3B718CA427000A5D254 /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
+		BA36B3B818CA427000A5D254 /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
+		BA36B3B918CA427000A5D254 /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
+		BA36B3BB18CA42C000A5D254 /* MKBleConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBleConnection.h; sourceTree = "<group>"; };
+		BA36B3BC18CA42C000A5D254 /* MKBleConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKBleConnection.m; sourceTree = "<group>"; };
+		BA36B3BF18CA4A7900A5D254 /* MKBLEDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKBLEDiscoveryViewController.h; path = BLEDiscovery/MKBLEDiscoveryViewController.h; sourceTree = "<group>"; };
+		BA36B3C018CA4A7900A5D254 /* MKBLEDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKBLEDiscoveryViewController.m; path = BLEDiscovery/MKBLEDiscoveryViewController.m; sourceTree = "<group>"; };
 		BAB430681705903900BEC0B5 /* libMKCommunication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKCommunication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4306B1705903900BEC0B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB4306F1705903900BEC0B5 /* MKCommunication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKCommunication-Prefix.pch"; sourceTree = "<group>"; };
@@ -177,6 +187,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA36B3B618CA427000A5D254 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				BA36B3B718CA427000A5D254 /* BLE.h */,
+				BA36B3B818CA427000A5D254 /* BLE.m */,
+				BA36B3B918CA427000A5D254 /* BLEDefines.h */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+		BA36B3BE18CA4A1B00A5D254 /* BLEDiscovery */ = {
+			isa = PBXGroup;
+			children = (
+				BA36B3BF18CA4A7900A5D254 /* MKBLEDiscoveryViewController.h */,
+				BA36B3C018CA4A7900A5D254 /* MKBLEDiscoveryViewController.m */,
+			);
+			name = BLEDiscovery;
+			sourceTree = "<group>";
+		};
 		BAB4305F1705903900BEC0B5 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +248,7 @@
 		BAB4306D1705903900BEC0B5 /* MKCommunication */ = {
 			isa = PBXGroup;
 			children = (
+				BA36B3BE18CA4A1B00A5D254 /* BLEDiscovery */,
 				BAB430931705C69300BEC0B5 /* Coding */,
 				BAB430A91705C69300BEC0B5 /* LowLevel */,
 				BAB430AC1705C69400BEC0B5 /* MKConnection */,
@@ -284,6 +314,7 @@
 		BAB430A91705C69300BEC0B5 /* LowLevel */ = {
 			isa = PBXGroup;
 			children = (
+				BA36B3B618CA427000A5D254 /* BLE */,
 				BAB430AA1705C69400BEC0B5 /* AsyncSocket.h */,
 				BAB430AB1705C69400BEC0B5 /* AsyncSocket.m */,
 			);
@@ -293,6 +324,8 @@
 		BAB430AC1705C69400BEC0B5 /* MKConnection */ = {
 			isa = PBXGroup;
 			children = (
+				BA36B3BB18CA42C000A5D254 /* MKBleConnection.h */,
+				BA36B3BC18CA42C000A5D254 /* MKBleConnection.m */,
 				BAB430AD1705C69400BEC0B5 /* MKConnection.h */,
 				BAB430AE1705C69400BEC0B5 /* MKIpConnection.h */,
 				BAB430AF1705C69400BEC0B5 /* MKIpConnection.m */,
@@ -500,7 +533,9 @@
 				BAB430D31705C69400BEC0B5 /* NSData+MKPayloadDecode.m in Sources */,
 				BAB430EE1705C69400BEC0B5 /* MKSimConnection.m in Sources */,
 				BAB430F01705C69400BEC0B5 /* MKConnectionController.m in Sources */,
+				BA36B3BA18CA427000A5D254 /* BLE.m in Sources */,
 				BAB431131705DE7B00BEC0B5 /* IKData3D.m in Sources */,
+				BA36B3C118CA4A7900A5D254 /* MKBLEDiscoveryViewController.m in Sources */,
 				BAB431141705DE7B00BEC0B5 /* IKDebugData.m in Sources */,
 				BAB431151705DE7B00BEC0B5 /* IKDebugLabel.m in Sources */,
 				BAB431161705DE7B00BEC0B5 /* IKDeviceVersion.m in Sources */,
@@ -509,6 +544,7 @@
 				BAB431191705DE7B00BEC0B5 /* IKMixerTable.m in Sources */,
 				BAB4311A1705DE7B00BEC0B5 /* IKNaviData.m in Sources */,
 				BAB4311B1705DE7B00BEC0B5 /* IKParamSet.m in Sources */,
+				BA36B3BD18CA42C000A5D254 /* MKBleConnection.m in Sources */,
 				BAB4311C1705DE7B00BEC0B5 /* IKPoint.m in Sources */,
 				BAB4311D1705DE7B00BEC0B5 /* NSString+Parsing.m in Sources */,
 				BAB4311E1705DE9200BEC0B5 /* MKSimConnection-Devices.m in Sources */,

@@ -182,9 +182,14 @@ static int ddLogLevel = LOG_LEVEL_WARN;
     connectionState = kConnectionStateIdle;
 
     if (![self.inputController connectTo:host]) {
-      [self performSelector:@selector(stop) withObject:self afterDelay:0.1];
+      [self performSelector:@selector(fail) withObject:self afterDelay:0.1];
     }
   }
+}
+
+- (void)fail {
+    DDLogVerbose(@"Failed, disconnect");
+    [self didDisconnect];
 }
 
 - (void)stop {
@@ -236,15 +241,14 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 - (void)resetToNC{
   DDLogVerbose(@"Activate the NaviControl");
-  uint8_t bytes[6];
+  uint8_t bytes[5];
   bytes[0] = 0x1B;
   bytes[1] = 0x1B;
   bytes[2] = 0x55;
   bytes[3] = 0xAA;
   bytes[4] = 0x00;
-  bytes[5] = '\r';
   
-  NSData *data = [NSData dataWithBytes:&bytes length:6];
+  NSData *data = [NSData dataWithBytes:&bytes length:5];
   [self sendRequest:data];
 }
 
