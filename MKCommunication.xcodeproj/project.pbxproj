@@ -12,6 +12,7 @@
 		BA36B3BA18CA427000A5D254 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36B3B818CA427000A5D254 /* BLE.m */; };
 		BA36B3BD18CA42C000A5D254 /* MKBleConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36B3BC18CA42C000A5D254 /* MKBleConnection.m */; };
 		BA36B3C118CA4A7900A5D254 /* MKBLEDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36B3C018CA4A7900A5D254 /* MKBLEDiscoveryViewController.m */; };
+		BA36B3C618CE3A2F00A5D254 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36B3C218CE391700A5D254 /* CoreBluetooth.framework */; };
 		BAB4306C1705903900BEC0B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4306B1705903900BEC0B5 /* Foundation.framework */; };
 		BAB4307B1705903A00BEC0B5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307A1705903A00BEC0B5 /* SenTestingKit.framework */; };
 		BAB4307D1705903A00BEC0B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB4307C1705903A00BEC0B5 /* UIKit.framework */; };
@@ -90,6 +91,7 @@
 		BA36B3BC18CA42C000A5D254 /* MKBleConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKBleConnection.m; sourceTree = "<group>"; };
 		BA36B3BF18CA4A7900A5D254 /* MKBLEDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKBLEDiscoveryViewController.h; path = BLEDiscovery/MKBLEDiscoveryViewController.h; sourceTree = "<group>"; };
 		BA36B3C018CA4A7900A5D254 /* MKBLEDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKBLEDiscoveryViewController.m; path = BLEDiscovery/MKBLEDiscoveryViewController.m; sourceTree = "<group>"; };
+		BA36B3C218CE391700A5D254 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		BAB430681705903900BEC0B5 /* libMKCommunication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKCommunication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB4306B1705903900BEC0B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB4306F1705903900BEC0B5 /* MKCommunication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKCommunication-Prefix.pch"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA36B3C618CE3A2F00A5D254 /* CoreBluetooth.framework in Frameworks */,
 				BAB431121705DDCB00BEC0B5 /* CoreGraphics.framework in Frameworks */,
 				BAB431101705DD3A00BEC0B5 /* CFNetwork.framework in Frameworks */,
 				BAB4310E1705DD2900BEC0B5 /* CoreLocation.framework in Frameworks */,
@@ -232,6 +235,7 @@
 		BAB4306A1705903900BEC0B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA36B3C218CE391700A5D254 /* CoreBluetooth.framework */,
 				BAB431111705DDCB00BEC0B5 /* CoreGraphics.framework */,
 				BAB4310F1705DD3A00BEC0B5 /* CFNetwork.framework */,
 				BAB4310D1705DD2900BEC0B5 /* CoreLocation.framework */,
