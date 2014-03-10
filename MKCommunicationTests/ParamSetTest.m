@@ -867,8 +867,9 @@ static void fillIKMkParamset97(IKMkParamset97 *p) {
   p->CompassOffset=136;
   p->ExtraConfig = 132;
   p->GlobalConfig3 = 133;
+  p->AutoLandingVoltage=137;
   //	p->crc                            =134;
-  strcpy(p->Name, "Paramsert98");
+  strcpy(p->Name, "Paramsert97");
 }
 
 
@@ -1068,6 +1069,7 @@ static void fillIKMkParamset98(IKMkParamset98 *p) {
   IKParamSet *p = [IKParamSet settingWithData:origPayload];
   STAssertNotNil(p, @"IKParamSet creating failed");
   STAssertEquals([p isValid], YES, @"Data should be valid");
+  STAssertEqualObjects(p.Name, @"Paramsert97", @"Check if name is correct");
   
   NSString *name = [NSString stringWithCString:pMk.Name encoding:NSASCIIStringEncoding];
   STAssertNotNil(p.Name, @"IKParamSet name");
