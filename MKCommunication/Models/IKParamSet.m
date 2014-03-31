@@ -46,8 +46,18 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 98) {
+    if (revision == 100) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
+    }
+    else if (revision == 98) {
+      memcpy(&_parameter98, [data bytes], sizeof(_parameter98));
+      memcpy(&_parameterLatest, [data bytes], sizeof(_parameter98));
+      
+      _parameterLatest.BitConfig = _parameter98.BitConfig;
+      _parameterLatest.ServoCompInvert = _parameter98.ServoCompInvert;
+      _parameterLatest.ExtraConfig = _parameter98.ExtraConfig;
+      _parameterLatest.GlobalConfig3 = _parameter98.GlobalConfig3;
+      memcpy(_parameterLatest.Name, _parameter98.Name, 12);
     }
     else if (revision == 97) {
       memcpy(&_parameter97, [data bytes], sizeof(_parameter97));
@@ -73,7 +83,7 @@
       memcpy(&_parameter92, [data bytes], sizeof(_parameter92));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter92));
       
-      _parameterLatest.NaviOut1Parameter = _parameter92.NaviOut1Parameter;
+      _parameterLatest.AutoPhotoDistance = _parameter92.AutoPhotoDistance;
       _parameterLatest.NaviGpsModeChannel = _parameter92.NaviGpsModeControl;
       _parameterLatest.NaviGpsGain = _parameter92.NaviGpsGain;
       _parameterLatest.NaviGpsP = _parameter92.NaviGpsP;
@@ -177,11 +187,26 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 98) {
+  if (_parameterLatest.Revision == 100) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
 
+    d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
+  }
+  else if (_parameterLatest.Revision == 98) {
+    unsigned char payloadData[sizeof(_parameter98)];
+    
+    memcpy(&_parameter98, &_parameterLatest, sizeof(_parameter98));
+    
+    _parameter98.BitConfig = _parameterLatest.BitConfig;
+    _parameter98.ServoCompInvert = _parameterLatest.ServoCompInvert;
+    _parameter98.ExtraConfig = _parameterLatest.ExtraConfig;
+    _parameter98.GlobalConfig3 = _parameterLatest.GlobalConfig3;
+    memcpy(_parameter98.Name, _parameterLatest.Name, 12);
+    
+    memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter98, sizeof(_parameter98));
+    
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 97) {
@@ -219,7 +244,7 @@
     
     memcpy(&_parameter92, &_parameterLatest, sizeof(_parameter92));
     
-    _parameter92.NaviOut1Parameter = _parameterLatest.NaviOut1Parameter;
+    _parameter92.AutoPhotoDistance = _parameterLatest.AutoPhotoDistance;
     _parameter92.NaviGpsModeControl = _parameterLatest.NaviGpsModeChannel;
     _parameter92.NaviGpsGain = _parameterLatest.NaviGpsGain;
     _parameter92.NaviGpsP = _parameterLatest.NaviGpsP;
@@ -329,7 +354,7 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 98  || _parameterLatest.Revision == 97  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
+  return _parameterLatest.Revision == 100  || _parameterLatest.Revision == 98  || _parameterLatest.Revision == 97  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
   || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90
   || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
@@ -1090,12 +1115,12 @@
   _parameterLatest.WARN_J17_Bitmask = [value unsignedCharValue];
 }
 
-- (NSNumber *)NaviOut1Parameter {
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviOut1Parameter];
+- (NSNumber *)AutoPhotoDistance {
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.AutoPhotoDistance];
 }
 
-- (void)setNaviOut1Parameter:(NSNumber *)value {
-  _parameterLatest.NaviOut1Parameter = [value unsignedCharValue];
+- (void)setAutoPhotoDistance:(NSNumber *)value {
+  _parameterLatest.AutoPhotoDistance = [value unsignedCharValue];
 }
 
 - (NSNumber *)NaviGpsModeChannel {
@@ -1750,6 +1775,26 @@
   _parameterLatest.ComingHomeVoltage = [value unsignedCharValue];
 }
 
+- (NSNumber *)AutoPhotoAtitudes {
+  NSAssert(_parameterLatest.Revision >= 100, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.AutoPhotoAtitudes];
+}
+
+- (void)setAutoPhotoAtitudes:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 100, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.AutoPhotoAtitudes = [value unsignedCharValue];
+}
+
+
+- (NSNumber *)SingleWpSpeed {
+  NSAssert(_parameterLatest.Revision >= 100, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.SingleWpSpeed];
+}
+
+- (void)setSingleWpSpeed:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 100, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.SingleWpSpeed = [value unsignedCharValue];
+}
 
 //---------------------------------------------------
 #pragma mark -

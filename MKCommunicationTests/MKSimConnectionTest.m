@@ -82,7 +82,7 @@ MKSimConnection* connection;
   IKParamSet *p = [IKParamSet settingWithData:payload];
   STAssertNotNil(p, @"IKParamSet creating failed");
 
-  STAssertEqualObjects(p.Revision, @(98), nil);
+  STAssertEqualObjects(p.Revision, @(EEPARAM_REVISION), nil);
   STAssertEqualObjects(p.Name, @"Easy", nil);
   
   STSuccess();

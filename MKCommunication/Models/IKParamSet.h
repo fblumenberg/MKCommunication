@@ -28,7 +28,8 @@
 
 @interface IKParamSet : NSObject {
 
-  IKMkParamset98 _parameterLatest;
+  IKMkParamset100 _parameterLatest;
+  IKMkParamset98 _parameter98;
   IKMkParamset97 _parameter97;
   IKMkParamset95 _parameter95;
   IKMkParamset92 _parameter92;
@@ -167,6 +168,8 @@
 @property(assign) NSNumber *CompassOffset;
 @property(assign) NSNumber *AutoLandingVoltage;
 @property(assign) NSNumber *ComingHomeVoltage;
+@property(assign) NSNumber *AutoPhotoAtitudes;
+@property(assign) NSNumber *SingleWpSpeed;
 
 @property(assign) NSNumber *BitConfig;
 @property(assign) NSNumber *BitConfig_LOOP_OBEN;

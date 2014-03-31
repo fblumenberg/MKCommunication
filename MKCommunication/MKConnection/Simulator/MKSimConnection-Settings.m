@@ -33,7 +33,7 @@
 
 #import "MKDataConstants.h"
 
-static IKMkParamset98 EE_Parameter;
+static IKMkParamset100 EE_Parameter;
 static uint8_t PlatinenVersion = 21;
 
 static void ParamSet_DefaultStickMapping(void) {
@@ -147,7 +147,7 @@ static void CommonDefaults(void) {
 	EE_Parameter.WARN_J17_Bitmask = 0xAA;
 	EE_Parameter.J16Timing = 40;
 	EE_Parameter.J17Timing = 40;
-  EE_Parameter.NaviOut1Parameter = 0;       // Photo release in meter
+  EE_Parameter.AutoPhotoDistance = 0;       // Photo release in meter
 	EE_Parameter.LoopGasLimit = 50;
 	EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle f¸r Stickausschlag
 	EE_Parameter.LoopHysterese = 50;
