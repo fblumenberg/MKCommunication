@@ -44,10 +44,26 @@ static int rssi = 0;
 
 -(void) write:(NSData *)d
 {
-    CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
-    CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_RX_UUID];
+  CBUUID *uuid_service = [CBUUID UUIDWithString:@RBL_SERVICE_UUID];
+  CBUUID *uuid_char = [CBUUID UUIDWithString:@RBL_CHAR_RX_UUID];
+  
+  NSData* myBlob=d;
+  NSUInteger length = [myBlob length];
+  NSUInteger chunkSize = 20;
+  NSUInteger offset = 0;
+  do {
+    NSUInteger thisChunkSize = length - offset > chunkSize ? chunkSize : length - offset;
     
-    [self writeValue:uuid_service characteristicUUID:uuid_char p:activePeripheral data:d];
+    NSData *chunk = [myBlob subdataWithRange:NSMakeRange(offset, thisChunkSize)];
+    
+    offset += thisChunkSize;
+
+    [self writeValue:uuid_service characteristicUUID:uuid_char p:activePeripheral data:chunk];
+    
+    [NSThread sleepForTimeInterval:0.05];
+    
+  } while (offset < length);
+
 }
 
 -(void) enableReadNotification:(CBPeripheral *)p
