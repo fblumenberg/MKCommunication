@@ -1041,6 +1041,46 @@ static void fillIKMkParamset98(IKMkParamset98 *p) {
   STAssertEqualObjects(origPayload, [p data], @"The encoded data is not equal");
 }
 
+// Not efficent
+-(id)dataWithHexString:(NSString *)command
+{
+  command = [command stringByReplacingOccurrencesOfString:@" " withString:@""];
+  NSMutableData *commandToSend= [[NSMutableData alloc] init];
+  unsigned char whole_byte;
+  char byte_chars[3] = {'\0','\0','\0'};
+  int i;
+  for (i=0; i < [command length]/2; i++) {
+    byte_chars[0] = [command characterAtIndex:i*2];
+    byte_chars[1] = [command characterAtIndex:i*2+1];
+    whole_byte = strtol(byte_chars, NULL, 16);
+    [commandToSend appendBytes:&whole_byte length:1];
+  }
+  
+  return [commandToSend copy];
+}
+
+- (void)testParamset98FromString {
+  
+  NSString* mkData = @"02610304 01020705 0608090a 0b0c6b1e 2807140f 1e01007f 08100608 e61b4064 780a6478 0621415a 01100000 00008032 18e68055 46dc033c 007d7d7d 325a327d 34464e4e 20004600 000000aa 28cc2800 aa000564 645a784b 554b2806 08322af5 8c020015 06000000 1e960000 00000c00 1f000272 40416769 6c650000 00000000 0054f4c3 0c30c30c 30c30f72 409fbdc3 6c30d00d 30d3f437 c411b5d8 4c30c30e 38c30c30 c30c3bc3 0c3bc30c";
+  
+  IKMkParamset98 pMk;
+  fillIKMkParamset98(&pMk);
+  
+  STAssertEquals((int)pMk.Revision, (int)98, nil);
+  
+  NSData *origPayload = [self dataWithHexString:mkData];
+  STAssertNotNil(origPayload, @"Payload creating failed");
+  
+  IKParamSet *p = [IKParamSet settingWithData:origPayload];
+  STAssertNotNil(p, @"IKParamSet creating failed");
+  STAssertEquals([p isValid], YES, @"Data should be valid");
+  
+  STAssertNotNil(p.Name, @"IKParamSet name");
+  
+  STAssertEqualObjects(p.Name, @"Agile", @"The names are not equal");
+}
+
+
 - (void)testParamset98Random {
   IKMkParamset98 pMk;
   
