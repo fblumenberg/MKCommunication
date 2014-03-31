@@ -924,12 +924,14 @@ typedef struct
 	unsigned char StartLandChannel;
 	unsigned char LandingSpeed;
 	unsigned char CompassOffset;
-  
+	unsigned char AutoLandingVoltage;    // in 0,1V  0 -> disabled
+
 	//------------------------------------------------
 	unsigned char BitConfig;          // (war Loop-Cfg) Bitcodiert: 0x01=oben, 0x02=unten, 0x04=links, 0x08=rechts / wird getrennt behandelt
 	unsigned char ServoCompInvert;    // //  0x01 = Nick, 0x02 = Roll, 0x04 = relative moving // WICHTIG!!! am Ende lassen
 	unsigned char ExtraConfig;        // bitcodiert
 	unsigned char GlobalConfig3;      // bitcodiert
+
 	char Name[12];
 //	unsigned char crc;				  // must be the last byte!
 } IKMkParamset97; // 127 bytes
