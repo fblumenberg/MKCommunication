@@ -312,11 +312,11 @@
 
 - (NSString *)title {
   if (self.type == POINT_TYPE_WP) {
-    return [NSString stringWithFormat:NSLocalizedString(@"Waypoint - %@", @"WP Annotation callout"), self.name];
+    return [NSString stringWithFormat:NSLocalizedStringFromTable(@"Waypoint - %@", @"MKTCommunication", @"WP Annotation callout"), self.name];
   } else if (self.type == POINT_TYPE_POI) {
-    return [NSString stringWithFormat:NSLocalizedString(@"POI - %@", @"POI Annotation callout"), self.name];
+    return [NSString stringWithFormat:NSLocalizedStringFromTable(@"POI - %@", @"MKTCommunication", @"POI Annotation callout"), self.name];
   }
-  return [NSString stringWithFormat:NSLocalizedString(@"Invalid - Index %d", @"Invalid WP Annotation callout"), self.index];
+  return [NSString stringWithFormat:NSLocalizedStringFromTable(@"Invalid - Index %d", @"MKTCommunication", @"Invalid WP Annotation callout"), self.index];
 }
 
 - (NSString *)formatHeading {

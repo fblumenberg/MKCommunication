@@ -106,63 +106,63 @@ static NSString *HardwareType[] = {@"Default", @"FlightCtrl", @"NaviCtrl", @"MK3
 
   if (address == kIKMkAddressFC) {
     if ((_version.HardwareError[0] & FC_ERROR0_GYRO_NICK) == FC_ERROR0_GYRO_NICK) {
-      [a addObject:NSLocalizedString(@"Hardware: Gyro NICK error", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Gyro NICK error",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_GYRO_ROLL) == FC_ERROR0_GYRO_ROLL) {
-      [a addObject:NSLocalizedString(@"Hardware: Gyro ROLL error", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Gyro ROLL error",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_GYRO_YAW) == FC_ERROR0_GYRO_YAW) {
-      [a addObject:NSLocalizedString(@"Hardware: Gyro YAW error", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Gyro YAW error",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_ACC_NICK) == FC_ERROR0_ACC_NICK) {
-      [a addObject:NSLocalizedString(@"Hardware: Acc NICK error", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Acc NICK error",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_ACC_ROLL) == FC_ERROR0_ACC_ROLL) {
-      [a addObject:NSLocalizedString(@"Hardware: Acc ROLL error", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Acc ROLL error",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_ACC_TOP) == FC_ERROR0_ACC_TOP) {
-      [a addObject:NSLocalizedString(@"Hardware: Acc Z error (FlightCtrl installed upside down ?)", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Acc Z error (FlightCtrl installed upside down ?)",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_PRESSURE) == FC_ERROR0_PRESSURE) {
-      [a addObject:NSLocalizedString(@"Hardware: Pressure sensor error", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Hardware: Pressure sensor error",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & FC_ERROR0_CAREFREE) == FC_ERROR0_CAREFREE) {
-      [a addObject:NSLocalizedString(@"Carefree control error/not possible (compass okay?, Orientation = 0 ?)", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Carefree control error/not possible (compass okay?, Orientation = 0 ?)",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[1] & FC_ERROR1_I2C) == FC_ERROR1_I2C) {
-      [a addObject:NSLocalizedString(@"I2C bus error (check I2C connections)", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"I2C bus error (check I2C connections)",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[1] & FC_ERROR1_BL_MISSING) == FC_ERROR1_BL_MISSING) {
-      [a addObject:NSLocalizedString(@"BL-Ctrl missing (check connections & mixer setup)", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"BL-Ctrl missing (check connections & mixer setup)",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[1] & FC_ERROR1_SPI_RX) == FC_ERROR1_SPI_RX) {
-      [a addObject:NSLocalizedString(@"SPI communication error. No data from Navi-Ctrl", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"SPI communication error. No data from Navi-Ctrl",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[1] & FC_ERROR1_PPM) == FC_ERROR1_PPM) {
-      [a addObject:NSLocalizedString(@"No receiver signal", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"No receiver signal",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[1] & FC_ERROR1_MIXER) == FC_ERROR1_MIXER) {
-      [a addObject:NSLocalizedString(@"Mixer setup error (check mixervalues)", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Mixer setup error (check mixervalues)",@"MKTCommunication", @"")];
     }
   }
   if (address == kIKMkAddressNC) {
     if ((_version.HardwareError[0] & NC_ERROR0_SPI_RX) == NC_ERROR0_SPI_RX) {
-      [a addObject:NSLocalizedString(@"SPI: no data from Flight-Ctrl", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"SPI: no data from Flight-Ctrl",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & NC_ERROR0_COMPASS_RX) == NC_ERROR0_COMPASS_RX) {
-      [a addObject:NSLocalizedString(@"no data from MK3Mag", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"no data from MK3Mag",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & NC_ERROR0_FC_INCOMPATIBLE) == NC_ERROR0_FC_INCOMPATIBLE) {
-      [a addObject:NSLocalizedString(@"Flight-Ctrl software incompatible", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"Flight-Ctrl software incompatible",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & NC_ERROR0_COMPASS_INCOMPATIBLE) == NC_ERROR0_COMPASS_INCOMPATIBLE) {
-      [a addObject:NSLocalizedString(@"MK3Mag software incompatible", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"MK3Mag software incompatible",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & NC_ERROR0_GPS_RX) == NC_ERROR0_GPS_RX) {
-      [a addObject:NSLocalizedString(@"no data from MKGPS", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"no data from MKGPS",@"MKTCommunication", @"")];
     }
     if ((_version.HardwareError[0] & NC_ERROR0_COMPASS_VALUE) == NC_ERROR0_COMPASS_VALUE) {
-      [a addObject:NSLocalizedString(@"invalid compass value (MK3Mag not calibrated ?)", @"")];
+      [a addObject:NSLocalizedStringFromTable(@"invalid compass value (MK3Mag not calibrated ?)",@"MKTCommunication", @"")];
     }
   }
 

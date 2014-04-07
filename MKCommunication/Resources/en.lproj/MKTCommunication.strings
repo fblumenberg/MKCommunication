@@ -1,0 +1,87 @@
+/* Localizazions.strings
+  MKCommunication
+
+  Created by Frank Blumenberg on 07.04.14.
+  Copyright (c) 2014 Frank Blumenberg. All rights reserved. */
+
+/* BLE discovery title */
+"Bluetooth 4.0 LE" = "Bluetooth 4.0 LE";
+
+/* BT descovery cancel */
+"Cancel" = "Cancel";
+
+/* BLE discovery */
+"Rescann" = "Rescann";
+
+/* BLE discovery */
+"Scanning…" = "Scanning…";
+
+/* No comment provided by engineer. */
+"BL-Ctrl missing (check connections & mixer setup)" = "BL-Ctrl missing (check connections & mixer setup)";
+
+/* No comment provided by engineer. */
+"Carefree control error/not possible (compass okay?, Orientation = 0 ?)" = "Carefree control error/not possible (compass okay?, Orientation = 0 ?)";
+
+/* No comment provided by engineer. */
+"Flight-Ctrl software incompatible" = "Flight-Ctrl software incompatible";
+
+/* No comment provided by engineer. */
+"Hardware: Acc NICK error" = "Hardware: Acc NICK error";
+
+/* No comment provided by engineer. */
+"Hardware: Acc ROLL error" = "Hardware: Acc ROLL error";
+
+/* No comment provided by engineer. */
+"Hardware: Acc Z error (FlightCtrl installed upside down ?)" = "Hardware: Acc Z error (FlightCtrl installed upside down ?)";
+
+/* No comment provided by engineer. */
+"Hardware: Gyro NICK error" = "Hardware: Gyro NICK error";
+
+/* No comment provided by engineer. */
+"Hardware: Gyro ROLL error" = "Hardware: Gyro ROLL error";
+
+/* No comment provided by engineer. */
+"Hardware: Gyro YAW error" = "Hardware: Gyro YAW error";
+
+/* No comment provided by engineer. */
+"Hardware: Pressure sensor error" = "Hardware: Pressure sensor error";
+
+/* No comment provided by engineer. */
+"I2C bus error (check I2C connections)" = "I2C bus error (check I2C connections)";
+
+/* Invalid WP Annotation callout */
+"Invalid - Index %d" = "Invalid - Index %d";
+
+/* No comment provided by engineer. */
+"invalid compass value (MK3Mag not calibrated ?)" = "invalid compass value (MK3Mag not calibrated ?)";
+
+/* No comment provided by engineer. */
+"Mixer setup error (check mixervalues)" = "Mixer setup error (check mixervalues)";
+
+/* No comment provided by engineer. */
+"MK3Mag software incompatible" = "MK3Mag software incompatible";
+
+/* No comment provided by engineer. */
+"no data from MK3Mag" = "no data from MK3Mag";
+
+/* No comment provided by engineer. */
+"no data from MKGPS" = "no data from MKGPS";
+
+/* No comment provided by engineer. */
+"No receiver signal" = "No receiver signal";
+
+/* POI Annotation callout */
+"POI - %@" = "POI - %@";
+
+/* No comment provided by engineer. */
+"SPI communication error. No data from Navi-Ctrl" = "SPI communication error. No data from Navi-Ctrl";
+
+/* No comment provided by engineer. */
+"SPI: no data from Flight-Ctrl" = "SPI: no data from Flight-Ctrl";
+
+/* MKBleConnection */
+"The device is not available" = "The device is not available";
+
+/* WP Annotation callout */
+"Waypoint - %@" = "Waypoint - %@";
+

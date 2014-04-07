@@ -157,6 +157,11 @@
 		BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandTest.m; sourceTree = "<group>"; };
 		BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandVersionTest.m; sourceTree = "<group>"; };
 		BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest.m; sourceTree = "<group>"; };
+		BADDDB4318F30E3C00660606 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AsyncSocket.strings; sourceTree = "<group>"; };
+		BADDDB4718F30E4200660606 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MKTCommunication.strings; sourceTree = "<group>"; };
+		BADDDB4918F30E5600660606 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BADDDB4A18F30E5600660606 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/AsyncSocket.strings; sourceTree = "<group>"; };
+		BADDDB4C18F30E5600660606 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MKTCommunication.strings; sourceTree = "<group>"; };
 		E9600AD7E9DF478E949D4AA9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -252,9 +257,10 @@
 		BAB4306D1705903900BEC0B5 /* MKCommunication */ = {
 			isa = PBXGroup;
 			children = (
+				BAB430A91705C69300BEC0B5 /* LowLevel */,
+				BADDDB3F18F30E0700660606 /* Resources */,
 				BA36B3BE18CA4A1B00A5D254 /* BLEDiscovery */,
 				BAB430931705C69300BEC0B5 /* Coding */,
-				BAB430A91705C69300BEC0B5 /* LowLevel */,
 				BAB430AC1705C69400BEC0B5 /* MKConnection */,
 				BAB430B71705C69400BEC0B5 /* MKConnectionController.h */,
 				BAB430B81705C69400BEC0B5 /* MKConnectionController.m */,
@@ -388,6 +394,15 @@
 			path = OtherSources;
 			sourceTree = "<group>";
 		};
+		BADDDB3F18F30E0700660606 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BADDDB4418F30E3C00660606 /* AsyncSocket.strings */,
+				BADDDB4818F30E4200660606 /* MKTCommunication.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -445,6 +460,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = BAB4305F1705903900BEC0B5;
 			productRefGroup = BAB430691705903900BEC0B5 /* Products */;
@@ -593,8 +609,29 @@
 			isa = PBXVariantGroup;
 			children = (
 				BAB430861705903A00BEC0B5 /* en */,
+				BADDDB4918F30E5600660606 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BADDDB4418F30E3C00660606 /* AsyncSocket.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BADDDB4318F30E3C00660606 /* en */,
+				BADDDB4A18F30E5600660606 /* de */,
+			);
+			name = AsyncSocket.strings;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BADDDB4818F30E4200660606 /* MKTCommunication.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BADDDB4718F30E4200660606 /* en */,
+				BADDDB4C18F30E5600660606 /* de */,
+			);
+			name = MKTCommunication.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

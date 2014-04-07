@@ -1,0 +1,24 @@
+/* Localizazions.strings
+  MKCommunication
+
+  Created by Frank Blumenberg on 07.04.14.
+  Copyright (c) 2014 Frank Blumenberg. All rights reserved. */
+
+/* No comment provided by engineer. */
+"AsyncSocketCanceledError" = "Connection canceled";
+
+/* No comment provided by engineer. */
+"AsyncSocketCFSocketError" = "General CFSocket error";
+
+/* No comment provided by engineer. */
+"AsyncSocketConnectTimeoutError" = "Attempt to connect to host timed out";
+
+/* No comment provided by engineer. */
+"AsyncSocketReadMaxedOutError" = "Read operation reached set maximum length";
+
+/* No comment provided by engineer. */
+"AsyncSocketReadTimeoutError" = "Read operation timed out";
+
+/* No comment provided by engineer. */
+"AsyncSocketWriteTimeoutError" = "Write operation timed out";
+

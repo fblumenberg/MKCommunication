@@ -1,0 +1,78 @@
+/* Localizazions.strings
+  MKCommunication
+
+  Created by Frank Blumenberg on 07.04.14.
+  Copyright (c) 2014 Frank Blumenberg. All rights reserved. */
+
+/* BLE discovery title */
+"Bluetooth 4.0 LE" = "Bluetooth 4.0 LE";
+
+/* BT descovery cancel */
+"Cancel" = "Abbrechen";
+
+/* BLE discovery */
+"Rescann" = "Erneut suchen";
+
+/* BLE discovery */
+"Scanning…" = "Suche...";
+
+/* No comment provided by engineer. */
+"BL-Ctrl missing (check connections & mixer setup)" = "BL-Ctrl fehlt (Verbindungen & Mixer-Einstellungen prüfen)";
+
+/* No comment provided by engineer. */
+"Carefree control error/not possible (compass okay?, Orientation = 0 ?)" = "Carefree Control Fehler/nicht möglich (Kompass okay?, Orientierung = 0 ?)";
+
+/* No comment provided by engineer. */
+"Flight-Ctrl software incompatible" = "Flight-Ctrl Software inkompatibel";
+
+/* No comment provided by engineer. */
+"Hardware: Acc NICK error" = "Hardware: Acc NICK Fehler";
+
+/* No comment provided by engineer. */
+"Hardware: Acc ROLL error" = "Hardware: Acc ROLL Fehler";
+
+/* No comment provided by engineer. */
+"Hardware: Acc Z error (FlightCtrl installed upside down ?)" = "Hardware: Acc Z Fehler (FlightCtrl falsch herum montiert?)";
+
+/* No comment provided by engineer. */
+"Hardware: Gyro NICK error" = "Hardware: Gyro NICK Fehler";
+
+/* No comment provided by engineer. */
+"Hardware: Gyro ROLL error" = "Hardware: Gyro ROLL Fehler";
+
+/* No comment provided by engineer. */
+"Hardware: Gyro YAW error" = "Hardware: Gyro GIER Fehler";
+
+/* No comment provided by engineer. */
+"Hardware: Pressure sensor error" = "Hardware: Luftdrucksensor Fehler";
+
+/* No comment provided by engineer. */
+"I2C bus error (check I2C connections)" = "I2C Bus Fehler (I2C Verbindungen prüfen) ";
+
+/* No comment provided by engineer. */
+"invalid compass value (MK3Mag not calibrated ?)" = "ungültiger Kompasswert (MK3Mag nicht kalibriert ?)";
+
+/* No comment provided by engineer. */
+"Mixer setup error (check mixervalues)" = "Mixer-Einstellungen fehlerhaft (Werte prüfen)";
+
+/* No comment provided by engineer. */
+"MK3Mag software incompatible" = "MK3Mag Software inkompatibel";
+
+/* No comment provided by engineer. */
+"no data from MK3Mag" = "keine Daten von MK3Mag";
+
+/* No comment provided by engineer. */
+"no data from MKGPS" = "keine Daten von MKGPS";
+
+/* No comment provided by engineer. */
+"No receiver signal" = "Kein Empängersignal";
+
+/* No comment provided by engineer. */
+"SPI communication error. No data from Navi-Ctrl" = "SPI Kommunikationsfehler. Keine Daten von Navi-Ctrl";
+
+/* No comment provided by engineer. */
+"SPI: no data from Flight-Ctrl" = "SPI: keine Daten von Flight-Ctrl";
+
+/* MKBleConnection */
+"The device is not available" = "Kein BLE Gerät verfügbar";
+

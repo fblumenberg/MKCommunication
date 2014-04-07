@@ -118,7 +118,7 @@ static int ddLogLevel = LOG_LEVEL_WARN;
         
         if ([delegate respondsToSelector:@selector(willDisconnectWithError:)]) {
             NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey : NSLocalizedString(@"The device is not available", @"MKBleConnection")
+                                       NSLocalizedDescriptionKey : NSLocalizedStringFromTable(@"The device is not available", @"MKTCommunication", @"MKBleConnection")
                                        };
             
             [delegate willDisconnectWithError:[NSError errorWithDomain:@"de.frankblumenberg.mktool" code:1 userInfo:userInfo]];

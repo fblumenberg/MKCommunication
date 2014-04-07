@@ -17,8 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.source_files = 'MKCommunication', 'MKCommunication/**/*.{h,m}'
 
-  s.resource  = "MKCommunication/MKConnection/Simulator/FakeOsd.csv"
-
+  s.resource  = "MKCommunication/MKConnection/Simulator/FakeOsd.csv",'MKCommunication/Resources/*.lproj'
   s.frameworks = 'CoreGraphics', 'CoreLocation', 'CFNetwork'
   s.requires_arc = true
   s.dependency 'CocoaLumberjack'

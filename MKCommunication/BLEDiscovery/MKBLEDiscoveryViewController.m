@@ -69,8 +69,8 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
 
-  self.title = NSLocalizedString(@"Bluetooth 4.0 LE", @"BLE discovery title");
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"BT descovery cancel")
+  self.title = NSLocalizedStringFromTable(@"Bluetooth 4.0 LE", @"MKTCommunication", @"BLE discovery title");
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Cancel", @"MKTCommunication", @"BT descovery cancel")
                                                                            style:UIBarButtonItemStyleDone
                                                                           target:self
                                                                           action:@selector(cancel)];
@@ -131,7 +131,7 @@
   else {
 
     if ([self.delegate respondsToSelector:@selector(discoveryView:didSelectDeviceWithIdentifier:name:)]) {
-      CBPeripheral *peripheral=self.devices[indexPath.row];
+      CBPeripheral *peripheral = self.devices[indexPath.row];
       [self.delegate discoveryView:self didSelectDeviceWithIdentifier:[peripheral.identifier UUIDString] name:peripheral.name];
     }
     [self cancel];
@@ -161,14 +161,14 @@
     }
 
     if (self.isSearching) {
-      cell.textLabel.text = NSLocalizedString(@"Scanning...", @"BLE discovery");
+      cell.textLabel.text = NSLocalizedStringFromTable(@"Scanning…", @"MKTCommunication", @"BLE discovery");
       cell.accessoryView = self.bluetoothActivity;
       self.bluetoothActivity.frame = CGRectMake(0, 0, 40, 40);
       [self.bluetoothActivity startAnimating];
 
     }
     else {
-      cell.textLabel.text = NSLocalizedString(@"Rescann", @"BLE discovery");
+      cell.textLabel.text = NSLocalizedStringFromTable(@"Rescann", @"MKTCommunication", @"BLE discovery");
       cell.accessoryView = nil;
     }
   }
