@@ -33,7 +33,7 @@
 
 #import "MKDataConstants.h"
 
-static IKMkParamset100 EE_Parameter;
+static IKMkParamset102 EE_Parameter;
 static uint8_t PlatinenVersion = 21;
 
 static void ParamSet_DefaultStickMapping(void) {
@@ -147,8 +147,11 @@ static void CommonDefaults(void) {
 	EE_Parameter.WARN_J17_Bitmask = 0xAA;
 	EE_Parameter.J16Timing = 40;
 	EE_Parameter.J17Timing = 40;
-  EE_Parameter.AutoPhotoDistance = 0;       // Photo release in meter
-	EE_Parameter.LoopGasLimit = 50;
+  EE_Parameter.AutoPhotoDistance = 0;    	// Photo release in meter
+  EE_Parameter.AutoPhotoAtitudes = 0;   	// Photo release in meter
+	EE_Parameter.SingleWpSpeed = 50;       	// Speed when flying the single points
+	
+  EE_Parameter.LoopGasLimit = 50;
 	EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle f¸r Stickausschlag
 	EE_Parameter.LoopHysterese = 50;
   
@@ -165,7 +168,8 @@ static void CommonDefaults(void) {
 	EE_Parameter.NaviStickThreshold = 8;
 	EE_Parameter.NaviWindCorrection = 50;
 	EE_Parameter.NaviAccCompensation = 42;
-	EE_Parameter.NaviOperatingRadius = 245;
+	EE_Parameter.NaviMaxFlyingRange = 0;
+	EE_Parameter.NaviDescendRange = 0;
 	EE_Parameter.NaviAngleLimitation = 140;
 	EE_Parameter.NaviPH_LoginTime = 2;
 	EE_Parameter.OrientationAngle = 0;
@@ -181,12 +185,16 @@ static void CommonDefaults(void) {
 	EE_Parameter.FailsafeChannel = 0;
 	EE_Parameter.ServoFilterNick = 0;
 	EE_Parameter.ServoFilterRoll = 0;
-  EE_Parameter.CompassOffset = 0;
   
-	EE_Parameter.UnterspannungsWarnung 	= 33; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
-	EE_Parameter.ComingHomeVoltage 		= 32;
-	EE_Parameter.AutoLandingVoltage 	= 31;
-}
+  EE_Parameter.Servo3OnValue = 140;
+  EE_Parameter.Servo3OffValue = 70;
+	EE_Parameter.Servo4OnValue = 140;
+  EE_Parameter.Servo4OffValue = 70;
+	
+  EE_Parameter.CompassOffset = 0;
+	EE_Parameter.UnterspannungsWarnung 	= 32; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
+	EE_Parameter.ComingHomeVoltage 		= 31;
+	EE_Parameter.AutoLandingVoltage 	= 30;}
 
 /***************************************************/
 /*    Default Values for parameter set 1           */

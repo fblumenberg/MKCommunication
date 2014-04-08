@@ -46,13 +46,42 @@
     _parameterLatest.Index = bytes[0];
     _parameterLatest.Revision = bytes[1];
 
-    if (revision == 100) {
+    if (revision == 102) {
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameterLatest));
+    }
+    else if (revision == 100) {
+      memcpy(&_parameter100, [data bytes], sizeof(_parameter100));
+      memcpy(&_parameterLatest, [data bytes], sizeof(_parameter100));
+
+      _parameterLatest.ExternalControl = _parameter100.ExternalControl;
+      _parameterLatest.OrientationAngle = _parameter100.OrientationAngle;
+      _parameterLatest.CareFreeChannel = _parameter100.CareFreeChannel;
+      _parameterLatest.MotorSafetySwitch = _parameter100.MotorSafetySwitch;
+      _parameterLatest.MotorSmooth = _parameter100.MotorSmooth;
+      _parameterLatest.ComingHomeAltitude = _parameter100.ComingHomeAltitude;
+      _parameterLatest.FailSafeTime = _parameter100.FailSafeTime;
+      _parameterLatest.MaxAltitude = _parameter100.MaxAltitude;
+      _parameterLatest.FailsafeChannel = _parameter100.FailsafeChannel;
+      _parameterLatest.ServoFilterNick = _parameter100.ServoFilterNick;
+      _parameterLatest.ServoFilterRoll = _parameter100.ServoFilterRoll;
+      _parameterLatest.StartLandChannel = _parameter100.StartLandChannel;
+      _parameterLatest.LandingSpeed = _parameter100.LandingSpeed;
+      _parameterLatest.CompassOffset = _parameter100.CompassOffset;
+      _parameterLatest.AutoLandingVoltage = _parameter100.AutoLandingVoltage;
+      _parameterLatest.ComingHomeVoltage = _parameter100.ComingHomeVoltage;
+      _parameterLatest.AutoPhotoAtitudes = _parameter100.AutoPhotoAtitudes;
+      _parameterLatest.SingleWpSpeed = _parameter100.SingleWpSpeed;
+      _parameterLatest.BitConfig = _parameter100.BitConfig;
+      _parameterLatest.ServoCompInvert = _parameter100.ServoCompInvert;
+      _parameterLatest.ExtraConfig = _parameter100.ExtraConfig;
+      _parameterLatest.GlobalConfig3 = _parameter100.GlobalConfig3;
+
+      memcpy(_parameterLatest.Name, _parameter100.Name, 12);
     }
     else if (revision == 98) {
       memcpy(&_parameter98, [data bytes], sizeof(_parameter98));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter98));
-      
+
       _parameterLatest.BitConfig = _parameter98.BitConfig;
       _parameterLatest.ServoCompInvert = _parameter98.ServoCompInvert;
       _parameterLatest.ExtraConfig = _parameter98.ExtraConfig;
@@ -62,7 +91,7 @@
     else if (revision == 97) {
       memcpy(&_parameter97, [data bytes], sizeof(_parameter97));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter97));
-      
+
       _parameterLatest.BitConfig = _parameter97.BitConfig;
       _parameterLatest.ServoCompInvert = _parameter97.ServoCompInvert;
       _parameterLatest.ExtraConfig = _parameter97.ExtraConfig;
@@ -82,7 +111,7 @@
     else if (revision == 92 || revision == 93) {
       memcpy(&_parameter92, [data bytes], sizeof(_parameter92));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter92));
-      
+
       _parameterLatest.AutoPhotoDistance = _parameter92.AutoPhotoDistance;
       _parameterLatest.NaviGpsModeChannel = _parameter92.NaviGpsModeControl;
       _parameterLatest.NaviGpsGain = _parameter92.NaviGpsGain;
@@ -97,7 +126,7 @@
       _parameterLatest.NaviStickThreshold = _parameter92.NaviStickThreshold;
       _parameterLatest.NaviWindCorrection = _parameter92.NaviWindCorrection;
       _parameterLatest.NaviAccCompensation = _parameter92.NaviAccCompensation;
-      _parameterLatest.NaviOperatingRadius = _parameter92.NaviOperatingRadius;
+      _parameterLatest.NaviMaxFlyingRange = _parameter92.NaviMaxFlyingRange;
       _parameterLatest.NaviAngleLimitation = _parameter92.NaviAngleLimitation;
       _parameterLatest.NaviPH_LoginTime = _parameter92.NaviPH_LoginTime;
       _parameterLatest.ExternalControl = _parameter92.ExternalControl;
@@ -134,7 +163,7 @@
       _parameterLatest.NaviStickThreshold = _parameter90.NaviStickThreshold;
       _parameterLatest.NaviWindCorrection = _parameter90.NaviWindCorrection;
       _parameterLatest.NaviAccCompensation = _parameter90.NaviAccCompensation;
-      _parameterLatest.NaviOperatingRadius = _parameter90.NaviOperatingRadius;
+      _parameterLatest.NaviMaxFlyingRange = _parameter90.NaviMaxFlyingRange;
       _parameterLatest.NaviAngleLimitation = _parameter90.NaviAngleLimitation;
       _parameterLatest.NaviPH_LoginTime = _parameter90.NaviPH_LoginTime;
       _parameterLatest.ExternalControl = _parameter90.ExternalControl;
@@ -187,63 +216,98 @@
 - (NSData *)data {
 
   NSData *d = nil;
-  if (_parameterLatest.Revision == 100) {
+  if (_parameterLatest.Revision == 102) {
     unsigned char payloadData[sizeof(_parameterLatest)];
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameterLatest, sizeof(_parameterLatest));
 
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
+  else if (_parameterLatest.Revision == 100) {
+    unsigned char payloadData[sizeof(_parameter100)];
+
+    memcpy(&_parameter100, &_parameterLatest, sizeof(_parameter100));
+
+    _parameter100.ExternalControl = _parameterLatest.ExternalControl;
+    _parameter100.OrientationAngle = _parameterLatest.OrientationAngle;
+    _parameter100.CareFreeChannel = _parameterLatest.CareFreeChannel;
+    _parameter100.MotorSafetySwitch = _parameterLatest.MotorSafetySwitch;
+    _parameter100.MotorSmooth = _parameterLatest.MotorSmooth;
+    _parameter100.ComingHomeAltitude = _parameterLatest.ComingHomeAltitude;
+    _parameter100.FailSafeTime = _parameterLatest.FailSafeTime;
+    _parameter100.MaxAltitude = _parameterLatest.MaxAltitude;
+    _parameter100.FailsafeChannel = _parameterLatest.FailsafeChannel;
+    _parameter100.ServoFilterNick = _parameterLatest.ServoFilterNick;
+    _parameter100.ServoFilterRoll = _parameterLatest.ServoFilterRoll;
+    _parameter100.StartLandChannel = _parameterLatest.StartLandChannel;
+    _parameter100.LandingSpeed = _parameterLatest.LandingSpeed;
+    _parameter100.CompassOffset = _parameterLatest.CompassOffset;
+    _parameter100.AutoLandingVoltage = _parameterLatest.AutoLandingVoltage;
+    _parameter100.ComingHomeVoltage = _parameterLatest.ComingHomeVoltage;
+    _parameter100.AutoPhotoAtitudes = _parameterLatest.AutoPhotoAtitudes;
+    _parameter100.SingleWpSpeed = _parameterLatest.SingleWpSpeed;
+    _parameter100.BitConfig = _parameterLatest.BitConfig;
+    _parameter100.ServoCompInvert = _parameterLatest.ServoCompInvert;
+    _parameter100.ExtraConfig = _parameterLatest.ExtraConfig;
+    _parameter100.GlobalConfig3 = _parameterLatest.GlobalConfig3;
+
+    memcpy(_parameter100.Name, _parameterLatest.Name, 12);
+
+
+    memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter100, sizeof(_parameter100));
+
+    d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
+  }
   else if (_parameterLatest.Revision == 98) {
     unsigned char payloadData[sizeof(_parameter98)];
-    
+
     memcpy(&_parameter98, &_parameterLatest, sizeof(_parameter98));
-    
+
     _parameter98.BitConfig = _parameterLatest.BitConfig;
     _parameter98.ServoCompInvert = _parameterLatest.ServoCompInvert;
     _parameter98.ExtraConfig = _parameterLatest.ExtraConfig;
     _parameter98.GlobalConfig3 = _parameterLatest.GlobalConfig3;
     memcpy(_parameter98.Name, _parameterLatest.Name, 12);
-    
+
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter98, sizeof(_parameter98));
-    
+
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 97) {
     unsigned char payloadData[sizeof(_parameter97)];
-    
+
     memcpy(&_parameter97, &_parameterLatest, sizeof(_parameter97));
-    
+
     _parameter97.BitConfig = _parameterLatest.BitConfig;
     _parameter97.ServoCompInvert = _parameterLatest.ServoCompInvert;
     _parameter97.ExtraConfig = _parameterLatest.ExtraConfig;
     _parameter97.GlobalConfig3 = _parameterLatest.GlobalConfig3;
     memcpy(_parameter97.Name, _parameterLatest.Name, 12);
-    
+
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter97, sizeof(_parameter97));
-    
+
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 95 || _parameterLatest.Revision == 96) {
     unsigned char payloadData[sizeof(_parameter95)];
-    
+
     memcpy(&_parameter95, &_parameterLatest, sizeof(_parameter95));
-    
+
     _parameter95.BitConfig = _parameterLatest.BitConfig;
     _parameter95.ServoCompInvert = _parameterLatest.ServoCompInvert;
     _parameter95.ExtraConfig = _parameterLatest.ExtraConfig;
     _parameter95.GlobalConfig3 = _parameterLatest.GlobalConfig3;
     memcpy(_parameter95.Name, _parameterLatest.Name, 12);
-    
+
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter95, sizeof(_parameter95));
-    
+
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 92 || _parameterLatest.Revision == 93) {
     unsigned char payloadData[sizeof(_parameter92)];
-    
+
     memcpy(&_parameter92, &_parameterLatest, sizeof(_parameter92));
-    
+
     _parameter92.AutoPhotoDistance = _parameterLatest.AutoPhotoDistance;
     _parameter92.NaviGpsModeControl = _parameterLatest.NaviGpsModeChannel;
     _parameter92.NaviGpsGain = _parameterLatest.NaviGpsGain;
@@ -258,7 +322,7 @@
     _parameter92.NaviStickThreshold = _parameterLatest.NaviStickThreshold;
     _parameter92.NaviWindCorrection = _parameterLatest.NaviWindCorrection;
     _parameter92.NaviAccCompensation = _parameterLatest.NaviAccCompensation;
-    _parameter92.NaviOperatingRadius = _parameterLatest.NaviOperatingRadius;
+    _parameter92.NaviMaxFlyingRange = _parameterLatest.NaviMaxFlyingRange;
     _parameter92.NaviAngleLimitation = _parameterLatest.NaviAngleLimitation;
     _parameter92.NaviPH_LoginTime = _parameterLatest.NaviPH_LoginTime;
     _parameter92.ExternalControl = _parameterLatest.ExternalControl;
@@ -277,9 +341,9 @@
     _parameter92.ExtraConfig = _parameterLatest.ExtraConfig;
     _parameter92.GlobalConfig3 = _parameterLatest.GlobalConfig3;
     memcpy(_parameter92.Name, _parameterLatest.Name, 12);
-    
+
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter92, sizeof(_parameter92));
-    
+
     d = [NSData dataWithBytes:payloadData length:sizeof(payloadData)];
   }
   else if (_parameterLatest.Revision == 90 || _parameterLatest.Revision == 91) {
@@ -300,7 +364,7 @@
     _parameter90.NaviStickThreshold = _parameterLatest.NaviStickThreshold;
     _parameter90.NaviWindCorrection = _parameterLatest.NaviWindCorrection;
     _parameter90.NaviAccCompensation = _parameterLatest.NaviAccCompensation;
-    _parameter90.NaviOperatingRadius = _parameterLatest.NaviOperatingRadius;
+    _parameter90.NaviMaxFlyingRange = _parameterLatest.NaviMaxFlyingRange;
     _parameter90.NaviAngleLimitation = _parameterLatest.NaviAngleLimitation;
     _parameter90.NaviPH_LoginTime = _parameterLatest.NaviPH_LoginTime;
     _parameter90.ExternalControl = _parameterLatest.ExternalControl;
@@ -354,9 +418,9 @@
 }
 
 - (BOOL)isValid {
-  return _parameterLatest.Revision == 100  || _parameterLatest.Revision == 98  || _parameterLatest.Revision == 97  || _parameterLatest.Revision == 95  || _parameterLatest.Revision == 96
-  || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90
-  || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
+  return _parameterLatest.Revision == 102 || _parameterLatest.Revision == 100 || _parameterLatest.Revision == 98 || _parameterLatest.Revision == 97 || _parameterLatest.Revision == 95 || _parameterLatest.Revision == 96
+      || _parameterLatest.Revision == 93 || _parameterLatest.Revision == 92 || _parameterLatest.Revision == 90
+      || _parameterLatest.Revision == 91 || _parameterLatest.Revision == 88 || _parameterLatest.Revision == 85;
 }
 
 //---------------------------------------------------
@@ -601,7 +665,7 @@
   _parameterLatest.Luftdruck_D = [value unsignedCharValue];
 }
 
-- (NSNumber *) HoeheChannel {
+- (NSNumber *)HoeheChannel {
   return [NSNumber numberWithUnsignedChar:_parameterLatest.HoeheChannel];
 }
 
@@ -1227,12 +1291,12 @@
   _parameterLatest.NaviAccCompensation = [value unsignedCharValue];
 }
 
-- (NSNumber *)NaviOperatingRadius {
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviOperatingRadius];
+- (NSNumber *)NaviMaxFlyingRange {
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviMaxFlyingRange];
 }
 
-- (void)setNaviOperatingRadius:(NSNumber *)value {
-  _parameterLatest.NaviOperatingRadius = [value unsignedCharValue];
+- (void)setNaviMaxFlyingRange:(NSNumber *)value {
+  _parameterLatest.NaviMaxFlyingRange = [value unsignedCharValue];
 }
 
 - (NSNumber *)NaviAngleLimitation {
@@ -1725,44 +1789,44 @@
 }
 
 - (NSNumber *)StartLandChannel {
-    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    return [NSNumber numberWithUnsignedChar:_parameterLatest.StartLandChannel];
+  NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.StartLandChannel];
 }
 
 - (void)setStartLandChannel:(NSNumber *)value {
-    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    _parameterLatest.StartLandChannel = [value unsignedCharValue];
+  NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.StartLandChannel = [value unsignedCharValue];
 }
 
 - (NSNumber *)LandingSpeed {
-    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    return [NSNumber numberWithUnsignedChar:_parameterLatest.LandingSpeed];
+  NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.LandingSpeed];
 }
 
 - (void)setLandingSpeed:(NSNumber *)value {
-    NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    _parameterLatest.LandingSpeed = [value unsignedCharValue];
+  NSAssert(_parameterLatest.Revision >= 95, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.LandingSpeed = [value unsignedCharValue];
 }
 
 - (NSNumber *)CompassOffset {
-    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    return [NSNumber numberWithUnsignedChar:_parameterLatest.CompassOffset];
+  NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.CompassOffset];
 }
 
 - (void)setCompassOffset:(NSNumber *)value {
-    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    _parameterLatest.CompassOffset = [value unsignedCharValue];
+  NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.CompassOffset = [value unsignedCharValue];
 }
 
 
 - (NSNumber *)AutoLandingVoltage {
-    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    return [NSNumber numberWithUnsignedChar:_parameterLatest.AutoLandingVoltage];
+  NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.AutoLandingVoltage];
 }
 
 - (void)setAutoLandingVoltage:(NSNumber *)value {
-    NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
-    _parameterLatest.AutoLandingVoltage = [value unsignedCharValue];
+  NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.AutoLandingVoltage = [value unsignedCharValue];
 }
 
 - (NSNumber *)ComingHomeVoltage {
@@ -1794,6 +1858,56 @@
 - (void)setSingleWpSpeed:(NSNumber *)value {
   NSAssert(_parameterLatest.Revision >= 100, @"Wrong parameter revision %d", _parameterLatest.Revision);
   _parameterLatest.SingleWpSpeed = [value unsignedCharValue];
+}
+
+- (NSNumber *)NaviDescendRange {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.NaviDescendRange];
+}
+
+- (void)setNaviDescendRange:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.NaviDescendRange = [value unsignedCharValue];
+}
+
+- (NSNumber *)Servo3OnValue {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.Servo3OnValue];
+}
+
+- (void)setServo3OnValue:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.Servo3OnValue = [value unsignedCharValue];
+}
+
+- (NSNumber *)Servo3OffValue {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.Servo3OffValue];
+}
+
+- (void)setServo3OffValue:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.Servo3OffValue = [value unsignedCharValue];
+}
+
+- (NSNumber *)Servo4OnValue {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.Servo4OnValue];
+}
+
+- (void)setServo4OnValue:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.Servo4OnValue = [value unsignedCharValue];
+}
+
+- (NSNumber *)Servo4OffValue {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  return [NSNumber numberWithUnsignedChar:_parameterLatest.Servo4OffValue];
+}
+
+- (void)setServo4OffValue:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 102, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  _parameterLatest.Servo4OffValue = [value unsignedCharValue];
 }
 
 //---------------------------------------------------

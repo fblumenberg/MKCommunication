@@ -28,7 +28,8 @@
 
 @interface IKParamSet : NSObject {
 
-  IKMkParamset100 _parameterLatest;
+  IKMkParamset102 _parameterLatest;
+  IKMkParamset100 _parameter100;
   IKMkParamset98 _parameter98;
   IKMkParamset97 _parameter97;
   IKMkParamset95 _parameter95;
@@ -149,9 +150,11 @@
 @property(assign) NSNumber *NaviStickThreshold;
 @property(assign) NSNumber *NaviWindCorrection;
 @property(assign) NSNumber *NaviAccCompensation;
-@property(assign) NSNumber *NaviOperatingRadius;
+@property(assign) NSNumber *NaviMaxFlyingRange;
 @property(assign) NSNumber *NaviAngleLimitation;
 @property(assign) NSNumber *NaviPH_LoginTime;
+@property(assign) NSNumber *NaviDescendRange;
+
 @property(assign) NSNumber *ExternalControl;
 @property(assign) NSNumber *OrientationAngle;
 @property(assign) NSNumber *CareFreeChannel;
