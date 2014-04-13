@@ -136,7 +136,7 @@
 @property(assign) NSNumber *J17Timing;
 @property(assign) NSNumber *WARN_J16_Bitmask;
 @property(assign) NSNumber *WARN_J17_Bitmask;
-@property(assign) NSNumber *NaviOut1Parameter;
+@property(assign) NSNumber *AutoPhotoDistance;
 @property(assign) NSNumber *NaviGpsChannel;
 @property(assign) NSNumber *NaviGpsGain;
 @property(assign) NSNumber *NaviGpsP;
