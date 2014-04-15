@@ -46,11 +46,11 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 @implementation MKBleConnection (DDRegisteredDynamicLogging)
 + (int)ddLogLevel {
-    return ddLogLevel;
+  return ddLogLevel;
 }
 
 + (void)ddSetLogLevel:(int)logLevel {
-    ddLogLevel = logLevel;
+  ddLogLevel = logLevel;
 }
 @end
 
@@ -62,149 +62,159 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 
 - (id)initWithDelegate:(id <MKConnectionDelegate>)theDelegate; {
-    self = [super init];
-    if (self) {
-        
-        self.ble = [[BLE alloc] init];
-        [self.ble controlSetup];
-        self.ble.delegate = self;
-        
-        
-        self.delegate = theDelegate;
-    }
-    return self;
+  self = [super init];
+  if (self) {
+
+    self.ble = [[BLE alloc] init];
+    [self.ble controlSetup];
+    self.ble.delegate = self;
+
+
+    self.delegate = theDelegate;
+  }
+  return self;
 }
 
 - (BOOL)connectTo:(NSDictionary *)connectionInfo {
-    
-    self.uuid = connectionInfo[@"address"];
-    
-    DDLogVerbose(@"Try to connect to BLE device  with UUID %@", self.uuid);
-    
-    
-    if ([self isConnected]) {
-        [[self.ble CM] cancelPeripheralConnection:[self.ble activePeripheral]];
-        return NO;
-    }
-    
-    self.mkData = [NSMutableData dataWithCapacity:512];
-    
-    
-    self.ble.peripherals = nil;
-    
-    [NSTimer scheduledTimerWithTimeInterval:(float) 0.2 target:self selector:@selector(doConnectionTimer:) userInfo:nil repeats:NO];
-    
-    
-    return YES;
+
+  self.uuid = connectionInfo[@"address"];
+
+  DDLogVerbose(@"Try to connect to BLE device  with UUID %@", self.uuid);
+
+
+  if ([self isConnected]) {
+    [[self.ble CM] cancelPeripheralConnection:[self.ble activePeripheral]];
+    return NO;
+  }
+
+  self.mkData = [NSMutableData dataWithCapacity:512];
+
+
+  self.ble.peripherals = nil;
+
+  [NSTimer scheduledTimerWithTimeInterval:(float) 0.2 target:self selector:@selector(doConnectionTimer:) userInfo:nil repeats:NO];
+
+
+  return YES;
 }
 
 - (void)doConnectionTimer:(NSTimer *)timer {
-    
-    if ([self.ble findBLEPeripherals:2] == -1) {
-        
-        //        return NO;
-    }
-    
-    [NSTimer scheduledTimerWithTimeInterval:(float) 2.0 target:self selector:@selector(connectionTimer:) userInfo:nil repeats:NO];
+
+  if ([self.ble findBLEPeripherals:2] == -1) {
+
+    //        return NO;
+  }
+
+  [NSTimer scheduledTimerWithTimeInterval:(float) 2.0 target:self selector:@selector(connectionTimer:) userInfo:nil repeats:NO];
 }
 
 
+- (CBPeripheral *)findPeriphealForUUID:(NSArray *)peripherals {
+  for (CBPeripheral *obj in peripherals) {
+    if ([obj.identifier.UUIDString isEqualToString:self.uuid])
+      return obj;
+  }
+
+  return nil;
+}
+
 - (void)connectionTimer:(NSTimer *)timer {
-    if (self.ble.peripherals.count > 0) {
-//TODO search for the peripherals with the desired uuid
-        [self.ble connectPeripheral:[self.ble.peripherals objectAtIndex:0]];
-        
+
+  CBPeripheral *device= [self findPeriphealForUUID:self.ble.peripherals];
+
+  if (device) {
+    [self.ble connectPeripheral:device];
+  }
+  else {
+
+    if ([delegate respondsToSelector:@selector(willDisconnectWithError:)]) {
+      NSDictionary *userInfo = @{
+          NSLocalizedDescriptionKey : NSLocalizedStringFromTable(@"The device is not available", @"MKTCommunication", @"MKBleConnection")
+      };
+
+      [delegate willDisconnectWithError:[NSError errorWithDomain:@"de.frankblumenberg.mktool" code:1 userInfo:userInfo]];
     }
-    else {
-        
-        if ([delegate respondsToSelector:@selector(willDisconnectWithError:)]) {
-            NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey : NSLocalizedStringFromTable(@"The device is not available", @"MKTCommunication", @"MKBleConnection")
-                                       };
-            
-            [delegate willDisconnectWithError:[NSError errorWithDomain:@"de.frankblumenberg.mktool" code:1 userInfo:userInfo]];
-        }
-    }
+  }
 }
 
 
 - (BOOL)isConnected {
-    return self.ble.activePeripheral && self.ble.activePeripheral.state == CBPeripheralStateConnected;
+  return self.ble.activePeripheral && self.ble.activePeripheral.state == CBPeripheralStateConnected;
 }
 
 - (void)disconnect {
-    if (self.ble.activePeripheral) {
-        if (self.ble.activePeripheral.state == CBPeripheralStateConnected) {
-            [[self.ble CM] cancelPeripheralConnection:[self.ble activePeripheral]];
-        }
+  if (self.ble.activePeripheral) {
+    if (self.ble.activePeripheral.state == CBPeripheralStateConnected) {
+      [[self.ble CM] cancelPeripheralConnection:[self.ble activePeripheral]];
     }
+  }
 }
 
 - (void)writeMkData:(NSData *)data {
-    NSLog(@"Write Data %@",data);
-    [self.ble write:data];
+  NSLog(@"Write Data %@", data);
+  [self.ble write:data];
 }
 
 
 - (void)bleDidConnect {
-    if ([delegate respondsToSelector:@selector(didConnectTo:)]) {
-        [delegate didConnectTo:self.uuid];
-    }
+  if ([delegate respondsToSelector:@selector(didConnectTo:)]) {
+    [delegate didConnectTo:self.uuid];
+  }
 }
 
 - (void)bleDidDisconnect {
-    if ([delegate respondsToSelector:@selector(didDisconnect)]) {
-        [delegate didDisconnect];
-    }
+  if ([delegate respondsToSelector:@selector(didDisconnect)]) {
+    [delegate didDisconnect];
+  }
 }
 
 - (void)bleDidUpdateRSSI:(NSNumber *)rssi {
-    
+
 }
 
 - (void)bleDidReceiveData:(unsigned char *)packet length:(int)length {
-    
-    NSData *data = [NSData dataWithBytes:packet length:length];
-    if ([data length] > 0) {
-        
-        /*
-         * The new data, which may only be partial, gets appended to the previously
-         * collected buffer in self.mkData.
-         * Then a line delimiter is searched, and any complete lines are passed
-         * to the delegate, and removed from the local buffer in self.mkData.
-         * We repeat this search for lines until no more are found.
-         */
-        
-        [self.mkData appendData:data];
-        
-        Boolean again;
-        do {
-            again = false;
-            
-            const char *haystackBytes = [self.mkData bytes];
-            static char needle = '\r';
-            
-            for (int i = 0; i < [self.mkData length]; i++) {
-                if (haystackBytes[i] == needle) { // check for line delimiter
-                    
-                    // extract the line
-                    NSRange r = {0, i + 1};
-                    NSData *cmdData = [self.mkData subdataWithRange:r];
-                    
-                    // remove the line from the receive buffer
-                    [self.mkData replaceBytesInRange:r withBytes:NULL length:0];
-                    
-                    if ([delegate respondsToSelector:@selector(didReadMkData:)]) {
-                        [delegate didReadMkData:cmdData];
-                    }
-                    again = true; // see if there are more lines to process
-                    break;
-                }
-            }
-        } while (again);
-        
-    }
-    
+
+  NSData *data = [NSData dataWithBytes:packet length:length];
+  if ([data length] > 0) {
+
+    /*
+     * The new data, which may only be partial, gets appended to the previously
+     * collected buffer in self.mkData.
+     * Then a line delimiter is searched, and any complete lines are passed
+     * to the delegate, and removed from the local buffer in self.mkData.
+     * We repeat this search for lines until no more are found.
+     */
+
+    [self.mkData appendData:data];
+
+    Boolean again;
+    do {
+      again = false;
+
+      const char *haystackBytes = [self.mkData bytes];
+      static char needle = '\r';
+
+      for (int i = 0; i < [self.mkData length]; i++) {
+        if (haystackBytes[i] == needle) { // check for line delimiter
+
+          // extract the line
+          NSRange r = {0, i + 1};
+          NSData *cmdData = [self.mkData subdataWithRange:r];
+
+          // remove the line from the receive buffer
+          [self.mkData replaceBytesInRange:r withBytes:NULL length:0];
+
+          if ([delegate respondsToSelector:@selector(didReadMkData:)]) {
+            [delegate didReadMkData:cmdData];
+          }
+          again = true; // see if there are more lines to process
+          break;
+        }
+      }
+    } while (again);
+
+  }
+
 }
 
 
