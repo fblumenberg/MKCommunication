@@ -111,6 +111,7 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 - (void)connectionTimer:(NSTimer *)timer {
     if (self.ble.peripherals.count > 0) {
+//TODO search for the peripherals with the desired uuid
         [self.ble connectPeripheral:[self.ble.peripherals objectAtIndex:0]];
         
     }
