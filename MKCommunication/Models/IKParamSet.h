@@ -169,6 +169,7 @@
 @property(assign) NSNumber *StartLandChannel;
 @property(assign) NSNumber *LandingSpeed;
 @property(assign) NSNumber *CompassOffset;
+@property(assign) NSNumber *CompassOffset_DisableDeclCalc;
 @property(assign) NSNumber *AutoLandingVoltage;
 @property(assign) NSNumber *ComingHomeVoltage;
 @property(assign) NSNumber *AutoPhotoAtitudes;

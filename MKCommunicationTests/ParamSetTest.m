@@ -1627,4 +1627,43 @@ static void fillIKMkParamset102(IKMkParamset102 *p) {
 }
 
 
+- (void)testCompassOffset {
+
+  IKMkParamset102 pMk;
+  fillIKMkParamset102(&pMk);
+
+  STAssertEquals((int) pMk.Revision, (int) 102, nil);
+
+  pMk.CompassOffset = 0;
+
+  NSData *origPayload = [NSData dataWithBytes:(void *) &pMk length:sizeof(pMk)];
+  STAssertNotNil(origPayload, @"Payload creating failed");
+
+  IKParamSet *p = [IKParamSet settingWithData:origPayload];
+  STAssertNotNil(p, @"IKParamSet creating failed");
+  STAssertEquals([p isValid], YES, @"Data should be valid");
+
+  STAssertEquals(p.CompassOffset, @(0), nil);
+
+  NSArray* testData =@[
+                     @[@(60),@(NO),@(60)],
+                     @[@(60),@(YES),@(188)],
+                     @[@(-60),@(NO),@(196)],
+                     @[@(-60),@(YES),@(68)],
+                     @[@(4),@(NO),@(4)],
+                     @[@(4),@(YES),@(132)],
+                     ];
+
+  
+  for (NSArray* d in testData) {
+    p.CompassOffset = d[0];
+    p.CompassOffset_DisableDeclCalc=d[1];
+    NSData *data = [p data];
+    IKMkParamset102 *pMk2 = (IKMkParamset102 *) [data bytes];
+
+    STAssertEquals((unsigned int)pMk2->CompassOffset, [d[2] unsignedIntValue], nil);
+  }
+
+}
+
 @end

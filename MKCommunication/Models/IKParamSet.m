@@ -1808,15 +1808,47 @@
   _parameterLatest.LandingSpeed = [value unsignedCharValue];
 }
 
+
+
 - (NSNumber *)CompassOffset {
   NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
-  return [NSNumber numberWithUnsignedChar:_parameterLatest.CompassOffset];
+
+  unsigned char value =_parameterLatest.CompassOffset & 0x7F;
+  return [NSNumber numberWithUnsignedChar:value];
 }
+
 
 - (void)setCompassOffset:(NSNumber *)value {
   NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  
+  NSNumber* disableDeclCalc = self.CompassOffset_DisableDeclCalc;
   _parameterLatest.CompassOffset = [value unsignedCharValue];
+  
+  self.CompassOffset_DisableDeclCalc = disableDeclCalc;
 }
+
+
+- (NSNumber *)CompassOffset_DisableDeclCalc {
+  NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  
+  BOOL bit7 =(_parameterLatest.CompassOffset & 0x80)!=0;
+  BOOL bit6 =(_parameterLatest.CompassOffset & 0x40)!=0;
+  
+  return [NSNumber numberWithBool:bit7^bit6];
+}
+
+- (void)setCompassOffset_DisableDeclCalc:(NSNumber *)value {
+  NSAssert(_parameterLatest.Revision >= 97, @"Wrong parameter revision %d", _parameterLatest.Revision);
+  
+  BOOL bit6 =(_parameterLatest.CompassOffset & 0x40)!=0;
+  BOOL bit7 = [value boolValue]? bit6:!bit6;
+  
+  if(bit7)
+    _parameterLatest.CompassOffset &= ~(0x80);
+  else
+    _parameterLatest.CompassOffset |= 0x80;
+}
+
 
 
 - (NSNumber *)AutoLandingVoltage {
