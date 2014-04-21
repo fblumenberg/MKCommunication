@@ -81,7 +81,22 @@
     else if (revision == 98) {
       memcpy(&_parameter98, [data bytes], sizeof(_parameter98));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter98));
-
+      _parameterLatest.ExternalControl = _parameter98.ExternalControl;
+      _parameterLatest.OrientationAngle = _parameter98.OrientationAngle;
+      _parameterLatest.CareFreeChannel = _parameter98.CareFreeChannel;
+      _parameterLatest.MotorSafetySwitch = _parameter98.MotorSafetySwitch;
+      _parameterLatest.MotorSmooth = _parameter98.MotorSmooth;
+      _parameterLatest.ComingHomeAltitude = _parameter98.ComingHomeAltitude;
+      _parameterLatest.FailSafeTime = _parameter98.FailSafeTime;
+      _parameterLatest.MaxAltitude = _parameter98.MaxAltitude;
+      _parameterLatest.FailsafeChannel = _parameter98.FailsafeChannel;
+      _parameterLatest.ServoFilterNick = _parameter98.ServoFilterNick;
+      _parameterLatest.ServoFilterRoll = _parameter98.ServoFilterRoll;
+      _parameterLatest.StartLandChannel = _parameter98.StartLandChannel;
+      _parameterLatest.LandingSpeed = _parameter98.LandingSpeed;
+      _parameterLatest.CompassOffset = _parameter98.CompassOffset;
+      _parameterLatest.AutoLandingVoltage = _parameter98.AutoLandingVoltage;
+      _parameterLatest.ComingHomeVoltage = _parameter98.ComingHomeVoltage;
       _parameterLatest.BitConfig = _parameter98.BitConfig;
       _parameterLatest.ServoCompInvert = _parameter98.ServoCompInvert;
       _parameterLatest.ExtraConfig = _parameter98.ExtraConfig;
@@ -92,6 +107,21 @@
       memcpy(&_parameter97, [data bytes], sizeof(_parameter97));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter97));
 
+      _parameterLatest.ExternalControl = _parameter97.ExternalControl;
+      _parameterLatest.OrientationAngle = _parameter97.OrientationAngle;
+      _parameterLatest.CareFreeChannel = _parameter97.CareFreeChannel;
+      _parameterLatest.MotorSafetySwitch = _parameter97.MotorSafetySwitch;
+      _parameterLatest.MotorSmooth = _parameter97.MotorSmooth;
+      _parameterLatest.ComingHomeAltitude = _parameter97.ComingHomeAltitude;
+      _parameterLatest.FailSafeTime = _parameter97.FailSafeTime;
+      _parameterLatest.MaxAltitude = _parameter97.MaxAltitude;
+      _parameterLatest.FailsafeChannel = _parameter97.FailsafeChannel;
+      _parameterLatest.ServoFilterNick = _parameter97.ServoFilterNick;
+      _parameterLatest.ServoFilterRoll = _parameter97.ServoFilterRoll;
+      _parameterLatest.StartLandChannel = _parameter97.StartLandChannel;
+      _parameterLatest.LandingSpeed = _parameter97.LandingSpeed;
+      _parameterLatest.CompassOffset = _parameter97.CompassOffset;
+      _parameterLatest.AutoLandingVoltage = _parameter97.AutoLandingVoltage;
       _parameterLatest.BitConfig = _parameter97.BitConfig;
       _parameterLatest.ServoCompInvert = _parameter97.ServoCompInvert;
       _parameterLatest.ExtraConfig = _parameter97.ExtraConfig;
@@ -102,6 +132,19 @@
       memcpy(&_parameter95, [data bytes], sizeof(_parameter95));
       memcpy(&_parameterLatest, [data bytes], sizeof(_parameter95));
 
+      _parameterLatest.ExternalControl = _parameter95.ExternalControl;
+      _parameterLatest.OrientationAngle = _parameter95.OrientationAngle;
+      _parameterLatest.CareFreeChannel = _parameter95.CareFreeChannel;
+      _parameterLatest.MotorSafetySwitch = _parameter95.MotorSafetySwitch;
+      _parameterLatest.MotorSmooth = _parameter95.MotorSmooth;
+      _parameterLatest.ComingHomeAltitude = _parameter95.ComingHomeAltitude;
+      _parameterLatest.FailSafeTime = _parameter95.FailSafeTime;
+      _parameterLatest.MaxAltitude = _parameter95.MaxAltitude;
+      _parameterLatest.FailsafeChannel = _parameter95.FailsafeChannel;
+      _parameterLatest.ServoFilterNick = _parameter95.ServoFilterNick;
+      _parameterLatest.ServoFilterRoll = _parameter95.ServoFilterRoll;
+      _parameterLatest.StartLandChannel = _parameter95.StartLandChannel;
+      _parameterLatest.LandingSpeed = _parameter95.LandingSpeed;
       _parameterLatest.BitConfig = _parameter95.BitConfig;
       _parameterLatest.ServoCompInvert = _parameter95.ServoCompInvert;
       _parameterLatest.ExtraConfig = _parameter95.ExtraConfig;
@@ -263,10 +306,27 @@
 
     memcpy(&_parameter98, &_parameterLatest, sizeof(_parameter98));
 
+    _parameter98.ExternalControl = _parameterLatest.ExternalControl;
+    _parameter98.OrientationAngle = _parameterLatest.OrientationAngle;
+    _parameter98.CareFreeChannel = _parameterLatest.CareFreeChannel;
+    _parameter98.MotorSafetySwitch = _parameterLatest.MotorSafetySwitch;
+    _parameter98.MotorSmooth = _parameterLatest.MotorSmooth;
+    _parameter98.ComingHomeAltitude = _parameterLatest.ComingHomeAltitude;
+    _parameter98.FailSafeTime = _parameterLatest.FailSafeTime;
+    _parameter98.MaxAltitude = _parameterLatest.MaxAltitude;
+    _parameter98.FailsafeChannel = _parameterLatest.FailsafeChannel;
+    _parameter98.ServoFilterNick = _parameterLatest.ServoFilterNick;
+    _parameter98.ServoFilterRoll = _parameterLatest.ServoFilterRoll;
+    _parameter98.StartLandChannel = _parameterLatest.StartLandChannel;
+    _parameter98.LandingSpeed = _parameterLatest.LandingSpeed;
+    _parameter98.CompassOffset = _parameterLatest.CompassOffset;
+    _parameter98.AutoLandingVoltage = _parameterLatest.AutoLandingVoltage;
+    _parameter98.ComingHomeVoltage = _parameterLatest.ComingHomeVoltage;
     _parameter98.BitConfig = _parameterLatest.BitConfig;
     _parameter98.ServoCompInvert = _parameterLatest.ServoCompInvert;
     _parameter98.ExtraConfig = _parameterLatest.ExtraConfig;
     _parameter98.GlobalConfig3 = _parameterLatest.GlobalConfig3;
+
     memcpy(_parameter98.Name, _parameterLatest.Name, 12);
 
     memcpy((unsigned char *) (payloadData), (unsigned char *) &_parameter98, sizeof(_parameter98));
@@ -278,6 +338,21 @@
 
     memcpy(&_parameter97, &_parameterLatest, sizeof(_parameter97));
 
+    _parameter97.ExternalControl = _parameterLatest.ExternalControl;
+    _parameter97.OrientationAngle = _parameterLatest.OrientationAngle;
+    _parameter97.CareFreeChannel = _parameterLatest.CareFreeChannel;
+    _parameter97.MotorSafetySwitch = _parameterLatest.MotorSafetySwitch;
+    _parameter97.MotorSmooth = _parameterLatest.MotorSmooth;
+    _parameter97.ComingHomeAltitude = _parameterLatest.ComingHomeAltitude;
+    _parameter97.FailSafeTime = _parameterLatest.FailSafeTime;
+    _parameter97.MaxAltitude = _parameterLatest.MaxAltitude;
+    _parameter97.FailsafeChannel = _parameterLatest.FailsafeChannel;
+    _parameter97.ServoFilterNick = _parameterLatest.ServoFilterNick;
+    _parameter97.ServoFilterRoll = _parameterLatest.ServoFilterRoll;
+    _parameter97.StartLandChannel = _parameterLatest.StartLandChannel;
+    _parameter97.LandingSpeed = _parameterLatest.LandingSpeed;
+    _parameter97.CompassOffset = _parameterLatest.CompassOffset;
+    _parameter97.AutoLandingVoltage = _parameterLatest.AutoLandingVoltage;
     _parameter97.BitConfig = _parameterLatest.BitConfig;
     _parameter97.ServoCompInvert = _parameterLatest.ServoCompInvert;
     _parameter97.ExtraConfig = _parameterLatest.ExtraConfig;
@@ -293,6 +368,19 @@
 
     memcpy(&_parameter95, &_parameterLatest, sizeof(_parameter95));
 
+    _parameter95.ExternalControl = _parameterLatest.ExternalControl;
+    _parameter95.OrientationAngle = _parameterLatest.OrientationAngle;
+    _parameter95.CareFreeChannel = _parameterLatest.CareFreeChannel;
+    _parameter95.MotorSafetySwitch = _parameterLatest.MotorSafetySwitch;
+    _parameter95.MotorSmooth = _parameterLatest.MotorSmooth;
+    _parameter95.ComingHomeAltitude = _parameterLatest.ComingHomeAltitude;
+    _parameter95.FailSafeTime = _parameterLatest.FailSafeTime;
+    _parameter95.MaxAltitude = _parameterLatest.MaxAltitude;
+    _parameter95.FailsafeChannel = _parameterLatest.FailsafeChannel;
+    _parameter95.ServoFilterNick = _parameterLatest.ServoFilterNick;
+    _parameter95.ServoFilterRoll = _parameterLatest.ServoFilterRoll;
+    _parameter95.StartLandChannel = _parameterLatest.StartLandChannel;
+    _parameter95.LandingSpeed = _parameterLatest.LandingSpeed;
     _parameter95.BitConfig = _parameterLatest.BitConfig;
     _parameter95.ServoCompInvert = _parameterLatest.ServoCompInvert;
     _parameter95.ExtraConfig = _parameterLatest.ExtraConfig;

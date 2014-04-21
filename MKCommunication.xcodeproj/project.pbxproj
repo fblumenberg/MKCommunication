@@ -54,6 +54,10 @@
 		BAB431321705DF2000BEC0B5 /* MKCommandTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */; };
 		BAB431331705DF2000BEC0B5 /* MKCommandVersionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */; };
 		BAB431341705DF2000BEC0B5 /* ParamSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */; };
+		BACED6BD19058F0C00F23C4D /* ParamSetTest98.m in Sources */ = {isa = PBXBuildFile; fileRef = BACED6BC19058F0C00F23C4D /* ParamSetTest98.m */; };
+		BACED6BF1905986E00F23C4D /* ParamSetTest95.m in Sources */ = {isa = PBXBuildFile; fileRef = BACED6BE1905986E00F23C4D /* ParamSetTest95.m */; };
+		BACED6C219059A1200F23C4D /* ParamSetTest97.m in Sources */ = {isa = PBXBuildFile; fileRef = BACED6C019059A1200F23C4D /* ParamSetTest97.m */; };
+		BACED6C319059A1200F23C4D /* ParamSetTest100.m in Sources */ = {isa = PBXBuildFile; fileRef = BACED6C119059A1200F23C4D /* ParamSetTest100.m */; };
 		D24D350EBF904322BA6919BA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9600AD7E9DF478E949D4AA9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +161,10 @@
 		BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandTest.m; sourceTree = "<group>"; };
 		BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommandVersionTest.m; sourceTree = "<group>"; };
 		BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest.m; sourceTree = "<group>"; };
+		BACED6BC19058F0C00F23C4D /* ParamSetTest98.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest98.m; sourceTree = "<group>"; };
+		BACED6BE1905986E00F23C4D /* ParamSetTest95.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest95.m; sourceTree = "<group>"; };
+		BACED6C019059A1200F23C4D /* ParamSetTest97.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest97.m; sourceTree = "<group>"; };
+		BACED6C119059A1200F23C4D /* ParamSetTest100.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamSetTest100.m; sourceTree = "<group>"; };
 		BADDDB4318F30E3C00660606 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AsyncSocket.strings; sourceTree = "<group>"; };
 		BADDDB4718F30E4200660606 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MKTCommunication.strings; sourceTree = "<group>"; };
 		BADDDB4918F30E5600660606 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -288,9 +296,13 @@
 				BAB4312A1705DF2000BEC0B5 /* MKCommandNaviDataTest.m */,
 				BAB4312B1705DF2000BEC0B5 /* MKCommandTest.m */,
 				BAB4312C1705DF2000BEC0B5 /* MKCommandVersionTest.m */,
-				BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */,
-				BAB430831705903A00BEC0B5 /* Supporting Files */,
 				BA111BDB1800524000DE54E0 /* MKSimConnectionTest.m */,
+				BAB4312D1705DF2000BEC0B5 /* ParamSetTest.m */,
+				BACED6C119059A1200F23C4D /* ParamSetTest100.m */,
+				BACED6BE1905986E00F23C4D /* ParamSetTest95.m */,
+				BACED6C019059A1200F23C4D /* ParamSetTest97.m */,
+				BACED6BC19058F0C00F23C4D /* ParamSetTest98.m */,
+				BAB430831705903A00BEC0B5 /* Supporting Files */,
 			);
 			path = MKCommunicationTests;
 			sourceTree = "<group>";
@@ -583,9 +595,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACED6BF1905986E00F23C4D /* ParamSetTest95.m in Sources */,
+				BACED6C219059A1200F23C4D /* ParamSetTest97.m in Sources */,
+				BACED6C319059A1200F23C4D /* ParamSetTest100.m in Sources */,
 				BAB4312E1705DF2000BEC0B5 /* MKCommandChannelsTest.m in Sources */,
 				BA111BDC1800524000DE54E0 /* MKSimConnectionTest.m in Sources */,
 				BAB4312F1705DF2000BEC0B5 /* MKCommandDebugDataTest.m in Sources */,
+				BACED6BD19058F0C00F23C4D /* ParamSetTest98.m in Sources */,
 				BAB431301705DF2000BEC0B5 /* MKCommandLcdDisplayTest.m in Sources */,
 				BAB431311705DF2000BEC0B5 /* MKCommandNaviDataTest.m in Sources */,
 				BAB431321705DF2000BEC0B5 /* MKCommandTest.m in Sources */,
