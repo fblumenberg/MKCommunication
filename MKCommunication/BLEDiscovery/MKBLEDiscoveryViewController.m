@@ -160,6 +160,8 @@
       cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ScannCellIdentifier];
     }
 
+    cell.userInteractionEnabled=NO;
+    
     if (self.isSearching) {
       cell.textLabel.text = NSLocalizedStringFromTable(@"Scanning…", @"MKTCommunication", @"BLE discovery");
       cell.accessoryView = self.bluetoothActivity;
@@ -168,7 +170,14 @@
 
     }
     else {
-      cell.textLabel.text = NSLocalizedStringFromTable(@"Rescann", @"MKTCommunication", @"BLE discovery");
+      if( self.ble.CM.state==CBCentralManagerStateUnsupported ){
+        cell.textLabel.text = NSLocalizedStringFromTable(@"The platform does not support Bluetooth low energy", @"MKTCommunication", @"BLE discovery");
+      }
+      else{
+        cell.textLabel.text = NSLocalizedStringFromTable(@"Rescann", @"MKTCommunication", @"BLE discovery");
+        cell.userInteractionEnabled=YES;
+      }
+        
       cell.accessoryView = nil;
     }
   }

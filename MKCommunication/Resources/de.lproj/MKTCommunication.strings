@@ -76,3 +76,6 @@
 /* MKBleConnection */
 "The device is not available" = "Kein BLE Gerät verfügbar";
 
+/* BLE discovery */
+"The platform does not support Bluetooth low energy" = "Bluetooth low energy wir auf diesem Gerät nicht unterstützt.";
+
