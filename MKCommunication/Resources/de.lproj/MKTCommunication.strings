@@ -77,5 +77,5 @@
 "The device is not available" = "Kein BLE Gerät verfügbar";
 
 /* BLE discovery */
-"The platform does not support Bluetooth low energy" = "Bluetooth low energy wir auf diesem Gerät nicht unterstützt.";
+"The platform does not support Bluetooth low energy" = "Bluetooth 4.0 LE wird auf diesem Gerät nicht unterstützt.";
 

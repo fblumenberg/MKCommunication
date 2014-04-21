@@ -86,5 +86,5 @@
 "Waypoint - %@" = "Waypoint - %@";
 
 /* BLE discovery */
-"The platform does not support Bluetooth low energy" = "The device does not support Bluetooth low energy";
+"The platform does not support Bluetooth low energy" = "The device does not support Bluetooth 4.0 LE";
 
