@@ -302,7 +302,7 @@ void ParamSet_DefaultSet3(void) // Easy
   index--;
 
   IKParamSet *p = [self.settings objectAtIndex:index];
-  p.Index = [NSNumber numberWithInt:index + 1];
+  p.Index = [NSNumber numberWithUnsignedInteger:index + 1];
 
   NSData *payLoad = [p data];
 

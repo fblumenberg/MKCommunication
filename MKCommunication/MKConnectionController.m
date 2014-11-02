@@ -515,7 +515,7 @@ static int ddLogLevel = LOG_LEVEL_WARN;
 
 
 - (void)nextConnectAction {
-  DDLogVerbose(@"Next connection action, current state is %d", connectionState);
+  DDLogVerbose(@"Next connection action, current state is %ld", connectionState);
   switch (connectionState) {
     case kConnectionStateIdle:
       retryCount = 0;
@@ -552,11 +552,11 @@ static int ddLogLevel = LOG_LEVEL_WARN;
     default:
       break;
   }
-  DDLogVerbose(@"Next connection action done, current state is %d", connectionState);
+  DDLogVerbose(@"Next connection action done, current state is %ld", connectionState);
 }
 
 - (void)connectionTimeout {
-  DDLogVerbose(@"connection timeout, retry count %d", retryCount);
+  DDLogVerbose(@"connection timeout, retry count %ld", retryCount);
   if (++retryCount > 3) {
 
     if (connectionState == kConnectionStateWaitNC) {

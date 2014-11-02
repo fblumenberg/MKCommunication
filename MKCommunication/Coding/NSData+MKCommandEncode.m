@@ -32,7 +32,7 @@ static NSData *encode64(NSData *inData) {
   unsigned int srcIdx = 0;
 
   const unsigned char *inBuffer = [inData bytes];
-  unsigned int length = [inData length];
+  unsigned int length = (unsigned int)[inData length];
 
   unsigned char a, b, c;
 

@@ -28,7 +28,8 @@
 
 @interface IKParamSet : NSObject {
 
-  IKMkParamset102 _parameterLatest;
+  IKMkParamset103 _parameterLatest;
+  IKMkParamset102 _parameter102;
   IKMkParamset100 _parameter100;
   IKMkParamset98 _parameter98;
   IKMkParamset97 _parameter97;
@@ -78,6 +79,7 @@
 @property(assign) NSNumber *Hoehe_ACC_Wirkung;
 @property(assign) NSNumber *Hoehe_HoverBand;
 @property(assign) NSNumber *Hoehe_GPS_Z;
+@property(assign) NSNumber *Hoehe_TiltCompensation;
 @property(assign) NSNumber *Hoehe_StickNeutralPoint;
 @property(assign) NSNumber *Stick_P;
 @property(assign) NSNumber *Stick_D;

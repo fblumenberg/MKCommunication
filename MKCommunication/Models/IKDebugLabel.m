@@ -52,7 +52,7 @@
 
     index = (NSUInteger) bytes[0];
 
-    int dataLength = [data length] < 16 ? [data length] : 16;
+    int dataLength = [data length] < 16 ? (int)[data length] : 16;
 
     NSData *strData = [NSData dataWithBytesNoCopy:(void *) (++bytes) length:dataLength freeWhenDone:NO];
 
