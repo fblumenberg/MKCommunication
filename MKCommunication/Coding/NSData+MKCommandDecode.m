@@ -79,7 +79,7 @@ static NSData *decode64(const char *inBuffer, int length) {
   const char *frameBytes = [self bytes];
 
   if (frameLength < 5) {
-    NSLog(@"The frame length is to short %d. Frame is invalid", frameLength);
+    NSLog(@"The frame length is to short %lu. Frame is invalid", (unsigned long)frameLength);
     return NO;
   }
 
@@ -139,7 +139,7 @@ static NSData *decode64(const char *inBuffer, int length) {
   const char *frameBytes = [self bytes];
 
   int startIndex = 3;
-  int frameDataLength = frameLength - startIndex - 2;
+  int frameDataLength = (int)frameLength - startIndex - 2;
 
   return decode64(frameBytes + startIndex, frameDataLength);
 }

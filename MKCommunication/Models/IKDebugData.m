@@ -56,7 +56,7 @@
 
 - (NSNumber *)analogValueAtIndex:(NSUInteger)index {
   if (index > kMaxDebugDataAnalog) {
-    NSLog(@"index %u out of bounds (%u) of %@", index, kMaxDebugDataAnalog, self);
+    NSLog(@"index %lu out of bounds (%u) of %@", (unsigned long)index, kMaxDebugDataAnalog, self);
     [NSException raise:NSRangeException format:@"analogValueAtIndex: Index out of bounds"];
   }
   return [NSNumber numberWithShort:_data.Analog[index]];
@@ -64,7 +64,7 @@
 
 - (BOOL)digitalValueAtIndex:(NSUInteger)index {
   if (index > kMaxDebugDataDigital) {
-    NSLog(@"index %u out of bounds (%u) of %@", index, kMaxDebugDataDigital, self);
+    NSLog(@"index %lu out of bounds (%u) of %@", (unsigned long)index, kMaxDebugDataDigital, self);
     [NSException raise:NSRangeException format:@"digitalValueAtIndex: Index out of bounds"];
   }
   return _data.Digital[index];
