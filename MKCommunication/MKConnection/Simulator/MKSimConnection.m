@@ -31,7 +31,7 @@
 
 #import "MKDataConstants.h"
 
-#import "DDLog.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 
 static NSString *const MKSimConnectionException = @"MKSimConnectionException";

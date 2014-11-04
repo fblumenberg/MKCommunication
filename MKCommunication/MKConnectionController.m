@@ -34,7 +34,7 @@
 #import "IKParamSet.h"
 #import "IKPoint.h"
 
-#import "DDLog.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 //#import "MKTConnection.h"
 //#import "MKTConnection+MKConnection.h"

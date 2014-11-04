@@ -196,9 +196,9 @@
 
   memset(_point.reserve, 0, 2);
 
-  _point.Position.Altitude = self.type == POINT_TYPE_POI ? self.altitude * 100 : self.altitude * 10;
-  _point.Position.Longitude = self.longitude;
-  _point.Position.Latitude = self.latitude;
+  _point.Position.Altitude = (int32_t)(self.type == POINT_TYPE_POI ? self.altitude * 100 : self.altitude * 10);
+  _point.Position.Longitude = (int32_t)self.longitude;
+  _point.Position.Latitude = (int32_t)self.latitude;
   _point.Position.Status = self.status;
 
   memcpy((unsigned char *) (payloadData), (unsigned char *) &_point, sizeof(_point));
@@ -295,7 +295,7 @@
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"%@-%d:%d:%d:(%d):%d", self.name, self.latitude, self.longitude, self.altitude, self.index, self.heading];
+  return [NSString stringWithFormat:@"%@-%ld:%ld:%ld:(%ld):%ld", self.name, (long)self.latitude, (long)self.longitude, (long)self.altitude, (long)self.index, (long)self.heading];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -307,7 +307,7 @@
   if (self.prefix == nil)
     self.prefix = [[NSUserDefaults standardUserDefaults] stringForKey:@"WpDefaultPrefix"];
 
-  self.name = [NSString stringWithFormat:@"%@%d", self.prefix, self.index];
+  self.name = [NSString stringWithFormat:@"%@%ld", self.prefix, (long)self.index];
 }
 
 - (NSString *)title {
@@ -321,10 +321,10 @@
 
 - (NSString *)formatHeading {
   if (heading > 0)
-    return [NSString stringWithFormat:@"%d°", heading];
+    return [NSString stringWithFormat:@"%ld°", (long)heading];
 
   if (heading < 0)
-    return [NSString stringWithFormat:@"P%d°", -heading];
+    return [NSString stringWithFormat:@"P%ld°", (long)-heading];
 
   return @"--";
 }
