@@ -144,7 +144,7 @@
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"%d:%d:%d:%d", self.latitude, self.longitude, self.altitude, self.status];
+  return [NSString stringWithFormat:@"%ld:%ld:%ld:%ld", (long)self.latitude, (long)self.longitude, (long)self.altitude, (long)self.status];
 }
 
 @end
@@ -177,7 +177,7 @@
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"%d:%d", self.distance, self.bearing];
+  return [NSString stringWithFormat:@"%lu:%ld", (unsigned long)self.distance, (long)self.bearing];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark NSCoding

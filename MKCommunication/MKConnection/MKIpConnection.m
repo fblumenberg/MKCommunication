@@ -25,7 +25,7 @@
 
 #import "MKIpConnection.h"
 #import "AsyncSocket.h"
-#import "DDLog.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #define CONNECT_TIMEOUT 2
 #define CONNECT_MAX_COUNT 15
@@ -178,7 +178,7 @@ static int ddLogLevel = LOG_LEVEL_WARN;
     }
   }
   else{
-    DDLogVerbose(@"Retry to connect to %@ on port %d connect count %d", _host, _port,_connectCounter);
+    DDLogVerbose(@"Retry to connect to %@ on port %d connect count %lu", _host, _port,(unsigned long)_connectCounter);
     [asyncSocket connectToHost:_host onPort:_port withTimeout:CONNECT_TIMEOUT error:nil];
   }
   

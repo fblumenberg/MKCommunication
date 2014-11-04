@@ -25,7 +25,7 @@
 
 #import "MKBleConnection.h"
 #import "BLE.h"
-#import "DDLog.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 static NSString *const MKIpConnectionException = @"MKBleConnectionException";
 
