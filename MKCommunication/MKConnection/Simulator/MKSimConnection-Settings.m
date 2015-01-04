@@ -33,7 +33,7 @@
 
 #import "MKDataConstants.h"
 
-static IKMkParamset102 EE_Parameter;
+static IKMkParamset103 EE_Parameter;
 static uint8_t PlatinenVersion = 21;
 
 static void ParamSet_DefaultStickMapping(void) {
@@ -88,6 +88,7 @@ static void CommonDefaults(void) {
   
 	EE_Parameter.Hoehe_MinGas = 30;
 	EE_Parameter.HoeheChannel = 5;         // Wert : 0-32
+  EE_Parameter.Hoehe_TiltCompensation = 110; // in %
 
 //	if(ACC_AltitudeControl)
 //	{
@@ -106,95 +107,93 @@ static void CommonDefaults(void) {
 		EE_Parameter.Luftdruck_D  = 30;          // Wert : 0-247
 		EE_Parameter.Hoehe_ACC_Wirkung = 0;     // Wert : 0-247
 		EE_Parameter.Hoehe_HoverBand = 8;     	  // Wert : 0-247
-		EE_Parameter.Hoehe_GPS_Z = 20;           // Wert : 0-247
 		EE_Parameter.Hoehe_StickNeutralPoint = 0;// Wert : 0-247 (0 = Hover-Estimation)
     EE_Parameter.GlobalConfig3 = CFG3_SPEAK_ALL;
 		EE_Parameter.FailSafeTime = 0; 	          // 0 = off
 	}
 	
-	EE_Parameter.Hoehe_Verstaerkung = 15;    // Wert : 0-50 (15 -> ca. +/- 5m/sek bei Stick-Voll-Ausschlag)
-	EE_Parameter.StartLandChannel = 0;
-	EE_Parameter.LandingSpeed = 12;
+  EE_Parameter.Hoehe_Verstaerkung = 15;    // Wert : 0-50 (15 -> ca. +/- 5m/sek bei Stick-Voll-Ausschlag)
+  EE_Parameter.StartLandChannel = 0;
+  EE_Parameter.LandingSpeed = 12;
   
-	EE_Parameter.UserParam1 =   0;           // zur freien Verwendung
-	EE_Parameter.UserParam2 =   0;           // zur freien Verwendung
-	EE_Parameter.UserParam3 =   0;           // zur freien Verwendung
-	EE_Parameter.UserParam4 =   0;           // zur freien Verwendung
-	EE_Parameter.UserParam5 =   0;           // zur freien Verwendung
-	EE_Parameter.UserParam6 =   0;           // zur freien Verwendung
-	EE_Parameter.UserParam7 = 0;             // zur freien Verwendung
-	EE_Parameter.UserParam8 = 0;             // zur freien Verwendung
+  EE_Parameter.UserParam1 =   0;           // zur freien Verwendung
+  EE_Parameter.UserParam2 =   0;           // zur freien Verwendung
+  EE_Parameter.UserParam3 =   0;           // zur freien Verwendung
+  EE_Parameter.UserParam4 =   0;           // zur freien Verwendung
+  EE_Parameter.UserParam5 =   0;           // zur freien Verwendung
+  EE_Parameter.UserParam6 =   0;           // zur freien Verwendung
+  EE_Parameter.UserParam7 = 0;             // zur freien Verwendung
+  EE_Parameter.UserParam8 = 0;             // zur freien Verwendung
   
-	EE_Parameter.ServoNickControl = 128;     // Wert : 0-247     // Stellung des Servos
-	EE_Parameter.ServoNickComp = 50;         // Wert : 0-247     // Einfluss Gyro/Servo
-	EE_Parameter.ServoCompInvert = 2;        // Wert : 0-247     // Richtung Einfluss Gyro/Servo
-	EE_Parameter.ServoNickMin = 24;          // Wert : 0-247     // Anschlag
-	EE_Parameter.ServoNickMax = 230;         // Wert : 0-247     // Anschlag
-	EE_Parameter.ServoNickRefresh = 4;
-	EE_Parameter.Servo3 = 125;
-	EE_Parameter.Servo4 = 125;
-	EE_Parameter.Servo5 = 125;
-	EE_Parameter.ServoRollControl = 128;     // Wert : 0-247     // Stellung des Servos
-	EE_Parameter.ServoRollComp = 85;         // Wert : 0-247     // Einfluss Gyro/Servo
-	EE_Parameter.ServoRollMin = 70;          // Wert : 0-247     // Anschlag
-	EE_Parameter.ServoRollMax = 220;         // Wert : 0-247     // Anschlag
-	EE_Parameter.ServoManualControlSpeed = 60;
-	EE_Parameter.CamOrientation = 0;         // Wert : 0-24 -> 0-360 -> 15∞ steps
+  EE_Parameter.ServoNickControl = 128;     // Wert : 0-247     // Stellung des Servos
+  EE_Parameter.ServoNickComp = 50;         // Wert : 0-247     // Einfluss Gyro/Servo
+  EE_Parameter.ServoCompInvert = 2;        // Wert : 0-247     // Richtung Einfluss Gyro/Servo
+  EE_Parameter.ServoNickMin = 24;          // Wert : 0-247     // Anschlag
+  EE_Parameter.ServoNickMax = 230;         // Wert : 0-247     // Anschlag
+  EE_Parameter.ServoNickRefresh = 3;
+  EE_Parameter.Servo3 = 125;
+  EE_Parameter.Servo4 = 125;
+  EE_Parameter.Servo5 = 125;
+  EE_Parameter.ServoRollControl = 128;     // Wert : 0-247     // Stellung des Servos
+  EE_Parameter.ServoRollComp = 85;         // Wert : 0-247     // Einfluss Gyro/Servo
+  EE_Parameter.ServoRollMin = 70;          // Wert : 0-247     // Anschlag
+  EE_Parameter.ServoRollMax = 220;         // Wert : 0-247     // Anschlag
+  EE_Parameter.ServoManualControlSpeed = 60;
+  EE_Parameter.CamOrientation = 0;         // Wert : 0-24 -> 0-360 -> 15∞ steps
   
-	EE_Parameter.J16Bitmask = 95;
-	EE_Parameter.J17Bitmask = 243;
-	EE_Parameter.WARN_J16_Bitmask = 0xAA;
-	EE_Parameter.WARN_J17_Bitmask = 0xAA;
-	EE_Parameter.J16Timing = 40;
-	EE_Parameter.J17Timing = 40;
+  EE_Parameter.J16Bitmask = 0xAA;
+  EE_Parameter.J17Bitmask = 0xCC;
+  EE_Parameter.WARN_J16_Bitmask = 0x00;
+  EE_Parameter.WARN_J17_Bitmask = 0xAA;
+  EE_Parameter.J16Timing = 40;
+  EE_Parameter.J17Timing = 40;
   EE_Parameter.AutoPhotoDistance = 0;    	// Photo release in meter
   EE_Parameter.AutoPhotoAtitudes = 0;   	// Photo release in meter
-	EE_Parameter.SingleWpSpeed = 50;       	// Speed when flying the single points
-	
+  EE_Parameter.SingleWpSpeed = 50;       	// Speed when flying the single points
+  
   EE_Parameter.LoopGasLimit = 50;
-	EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle f¸r Stickausschlag
-	EE_Parameter.LoopHysterese = 50;
+  EE_Parameter.LoopThreshold = 90;     	// Wert: 0-247  Schwelle f¸r Stickausschlag
+  EE_Parameter.LoopHysterese = 50;
   
-	EE_Parameter.NaviGpsModeChannel = 6; // Kanal 6
-	EE_Parameter.NaviGpsGain = 100;
-	EE_Parameter.NaviGpsP =  100;
-	EE_Parameter.NaviGpsI =   90;
-	EE_Parameter.NaviGpsD =  120;
-	EE_Parameter.NaviGpsA =   40;
-	EE_Parameter.NaviGpsPLimit = 75;
-	EE_Parameter.NaviGpsILimit = 85;
-	EE_Parameter.NaviGpsDLimit = 75;
-	EE_Parameter.NaviGpsMinSat = 6;
-	EE_Parameter.NaviStickThreshold = 8;
-	EE_Parameter.NaviWindCorrection = 50;
-	EE_Parameter.NaviAccCompensation = 42;
-	EE_Parameter.NaviMaxFlyingRange = 0;
-	EE_Parameter.NaviDescendRange = 0;
-	EE_Parameter.NaviAngleLimitation = 140;
-	EE_Parameter.NaviPH_LoginTime = 2;
-	EE_Parameter.OrientationAngle = 0;
-	EE_Parameter.CareFreeChannel = 0;
-	EE_Parameter.UnterspannungsWarnung = 33; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
-	EE_Parameter.NotGas = 65;                // Wert : 0-247     // Gaswert bei Empangsverlust (ggf. in Prozent)
-	EE_Parameter.NotGasZeit = 90;            // Wert : 0-247     // Zeit bis auf NotGas geschaltet wird, wg. Rx-Problemen
-	EE_Parameter.MotorSmooth = 0;
-	EE_Parameter.ComingHomeAltitude = 0; 	  // 0 = don't change
-	EE_Parameter.MaxAltitude = 150;           // 0 = off
-	EE_Parameter.AchsKopplung1 = 125;
-	EE_Parameter.AchsKopplung2 = 52;
-	EE_Parameter.FailsafeChannel = 0;
-	EE_Parameter.ServoFilterNick = 0;
-	EE_Parameter.ServoFilterRoll = 0;
-  
+  EE_Parameter.NaviGpsModeChannel = 6; // Kanal 6
+  EE_Parameter.NaviGpsGain = 100;
+  EE_Parameter.NaviGpsP =  100;
+  EE_Parameter.NaviGpsI =   90;
+  EE_Parameter.NaviGpsD =  120;
+  EE_Parameter.NaviGpsA =   40;
+  EE_Parameter.NaviGpsPLimit = 75;
+  EE_Parameter.NaviGpsILimit = 85;
+  EE_Parameter.NaviGpsDLimit = 75;
+  EE_Parameter.NaviGpsMinSat = 6;
+  EE_Parameter.NaviStickThreshold = 8;
+  EE_Parameter.NaviWindCorrection = 50;
+  EE_Parameter.NaviAccCompensation = 42;
+  EE_Parameter.NaviMaxFlyingRange = 0;
+  EE_Parameter.NaviDescendRange = 0;
+  EE_Parameter.NaviAngleLimitation = 140;
+  EE_Parameter.NaviPH_LoginTime = 2;
+  EE_Parameter.OrientationAngle = 0;
+  EE_Parameter.CareFreeChannel = 0;
+  EE_Parameter.NotGas = 65;                // Wert : 0-247     // Gaswert bei Empangsverlust (ggf. in Prozent)
+  EE_Parameter.NotGasZeit = 90;            // Wert : 0-247     // Zeit bis auf NotGas geschaltet wird, wg. Rx-Problemen
+  EE_Parameter.MotorSmooth = 0;
+  EE_Parameter.ComingHomeAltitude = 0; 	  // 0 = don't change
+  EE_Parameter.MaxAltitude = 150;           // 0 = off
+  EE_Parameter.AchsKopplung1 = 125;
+  EE_Parameter.AchsKopplung2 = 52;
+  EE_Parameter.FailsafeChannel = 0;
+  EE_Parameter.ServoFilterNick = 0;
+  EE_Parameter.ServoFilterRoll = 0;
   EE_Parameter.Servo3OnValue = 140;
   EE_Parameter.Servo3OffValue = 70;
-	EE_Parameter.Servo4OnValue = 140;
+  EE_Parameter.Servo4OnValue = 140;
   EE_Parameter.Servo4OffValue = 70;
-	
   EE_Parameter.CompassOffset = 0;
-	EE_Parameter.UnterspannungsWarnung 	= 32; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
-	EE_Parameter.ComingHomeVoltage 		= 31;
-	EE_Parameter.AutoLandingVoltage 	= 30;}
+  EE_Parameter.UnterspannungsWarnung 	= 32; // Wert : 0-247 ( Automatische Zellenerkennung bei < 50)
+  EE_Parameter.ComingHomeVoltage 		= 31;
+  EE_Parameter.AutoLandingVoltage 	= 30;
+  
+}
 
 /***************************************************/
 /*    Default Values for parameter set 1           */
