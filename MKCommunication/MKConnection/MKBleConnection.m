@@ -39,7 +39,7 @@ static NSString *const MKIpConnectionException = @"MKBleConnectionException";
 
 ///////////////////////////////////////////////////////////////////////////////
 #pragma mark - DDRegisteredDynamicLogging
-static int ddLogLevel = LOG_LEVEL_WARN;
+static int ddLogLevel = DDLogLevelWarning;
 
 @interface MKBleConnection (DDRegisteredDynamicLogging) <DDRegisteredDynamicLogging>
 @end
