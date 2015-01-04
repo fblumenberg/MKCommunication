@@ -82,7 +82,7 @@ NSString *const MKMotorDataNotification = @"MKMotorDataNotification";
 
 ///////////////////////////////////////////////////////////////////////////////
 #pragma mark - DDRegisteredDynamicLogging
-static int ddLogLevel = LOG_LEVEL_WARN;
+static int ddLogLevel = DDLogLevelWarning;
 
 @interface MKConnectionController (DDRegisteredDynamicLogging) <DDRegisteredDynamicLogging>
 @end

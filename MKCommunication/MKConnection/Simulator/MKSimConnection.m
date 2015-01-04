@@ -38,7 +38,7 @@ static NSString *const MKSimConnectionException = @"MKSimConnectionException";
 
 ///////////////////////////////////////////////////////////////////////////////
 #pragma mark - DDRegisteredDynamicLogging
-static int ddLogLevel = LOG_LEVEL_WARN;
+static int ddLogLevel = DDLogLevelWarning;
 
 @interface MKSimConnection (DDRegisteredDynamicLogging) <DDRegisteredDynamicLogging>
 @end
