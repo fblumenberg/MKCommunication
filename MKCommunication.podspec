@@ -6,13 +6,13 @@
 #
 Pod::Spec.new do |s|
   s.name         = "MKCommunication"
-  s.version      = "1.3.2"
+  s.version      = "1.3.3"
   s.summary      = "A library which implements the base communication to a Mikrokopter via TCP/IP."
   s.license      = 'MIT'
   s.author       = { "frank" => "frank@frankblumenberg.de" }
   s.homepage     = 'https://github.com/fblumenberg/MKCommunication'
 
-  s.source       = { :git => "https://github.com/fblumenberg/MKCommunication.git", :tag => "1.0.0-a" }
+  s.source       = { :git => "https://github.com/fblumenberg/MKCommunication.git", :tag => "1.3.3" }
 
   s.platform     = :ios, '5.0'
   s.source_files = 'MKCommunication', 'MKCommunication/**/*.{h,m}'
